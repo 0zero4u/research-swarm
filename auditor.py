@@ -39,6 +39,12 @@ class CitationAuditor:
         # Broad pattern to detect potential malformed citations
         self.broad_citation_pattern = re.compile(r'\(([^)]{3,60})\)')
         self.quotes_pattern = re.compile(r'"([^"]+)"')
+        # Structured citation: [[chunk_id:page]]
+        self.structured_pattern = re.compile(r'\[\[([A-Za-z0-9_]+):(\d+)\]\]')
+        # MLA simple: (Author page) or (Author, page) — no year
+        self.mla_simple_pattern = re.compile(r'\(([A-Z][a-zA-Z]*)\s*,?\s*(\d+)\)')
+        # Index by chunk_id for quick structured lookup
+        self.chunk_by_id = {}
 
     def load_sources(self):
         """Load chunks and metadata from JSON files."""
@@ -56,6 +62,10 @@ class CitationAuditor:
                         val = item.get(key_field, '')
                         if val:
                             self.chunk_index[val] = item
+                    # Index by chunk_id for structured citation validation
+                    cid = item.get('chunk_id', '')
+                    if cid:
+                        self.chunk_by_id[cid] = item
         except FileNotFoundError:
             print(f"Warning: Chunks file not found at {self.chunks_path}")
 
@@ -77,14 +87,29 @@ class CitationAuditor:
             print(f"Warning: Metadata file not found at {self.metadata_path}")
 
     def extract_citations(self, content: str):
-        """Extract MLA-style citations from content and detect malformed ones."""
+        """Extract structured [[chunk_id:page]] and MLA-style citations from content."""
         citations = []
         lines = content.split('\n')
         seen_spans = set()  # Track (line_num, start) to avoid duplicates
         
         for line_num, line in enumerate(lines, 1):
-            # First find valid MLA citations: (Author, Year, p. #) or (Author Year, p. #)
+            # Format 1: Structured [[chunk_id:page]]
+            for match in self.structured_pattern.finditer(line):
+                chunk_id = match.group(1)
+                page = int(match.group(2))
+                citations.append({
+                    'chunk_id': chunk_id,
+                    'page': page,
+                    'line': line_num,
+                    'text': match.group(0),
+                    'type': 'structured'
+                })
+                seen_spans.add((line_num, match.start()))
+
+            # Format 2a: MLA with year and page: (Author, Year, p. #) or (Author Year, p. #)
             for match in self.citation_pattern.finditer(line):
+                if (line_num, match.start()) in seen_spans:
+                    continue
                 author = match.group(1)
                 year = int(match.group(2))
                 page = int(match.group(3))
@@ -94,21 +119,32 @@ class CitationAuditor:
                     'page': page,
                     'line': line_num,
                     'text': match.group(0),
-                    'type': 'citation'
+                    'type': 'mla'
                 })
                 seen_spans.add((line_num, match.start()))
 
-            # Find malformed citations (parens with citation-like content but wrong format)
+            # Format 2b: MLA simple (Author page) or (Author, page) — page only, no year
+            for match in self.mla_simple_pattern.finditer(line):
+                if (line_num, match.start()) in seen_spans:
+                    continue
+                author = match.group(1)
+                page = int(match.group(2))
+                citations.append({
+                    'author': author,
+                    'page': page,
+                    'line': line_num,
+                    'text': match.group(0),
+                    'type': 'mla'
+                })
+                seen_spans.add((line_num, match.start()))
+
+            # Fallback: parenthetical that looks citation-like but matches no known format
             for match in self.broad_citation_pattern.finditer(line):
                 if (line_num, match.start()) in seen_spans:
                     continue
                 inner = match.group(1)
-                # Looks like a citation attempt: has a capitalized word + a number
                 if re.search(r'[A-Z][a-z]+', inner) and re.search(r'\d+', inner):
                     citations.append({
-                        'author': '',
-                        'year': 0,
-                        'page': 0,
                         'line': line_num,
                         'text': match.group(0),
                         'type': 'malformed_citation'
@@ -147,6 +183,10 @@ class CitationAuditor:
                                     return True
         
         return False
+
+    def check_chunk_exists(self, chunk_id: str) -> bool:
+        """Check if a chunk_id exists in the loaded chunks."""
+        return chunk_id in self.chunk_by_id
 
     def check_source_existence(self, author: str) -> bool:
         """Check if author exists in any source (source_filename, metadata, or chunk text)."""
@@ -189,45 +229,71 @@ class CitationAuditor:
         return None
 
     def validate_citation(self, citation: dict) -> list:
-        """Validate a single citation and return any issues."""
+        """Validate a single citation using hybrid logic (structured [[chunk_id:page]] or MLA)."""
         issues = []
         
-        # Malformed citations don't have author/page to validate
+        # Malformed citations don't have content to validate
         if citation['type'] == 'malformed_citation':
             issues.append({
-                'type': 'malformed_citation',
+                'type': 'malformed',
                 'citation': citation['text'],
                 'line': citation['line'],
-                'message': f"Malformed citation format: '{citation['text']}' — expected (Author, Year, p. #)"
+                'message': f"Malformed citation format: '{citation['text']}'"
             })
             return issues
         
-        author = citation['author']
-        page = citation['page']
-        line = citation['line']
-        text = citation['text']
+        # Format 1: Structured [[chunk_id:page]]
+        if citation['type'] == 'structured':
+            chunk_id = citation['chunk_id']
+            if self.check_chunk_exists(chunk_id):
+                # Valid structured citation — no issue
+                return issues
+            else:
+                issues.append({
+                    'type': 'hallucination',
+                    'citation': citation['text'],
+                    'line': citation['line'],
+                    'message': f"No chunk found for '{chunk_id}'"
+                })
+                return issues
         
-        if not self.check_source_existence(author):
-            issues.append({
-                'type': 'hallucination',
-                'citation': text,
-                'line': line,
-                'message': f"No source found for '{author}'"
-            })
+        # Format 2: MLA citation — verify author exists in sources
+        if citation['type'] == 'mla':
+            author = citation['author']
+            page = citation['page']
+            line = citation['line']
+            text = citation['text']
+            
+            if not self.check_source_existence(author):
+                issues.append({
+                    'type': 'hallucination',
+                    'citation': text,
+                    'line': line,
+                    'message': f"No source found for '{author}'"
+                })
+                return issues
+            
+            if not self.validate_page(author, page):
+                issues.append({
+                    'type': 'invalid_page',
+                    'citation': text,
+                    'line': line,
+                    'message': f"Page {page} not found in source chunks for '{author}'"
+                })
+            
             return issues
         
-        if not self.validate_page(author, page):
-            issues.append({
-                'type': 'invalid_page',
-                'citation': text,
-                'line': line,
-                'message': f"Page {page} not found in source chunks for '{author}'"
-            })
-        
+        # Unknown citation type — treat as malformed
+        issues.append({
+            'type': 'malformed',
+            'citation': citation.get('text', ''),
+            'line': citation.get('line', 0),
+            'message': "Unknown citation format"
+        })
         return issues
 
     def audit(self, content: str) -> dict:
-        """Run full audit on chapter content."""
+        """Run full audit on chapter content with hybrid citation detection."""
         citations = self.extract_citations(content)
         all_issues = []
         
@@ -237,18 +303,34 @@ class CitationAuditor:
         
         total = len(citations)
         hallucinated = len([i for i in all_issues if i['type'] == 'hallucination'])
-        malformed = len([i for i in all_issues if i['type'] == 'malformed_citation'])
+        malformed = len([i for i in all_issues if i['type'] == 'malformed'])
         invalid_pages = len([i for i in all_issues if i['type'] == 'invalid_page'])
         
-        valid = total - hallucinated - invalid_pages
-        malformed_rate = malformed / total if total > 0 else 0
+        # Count valid by format type
+        structured_valid = sum(
+            1 for c in citations
+            if c['type'] == 'structured'
+            and not any(i['citation'] == c['text'] for i in all_issues if i['type'] in ('hallucination', 'malformed'))
+        )
+        mla_valid = sum(
+            1 for c in citations
+            if c['type'] == 'mla'
+            and not any(i['citation'] == c['text'] for i in all_issues if i['type'] in ('hallucination', 'malformed'))
+        )
+        
+        valid = total - hallucinated - malformed - invalid_pages
+        malformed_rate = (malformed + hallucinated) / total if total > 0 else 0
         passed = hallucinated == 0 and malformed_rate < 0.10
         
         return {
             'chapter_file': self.chapter_path.name,
             'total_citations': total,
             'valid_citations': valid,
+            'structured_valid': structured_valid,
+            'mla_valid': mla_valid,
             'hallucinated_citations': hallucinated,
+            'malformed_citations': malformed,
+            'invalid_pages': invalid_pages,
             'issues': all_issues,
             'passed': passed
         }
@@ -288,7 +370,12 @@ def print_report(report: dict):
     print("=" * 60)
     print(f"Chapter File:     {report['chapter_file']}")
     print(f"Total Citations:  {report['total_citations']}")
+    print(f"  Structured:     {report.get('structured_valid', 0)}")
+    print(f"  MLA:            {report.get('mla_valid', 0)}")
     print(f"Valid Citations:  {report['valid_citations']}")
+    print(f"Hallucinated:     {report.get('hallucinated_citations', 0)}")
+    print(f"Malformed:        {report.get('malformed_citations', 0)}")
+    print(f"Invalid Pages:    {report.get('invalid_pages', 0)}")
     print(f"Status:           {'PASS' if report['passed'] else 'FAIL'}")
     print("-" * 60)
     
