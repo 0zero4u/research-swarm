@@ -144,21 +144,19 @@ def format_mla_citation(chunk, page=None):
 
 
 def convert_citations(text, chunks_map):
-    """Replace all [[chunk_id:page]] citations with MLA format.
+    """Replace all [chunk_id] citations with MLA format.
 
-    The pattern matches [[CHUNK_ID:PAGE_NUM]] where chunk_id can contain
-    alphanumeric characters and underscores, and page is a digit string.
+    The pattern matches [CHUNK_ID] where chunk_id can contain
+    alphanumeric characters and underscores.
     """
-    # Pattern: [[chunk_id:page]]
-    citation_pattern = re.compile(r'\[\[([A-Za-z0-9_]+):(\d+)\]\]')
+    # Pattern: [chunk_id]
+    citation_pattern = re.compile(r'\[([A-Za-z0-9_]+)\]')
 
     def replace_match(match):
         chunk_id = match.group(1)
-        page = match.group(2)
 
         chunk = chunks_map.get(chunk_id)
         if chunk is None:
-            # Chunk not found — preserve original citation for review
             print(
                 f"Warning: chunk '{chunk_id}' not found in chunks metadata, "
                 f"preserving original citation",
@@ -166,6 +164,7 @@ def convert_citations(text, chunks_map):
             )
             return match.group(0)
 
+        page = chunk.get("page", 1)
         return format_mla_citation(chunk, page=page)
 
     return citation_pattern.sub(replace_match, text)
@@ -207,7 +206,7 @@ def main():
         text = f.read()
 
     # Count citations before conversion
-    raw_count = len(re.findall(r'\[\[([A-Za-z0-9_]+):(\d+)\]\]', text))
+    raw_count = len(re.findall(r'\[([A-Za-z0-9_]+)\]', text))
     if raw_count == 0:
         print("No citations found in input file.")
         sys.exit(0)
