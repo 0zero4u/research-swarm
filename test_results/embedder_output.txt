@@ -1,0 +1,27 @@
+============================================================
+Research Swarm Embedder
+============================================================
+Model: qwen/qwen3-embedding-8b
+Dimensions: 4096
+Batch size: 32
+Chunks file: chunks/chunks.json
+Output directory: vector_index
+============================================================
+Verifying OpenRouter API key...
+API key verified
+
+Loading chunks from chunks/chunks.json...
+Loaded 18 chunks
+
+Creating new FAISS index (IndexFlatIP for inner product)
+Building FAISS index...
+
+Processing batch 1/1 (18 chunks)...
+  Progress: 18/18 chunks indexed
+
+============================================================
+Embedding Complete!
+============================================================
+Total vectors: 18
+Index saved to: vector_index/index.faiss
+Manifest saved to: vector_index/manifest.json

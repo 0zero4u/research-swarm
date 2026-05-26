@@ -1,0 +1,76 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "002_P001C001",
+      "faiss_idx": 0
+    },
+    {
+      "chunk_id": "002_P001C002",
+      "faiss_idx": 1
+    },
+    {
+      "chunk_id": "002_P001C003",
+      "faiss_idx": 2
+    },
+    {
+      "chunk_id": "002_P002C004",
+      "faiss_idx": 3
+    },
+    {
+      "chunk_id": "002_P002C005",
+      "faiss_idx": 4
+    },
+    {
+      "chunk_id": "002_P002C006",
+      "faiss_idx": 5
+    },
+    {
+      "chunk_id": "002_P002C007",
+      "faiss_idx": 6
+    },
+    {
+      "chunk_id": "002_P003C008",
+      "faiss_idx": 7
+    },
+    {
+      "chunk_id": "002_P003C009",
+      "faiss_idx": 8
+    },
+    {
+      "chunk_id": "002_P003C010",
+      "faiss_idx": 9
+    },
+    {
+      "chunk_id": "002_P003C011",
+      "faiss_idx": 10
+    },
+    {
+      "chunk_id": "002_P004C012",
+      "faiss_idx": 11
+    },
+    {
+      "chunk_id": "002_P004C013",
+      "faiss_idx": 12
+    },
+    {
+      "chunk_id": "002_P004C014",
+      "faiss_idx": 13
+    },
+    {
+      "chunk_id": "002_P004C015",
+      "faiss_idx": 14
+    },
+    {
+      "chunk_id": "002_P005C016",
+      "faiss_idx": 15
+    },
+    {
+      "chunk_id": "002_P005C017",
+      "faiss_idx": 16
+    },
+    {
+      "chunk_id": "002_P005C018",
+      "faiss_idx": 17
+    }
+  ]
+}
