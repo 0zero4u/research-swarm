@@ -17,10 +17,15 @@ from typing import Optional
 
 @dataclass
 class Chunk:
-    """Represents a single text chunk with provenance."""
+    """Represents a single text chunk with provenance and metadata."""
     chunk_id: str
     source_id: str
     source_filename: str
+    author: str
+    title: str
+    year: str
+    journal: str
+    url: str
     page: int
     text: str
     token_count: int
@@ -198,6 +203,121 @@ class Chunker:
             return match.group(1)
         return name
     
+    @staticmethod
+    def _clean_author(author: str) -> str:
+        """Remove academic title prefixes from author string."""
+        cleaned = re.sub(r'\b(Dr\.|Prof\.|Mr\.|Ms\.|Mrs\.|Er\.)\s+', '', author)
+        cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+        cleaned = re.sub(r'[.;,]+$', '', cleaned)
+        return cleaned
+
+    def _extract_metadata(self, text: str, source_filename: str) -> dict:
+        metadata = {
+            "author": "",
+            "title": "",
+            "year": "",
+            "journal": "",
+            "url": ""
+        }
+
+        # 1. URL — doi.org, https?://, then bare www.* domains
+        url = ""
+        doi_match = re.search(r'(doi\.org/[^\s)>\]]+)', text)
+        if doi_match:
+            url = f"https://{doi_match.group(1)}"
+        else:
+            http_match = re.search(r'(https?://[^\s)>\]]+)', text)
+            if http_match:
+                url = http_match.group(1)
+            else:
+                www_match = re.search(r'(www\.[^\s)>\]]{4,})', text, re.IGNORECASE)
+                if www_match:
+                    url = f"http://{www_match.group(1)}"
+        metadata["url"] = url
+
+        # 2. Year — 4-digit year between 1900-2099
+        year_match = re.search(r'\b(19\d{2}|20\d{2})\b', text)
+        if year_match:
+            metadata["year"] = year_match.group(1)
+
+        # 3. Labeled patterns (most reliable)
+        labeled_patterns = [
+            (r'(?:Author|Authors?)\s*[:;]\s*(.+?)(?:\n|\.\s|$)', "author"),
+            (r'(?:Title)\s*[:;]\s*(.+?)(?:\n|\.\s|$)', "title"),
+            (r'(?:Journal|Publisher)\s*[:;]\s*(.+?)(?:\n|\.\s|$)', "journal"),
+        ]
+        for pattern, key in labeled_patterns:
+            match = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
+            if match:
+                val = match.group(1).strip().rstrip('.')
+                if val:
+                    metadata[key] = val
+
+        lines = text.strip().split('\n')
+
+        # 4. Heuristic: author names in early lines
+        if not metadata["author"]:
+            title_honorific = re.compile(r'\b(Dr\.|Prof\.|Mr\.|Ms\.|Mrs\.)\s', re.IGNORECASE)
+            for line in lines[:10]:
+                line = line.strip()
+                if not line:
+                    continue
+                # Strong signal: "Dr." or "Prof." in the line
+                if title_honorific.search(line):
+                    cleaned = re.sub(r'([A-Za-z]+)[\d\*]+', r'\1', line)
+                    metadata["author"] = self._clean_author(cleaned)
+                    break
+                # Look for "Name1 Surname1* Name2 Surname2" with superscripts
+                if re.search(r'[A-Z][a-z]+[\d\*]+\s+[A-Z][a-z]+[\d\*]+', line):
+                    cleaned = re.sub(r'([A-Za-z]+)[\d\*]+', r'\1', line)
+                    metadata["author"] = self._clean_author(cleaned)
+                    break
+
+        # 5. Heuristic: title from first substantial line
+        if not metadata["title"]:
+            skip_re = re.compile(
+                r'(?:\b(?:Abstract|Keywords|ISSN|DOI|Vol\.|No\.|Introduction|'
+                r'Conclusion|References|Bibliography|Research\s+Scholar|'
+                r'Associate\s+Professor|University|College|Institute|Department|'
+                r'Corresponding\s+Author|Page)\b|'
+                r'\b(?:Dr\.|Prof\.)(?:\s+[A-Z]\.?)?)',
+                re.IGNORECASE
+            )
+            for line in lines:
+                line = line.strip()
+                if not line or len(line) < 20:
+                    continue
+                if re.search(r'https?://|www\.', line, re.IGNORECASE):
+                    continue
+                if re.search(r'^-{3,}', line):
+                    continue
+                if re.search(r'^\d+\s*$', line):
+                    continue
+                if skip_re.search(line):
+                    continue
+                # Skip lines starting with journal-like words
+                if re.search(r'^Journal\s+of|^International\s+Journal|^Proceedings\s+of', line, re.IGNORECASE):
+                    continue
+                # Take the first capitalized, substantial line
+                if line[0].isupper():
+                    metadata["title"] = line.rstrip('.;,:').rstrip()
+                    break
+
+        # 6. Heuristic: journal name
+        if not metadata["journal"]:
+            journal_match = re.search(r'(Journal\s+of\s+[A-Z][^.\n]{5,80})', text)
+            if journal_match:
+                metadata["journal"] = journal_match.group(1).strip()
+            else:
+                pub_match = re.search(
+                    r'(?:Publisher|Published by|Press|Publishing)\s*[:;]?\s*([A-Z][^.\n]{5,80})',
+                    text
+                )
+                if pub_match:
+                    metadata["journal"] = pub_match.group(1).strip().rstrip('.')
+
+        return metadata
+
     def process_file(self, filepath: Path) -> list[Chunk]:
         """Process a single file into chunks."""
         source_id = self._extract_source_id(filepath.name)
@@ -212,6 +332,14 @@ class Chunker:
         
         # Extract pages
         pages = self._extract_pages(text)
+        
+        # Extract metadata from first non-empty page
+        first_page_text = ""
+        for _, page_text in pages:
+            if page_text.strip():
+                first_page_text = page_text
+                break
+        metadata = self._extract_metadata(first_page_text, filepath.name)
         
         chunks = []
         chunk_counter = 1
@@ -238,6 +366,11 @@ class Chunker:
                     chunk_id=chunk_id,
                     source_id=source_id,
                     source_filename=filepath.name,
+                    author=metadata["author"],
+                    title=metadata["title"],
+                    year=metadata["year"],
+                    journal=metadata["journal"],
+                    url=metadata["url"],
                     page=page_num,
                     text=chunk_text,
                     token_count=self._estimate_tokens(chunk_text)

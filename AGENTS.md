@@ -78,9 +78,14 @@ python3 chunker.py --resume      # Resume interrupted
 **Chunk Schema:**
 ```json
 {
-  "chunk_id": "001_P001",
+  "chunk_id": "001_P001C001",
   "source_id": "001",
   "source_filename": "paper.txt",
+  "author": "Shikha and Charyulu",
+  "title": "Khushwant Singh Novel Train to Pakistan...",
+  "year": "2019",
+  "journal": "Journal of Advances and Scholarly Researches",
+  "url": "https://doi.org/...",
   "page": 1,
   "text": "...",
   "token_count": 250
