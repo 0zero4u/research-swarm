@@ -26,14 +26,17 @@ OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 SYSTEM_PROMPT = """You are an academic dissertation writer specializing in South Asian history and literature.
 You write in formal academic prose with MLA citations (Author Page format).
 
-RULES:
-1. Use evidence from the provided evidence pack to support claims
-2. Cite using MLA format: (Author Page) e.g., (Singh 14)
-3. Do NOT fabricate citations - only cite sources in the evidence pack
-4. Write in scholarly third person
-5. Maintain paragraph coherence
-6. Include section headers (## for H2, ### for H3)
-7. End with discussion questions or a transition
+CRITICAL RULES - VIOLATIONS WILL CAUSE CITATION AUDIT FAILURE:
+1. Cite ONLY from the provided evidence pack - NEVER invent citations
+2. Do NOT invent page numbers - use page numbers exactly as provided in the evidence
+3. Do NOT cite sources not in the evidence pack
+4. If a claim is not supported by evidence, write: "Further research is needed to..."
+5. Write in scholarly third person
+6. Maintain paragraph coherence
+7. Include section headers (## for H2, ### for H3)
+8. End with discussion questions or a transition
+
+MLA FORMAT: (AuthorName PageNumber) e.g., (Singh 85)
 """
 
 
@@ -204,16 +207,16 @@ RESEARCH QUESTION: {pack.query if pack.query else 'Based on the provided evidenc
 EVIDENCE PACK:
 {evidence_section}
 
-INSTRUCTIONS:
-Write a scholarly chapter section on the topic above using only the evidence provided.
-Each piece of evidence is labeled [EVIDENCE N]. You may use each source multiple times
-when relevant, but always cite them accurately.
-
-REQUIREMENTS:
+CRITICAL WRITING RULES:
+- Write a scholarly chapter section on the topic using ONLY the evidence provided
+- Each piece of evidence is labeled [EVIDENCE N]
+- You may use each source multiple times when relevant, but always cite accurately
+- NEVER fabricate citations - only sources in this evidence pack are available
+- NEVER invent page numbers - use the page numbers exactly as shown in the evidence
+- If you need to make a claim not supported by evidence, write: "Further research is needed to..."
 - Write in formal academic prose (MLA style)
 - Use section headers: ## for main sections, ### for subsections
-- Cite sources as (AuthorName PageNumber) using the source filenames as author proxies
-  Example: If source is "Singh_14.txt", cite as (Singh 14)
+- Cite sources as (AuthorName PageNumber) - example: (Singh 85)
 - Include a brief transition or discussion questions at the end
 - Target length: approximately {max_length} words
 - Write from a detached scholarly perspective

@@ -42,6 +42,7 @@ class RetrieverConfig:
     embedding_model: str = EMBEDDING_MODEL
     embedding_dim: int = EMBEDDING_DIM
     save_evidence: bool = True
+    min_confidence: float = 0.70
 
 
 @dataclass
@@ -372,6 +373,13 @@ Examples:
     )
 
     parser.add_argument(
+        "--min-confidence",
+        type=float,
+        default=0.70,
+        help="Minimum similarity score threshold (default: 0.70)",
+    )
+
+    parser.add_argument(
         "--no-save",
         action="store_true",
         help="Do not save evidence pack to file",
@@ -386,6 +394,7 @@ Examples:
         chunks_path=args.chunks,
         api_key=args.api_key,
         save_evidence=not args.no_save,
+        min_confidence=args.min_confidence,
     )
 
 
@@ -422,6 +431,14 @@ def main():
         # Perform retrieval
         print("\nEmbedding query...", file=sys.stderr)
         evidence = retriever.retrieve(config.query, config.top_k)
+
+        before = len(evidence.results)
+        evidence.results = [r for r in evidence.results if r.score >= config.min_confidence]
+        filtered = before - len(evidence.results)
+        if filtered > 0:
+            print(f"Filtered {filtered} result(s) below confidence threshold {config.min_confidence}", file=sys.stderr)
+        if not evidence.results:
+            print("Warning: Low confidence results - consider broadening query", file=sys.stderr)
 
         # Output results
         print("\n" + "=" * 60, file=sys.stderr)

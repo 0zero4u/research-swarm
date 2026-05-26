@@ -29,10 +29,15 @@ class CitationAuditor:
         self.chapter_path = Path(chapter_path)
         self.chunks_path = Path(chunks_path) if chunks_path else Path("chunks/chunks.json")
         self.metadata_path = Path(metadata_path) if metadata_path else Path("corpus/metadata.json")
-        self.chunks = {}
+        self.chunks = []
+        self.chunk_index = {}  # Index by source_filename for quick key lookup
         self.metadata = {}
         self.api_key = os.environ.get("OPENROUTER_API_KEY", "")
-        self.citation_pattern = re.compile(r'\(([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\s+(\d+))')
+        # MLA citation: (Author, Year, p. #) or (Author Year, p. #)
+        # Supports CamelCase names like FakeAuthor (last names only, no spaces)
+        self.citation_pattern = re.compile(r'\(([A-Z][a-zA-Z]*(?:\s+[A-Z][a-zA-Z]*)*)\s*,?\s*(\d{4})\s*,\s*p\.?\s*(\d+)\)')
+        # Broad pattern to detect potential malformed citations
+        self.broad_citation_pattern = re.compile(r'\(([^)]{3,60})\)')
         self.quotes_pattern = re.compile(r'"([^"]+)"')
 
     def load_sources(self):
@@ -40,36 +45,74 @@ class CitationAuditor:
         try:
             with open(self.chunks_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                for item in data if isinstance(data, list) else [data]:
-                    if 'source' in item:
-                        self.chunks[item['source']] = item
+                # Handle {"chunks": [...]} format from chunker.py
+                items = data
+                if isinstance(data, dict) and 'chunks' in data:
+                    items = data['chunks']
+                for item in items if isinstance(items, list) else [items]:
+                    self.chunks.append(item)
+                    # Index by source_filename for quick presence checks
+                    for key_field in ('source_filename', 'source'):
+                        val = item.get(key_field, '')
+                        if val:
+                            self.chunk_index[val] = item
         except FileNotFoundError:
             print(f"Warning: Chunks file not found at {self.chunks_path}")
 
         try:
             with open(self.metadata_path, 'r', encoding='utf-8') as f:
-                self.metadata = json.load(f)
-                if isinstance(self.metadata, list):
-                    self.metadata = {m.get('source', m.get('id', '')): m for m in self.metadata}
+                data = json.load(f)
+                # Handle {"sources": [...]} format from downloader.py
+                items = data
+                if isinstance(data, dict) and 'sources' in data:
+                    items = data['sources']
+                if isinstance(items, list):
+                    self.metadata = {}
+                    for m in items:
+                        key = m.get('filename') or m.get('id') or m.get('source', '')
+                        self.metadata[key] = m
+                else:
+                    self.metadata = items
         except FileNotFoundError:
             print(f"Warning: Metadata file not found at {self.metadata_path}")
 
     def extract_citations(self, content: str):
-        """Extract MLA-style citations from content."""
+        """Extract MLA-style citations from content and detect malformed ones."""
         citations = []
         lines = content.split('\n')
+        seen_spans = set()  # Track (line_num, start) to avoid duplicates
         
         for line_num, line in enumerate(lines, 1):
-            matches = self.citation_pattern.finditer(line)
-            for match in matches:
+            # First find valid MLA citations: (Author, Year, p. #) or (Author Year, p. #)
+            for match in self.citation_pattern.finditer(line):
                 author = match.group(1)
-                page = int(match.group(2))
+                year = int(match.group(2))
+                page = int(match.group(3))
                 citations.append({
                     'author': author,
+                    'year': year,
                     'page': page,
                     'line': line_num,
-                    'text': match.group(0)
+                    'text': match.group(0),
+                    'type': 'citation'
                 })
+                seen_spans.add((line_num, match.start()))
+
+            # Find malformed citations (parens with citation-like content but wrong format)
+            for match in self.broad_citation_pattern.finditer(line):
+                if (line_num, match.start()) in seen_spans:
+                    continue
+                inner = match.group(1)
+                # Looks like a citation attempt: has a capitalized word + a number
+                if re.search(r'[A-Z][a-z]+', inner) and re.search(r'\d+', inner):
+                    citations.append({
+                        'author': '',
+                        'year': 0,
+                        'page': 0,
+                        'line': line_num,
+                        'text': match.group(0),
+                        'type': 'malformed_citation'
+                    })
         
         return citations
 
@@ -77,54 +120,60 @@ class CitationAuditor:
         """Check if page number exists in relevant chunks."""
         author_lower = author.lower()
         
-        for source, chunk_data in self.chunks.items():
-            source_lower = source.lower()
+        for chunk_data in self.chunks:
+            source_filename = chunk_data.get('source_filename', '').lower()
             chunk_author = chunk_data.get('author', '').lower()
+            chunk_text = chunk_data.get('text', '').lower()
             
-            if author_lower in source_lower or author_lower in chunk_author:
-                chunking = chunk_data.get('chunking', {})
-                page_ranges = chunking.get('page_ranges', [])
+            # Only check chunks related to this author
+            if (author_lower in source_filename or author_lower in chunk_author
+                    or author_lower in chunk_text):
+                chunk_page = chunk_data.get('page', 0)
+                if chunk_page == page:
+                    return True
                 
-                if page_ranges:
-                    for page_range in page_ranges:
-                        if isinstance(page_range, dict):
-                            start = page_range.get('start', 0)
-                            end = page_range.get('end', float('inf'))
-                            if start <= page <= end:
-                                return True
-                        elif isinstance(page_range, (list, tuple)):
-                            if len(page_range) >= 2 and page_range[0] <= page <= page_range[1]:
-                                return True
-                else:
-                    pages = chunk_data.get('pages', [])
-                    if page in pages:
-                        return True
-                    
-                    page_start = chunk_data.get('page_start', 0)
-                    page_end = chunk_data.get('page_end', 0)
-                    if page_start and page_end:
-                        if page_start <= page <= page_end:
-                            return True
+                chunking = chunk_data.get('chunking', {})
+                if isinstance(chunking, dict):
+                    page_ranges = chunking.get('page_ranges', [])
+                    if page_ranges:
+                        for page_range in page_ranges:
+                            if isinstance(page_range, dict):
+                                start = page_range.get('start', 0)
+                                end = page_range.get('end', float('inf'))
+                                if start <= page <= end:
+                                    return True
+                            elif isinstance(page_range, (list, tuple)):
+                                if len(page_range) >= 2 and page_range[0] <= page <= page_range[1]:
+                                    return True
         
         return False
 
     def check_source_existence(self, author: str) -> bool:
-        """Check if author exists in any source."""
+        """Check if author exists in any source (source_filename, metadata, or chunk text)."""
         author_lower = author.lower()
         
-        if author_lower in [s.lower() for s in self.chunks.keys()]:
-            return True
-        
-        for source, chunk_data in self.chunks.items():
-            chunk_author = chunk_data.get('author', '').lower()
-            chunk_title = chunk_data.get('title', '').lower()
-            if author_lower in chunk_author or author_lower in chunk_title:
+        # Check if author appears in chunk source_filenames or source IDs (via index)
+        for chunk_key in self.chunk_index:
+            if author_lower in chunk_key.lower():
                 return True
         
-        for meta_author in self.metadata.values():
-            if isinstance(meta_author, dict):
-                if author_lower in meta_author.get('author', '').lower():
+        # Check chunk structured fields and text content
+        for chunk_data in self.chunks:
+            for field in ('author', 'title', 'source_filename', 'url', 'source'):
+                value = chunk_data.get(field, '')
+                if author_lower in value.lower():
                     return True
+            # Also check text content for author name
+            text = chunk_data.get('text', '')
+            if author_lower in text.lower():
+                return True
+        
+        # Check all metadata fields for author match
+        for meta_entry in self.metadata.values():
+            if isinstance(meta_entry, dict):
+                for field_value in meta_entry.values():
+                    if isinstance(field_value, str) and author_lower in field_value.lower():
+                        return True
         
         return False
 
@@ -132,16 +181,27 @@ class CitationAuditor:
         """Check if quoted text exists in chunks. Returns source or None."""
         quote_lower = quote.lower().strip()
         
-        for source, chunk_data in self.chunks.items():
-            content = chunk_data.get('content', '').lower()
+        for chunk_data in self.chunks:
+            content = chunk_data.get('text', chunk_data.get('content', '')).lower()
             if quote_lower in content:
-                return source
+                return chunk_data.get('source_filename', 'unknown')
         
         return None
 
     def validate_citation(self, citation: dict) -> list:
         """Validate a single citation and return any issues."""
         issues = []
+        
+        # Malformed citations don't have author/page to validate
+        if citation['type'] == 'malformed_citation':
+            issues.append({
+                'type': 'malformed_citation',
+                'citation': citation['text'],
+                'line': citation['line'],
+                'message': f"Malformed citation format: '{citation['text']}' — expected (Author, Year, p. #)"
+            })
+            return issues
+        
         author = citation['author']
         page = citation['page']
         line = citation['line']
@@ -176,17 +236,19 @@ class CitationAuditor:
             all_issues.extend(issues)
         
         total = len(citations)
-        valid = total - len([i for i in all_issues if i['type'] in ('hallucination', 'invalid_page')])
-        hallucination_count = len([i for i in all_issues if i['type'] == 'hallucination'])
-        page_errors = len([i for i in all_issues if i['type'] == 'invalid_page'])
+        hallucinated = len([i for i in all_issues if i['type'] == 'hallucination'])
+        malformed = len([i for i in all_issues if i['type'] == 'malformed_citation'])
+        invalid_pages = len([i for i in all_issues if i['type'] == 'invalid_page'])
         
-        page_error_rate = page_errors / total if total > 0 else 0
-        passed = hallucination_count == 0 and page_error_rate <= 0.10
+        valid = total - hallucinated - invalid_pages
+        malformed_rate = malformed / total if total > 0 else 0
+        passed = hallucinated == 0 and malformed_rate < 0.10
         
         return {
             'chapter_file': self.chapter_path.name,
             'total_citations': total,
             'valid_citations': valid,
+            'hallucinated_citations': hallucinated,
             'issues': all_issues,
             'passed': passed
         }
