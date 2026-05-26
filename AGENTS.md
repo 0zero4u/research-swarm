@@ -178,11 +178,13 @@ python3 formatter.py --input output/draft.md --output output/final.md
 ### 7. Humanizer Agent
 | Property | Value |
 |-----------|-------|
-| **File** | `humanizer_agent.py` |
-| **Model** | `qwen/qwen3.5-plus` (OpenRouter) |
+| **File** | `humanizer_agent.py` (wrapper) |
+| **Model** | `qwen/qwen3.5-plus` via OpenCode task+skill |
 | **Phase** | Phase 7 |
 | **Input** | Formatted chapter with MLA citations |
 | **Output** | Humanized chapter (`_h.md`) |
+
+**How it works:** Invoked via OpenCode task with `humanizer` skill loaded. The skill applies 29 AI-pattern categories in a 4-pass workflow. The Python wrapper is a lightweight file-based interface — the actual work happens inside OpenCode's agent system.
 
 **Responsibilities:**
 - Remove 29 categories of AI writing patterns
@@ -198,11 +200,17 @@ python3 formatter.py --input output/draft.md --output output/final.md
 - Curly quotes, emojis, title case headings
 - Generic conclusions, signposting, chatbot artifacts
 
-**CLI:**
+**CLI (via OpenCode task):**
 ```bash
+# Via OpenCode task + humanizer skill (RECOMMENDED)
+task(category="writing", load_skills=["humanizer"], --input output/chapters/final.md)
+
+# Via Python wrapper (writes to _h.md suffix)
 python3 humanizer_agent.py --input output/chapters/final.md
 python3 humanizer_agent.py --input output/chapters/final.md --output output/chapters/chapter_h.md
 ```
+
+**E2E Test (2026-05-26):** `ghost-train.md` → `ghost-train_h.md` — 5/5 citations valid, prose natural, auditor PASS.
 
 ---
 
@@ -329,7 +337,7 @@ python3 writer.py --topic "Chapter 3: Partition and Violence"
 # 6. Format (MLA citations)
 python3 formatter.py --input output/chapters/draft.md
 
-# 7. Humanize (remove AI patterns)
+# 7. Humanize (remove AI patterns — via OpenCode task+skill)
 python3 humanizer_agent.py --input output/chapters/final.md
 
 # 8. Audit
