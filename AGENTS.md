@@ -7,10 +7,10 @@
 ## Pipeline Overview
 
 ```
-URLs → Downloader → Chunker → Embedder → Retriever → Writer → Formatter → Citation Auditor
-         ↓            ↓          ↓           ↓          ↓         ↓          ↓
-       corpus/     chunks/   vector_index  evidence   output/   final     output/
-        *.txt     chunks.json              packs    draft.md  chapters/ chapters/
+URLs → Downloader → Chunker → Embedder → Retriever → Writer → Formatter → Humanizer → Citation Auditor
+         ↓            ↓          ↓           ↓          ↓         ↓          ↓          ↓
+       corpus/     chunks/   vector_index  evidence   output/   final    output/    output/
+        *.txt     chunks.json              packs    draft.md  chapters/ humanized/ chapters/
 ```
 
 ---
@@ -175,12 +175,43 @@ python3 formatter.py --input output/draft.md --output output/final.md
 
 ---
 
-### 7. Citation Auditor Agent
+### 7. Humanizer Agent
+| Property | Value |
+|-----------|-------|
+| **File** | `humanizer_agent.py` |
+| **Model** | `qwen/qwen3.5-plus` (OpenRouter) |
+| **Phase** | Phase 7 |
+| **Input** | Formatted chapter with MLA citations |
+| **Output** | Humanized chapter (`_h.md`) |
+
+**Responsibilities:**
+- Remove 29 categories of AI writing patterns
+- Apply 4-pass humanization workflow
+- Preserve all MLA citations and headings
+- Add natural voice and varied sentence rhythm
+
+**AI Patterns Removed:**
+- Significance inflation, -ing fillers, copula avoidance
+- Promotional language, vague attributions, rule of three
+- Negative parallelisms, em dash overuse, passive voice
+- Excessive hedging, filler phrases, AI vocabulary
+- Curly quotes, emojis, title case headings
+- Generic conclusions, signposting, chatbot artifacts
+
+**CLI:**
+```bash
+python3 humanizer_agent.py --input output/chapters/final.md
+python3 humanizer_agent.py --input output/chapters/final.md --output output/chapters/chapter_h.md
+```
+
+---
+
+### 8. Citation Auditor Agent
 | Property | Value |
 |-----------|-------|
 | **File** | `auditor.py` |
 | **Model** | `qwen/qwen3.5-plus` (OpenRouter) |
-| **Phase** | Phase 7+8 |
+| **Phase** | Phase 8 |
 | **Input** | Writer output |
 | **Output** | Validation report |
 
@@ -206,7 +237,11 @@ python3 formatter.py --input output/draft.md --output output/final.md
          ↓
 6. Writer → Draft Chapter (Markdown)
          ↓
-7. Citation Auditor → Validation Report
+7. Formatter → Chapter with MLA Citations
+         ↓
+8. Humanizer → Natural-sounding prose
+         ↓
+9. Citation Auditor → Validation Report
          ↓
 8. Human Review → Final Output
 ```
@@ -251,6 +286,7 @@ research-swarm/
 | Retriever | None | — | Search |
 | Writer | minimax/m2.7 | OpenRouter | Generation |
 | Formatter | None | — | Citation formatting |
+| Humanizer | qwen3.5-plus | OpenRouter | AI pattern removal |
 | Auditor | qwen3.5-plus | OpenRouter | Verification |
 
 ---
@@ -266,6 +302,7 @@ research-swarm/
 | Retriever | ✅ | Working (semantic search) |
 | Writer | ✅ | minimax/m2.7 |
 | Formatter | ✅ | MLA citation formatter |
+| Humanizer | ✅ | AI pattern removal (29 categories) |
 | Auditor | ✅ | Citation validation |
 
 ---
@@ -292,8 +329,11 @@ python3 writer.py --topic "Chapter 3: Partition and Violence"
 # 6. Format (MLA citations)
 python3 formatter.py --input output/chapters/draft.md
 
-# 7. Audit
-python3 auditor.py --input output/chapters/final.md
+# 7. Humanize (remove AI patterns)
+python3 humanizer_agent.py --input output/chapters/final.md
+
+# 8. Audit
+python3 auditor.py --input output/chapters/final_h.md
 ```
 
 ### Via Orchestrator
