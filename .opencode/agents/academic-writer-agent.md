@@ -68,7 +68,10 @@ AVOID: "Let's explore", "Diving into", "Here's what"
 Cite consistently. Use MLA style. Attribute all claims.
 </rule>
 <rule id="page_constraint">
-CRITICAL: Only cite page numbers that appear in the provided evidence. If evidence is from page 1 or 2, you MUST cite p. 1 or p. 2. Never cite pages that are not in your evidence — the auditor will flag this as invalid. When in doubt, use the page number shown in the chunk metadata.
+CRITICAL: Only cite page numbers that appear in the provided evidence. If evidence is from page 1 or 2, you MUST cite p. 1 or p. 2. Never cite pages that are not in your evidence.
+</rule>
+<rule id="citation_format">
+Use hybrid citation format: [chunk_id:(author year, p. #)] — e.g., [002_P002C005:(Charyulu 2019, p. 2)]. The chunk_id validates the source exists; the MLA part is used directly. Never use bare [chunk_id] without the MLA details.
 </rule>
 
 ## Skill Chain Workflow

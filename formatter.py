@@ -2,8 +2,11 @@
 """
 Citation Formatter
 
-Converts structured citations [[chunk_id:page]] in Markdown files
-to proper MLA format (Author Year, p. #).
+Converts structured citations in Markdown files to proper MLA format.
+
+Supported formats:
+  [chunk_id:(author year, p. #)]  — hybrid: validates chunk, keeps MLA intact
+  [chunk_id]                       — simple: looks up metadata, generates MLA
 
 Usage:
     python3 formatter.py --input output/chapters/draft.md
@@ -144,15 +147,23 @@ def format_mla_citation(chunk, page=None):
 
 
 def convert_citations(text, chunks_map):
-    """Replace all [chunk_id] citations with MLA format.
+    """Replace all [chunk_id] and [chunk_id:(mla citation)] citations with MLA format."""
 
-    The pattern matches [CHUNK_ID] where chunk_id can contain
-    alphanumeric characters and underscores.
-    """
-    # Pattern: [chunk_id]
-    citation_pattern = re.compile(r'\[([A-Za-z0-9_]+)\]')
+    def replace_hybrid(match):
+        chunk_id = match.group(1)
+        mla_cite = match.group(2)
 
-    def replace_match(match):
+        if chunk_id not in chunks_map:
+            print(
+                f"Warning: chunk '{chunk_id}' not found in chunks metadata, "
+                f"preserving original citation",
+                file=sys.stderr,
+            )
+            return match.group(0)
+
+        return mla_cite
+
+    def replace_simple(match):
         chunk_id = match.group(1)
 
         chunk = chunks_map.get(chunk_id)
@@ -167,17 +178,30 @@ def convert_citations(text, chunks_map):
         page = chunk.get("page", 1)
         return format_mla_citation(chunk, page=page)
 
-    return citation_pattern.sub(replace_match, text)
+    # Hybrid: [chunk_id:(author year, p. #)] — validate chunk, keep MLA intact
+    text = re.sub(
+        r'\[([A-Za-z0-9_]+):(\([^)]+\))\]',
+        replace_hybrid,
+        text
+    )
+    # Simple: [chunk_id] — look up metadata and generate MLA
+    text = re.sub(
+        r'\[([A-Za-z0-9_]+)\]',
+        replace_simple,
+        text
+    )
+
+    return text
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Convert [[chunk_id:page]] citations to MLA format in Markdown files"
+        description="Convert [chunk_id] and [chunk_id:(mla citation)] citations to MLA format"
     )
     parser.add_argument(
         "--input", "-i",
         required=True,
-        help="Input markdown file with [[chunk_id:page]] citations",
+        help="Input markdown file with [chunk_id] or [chunk_id:(mla citation)] citations",
     )
     parser.add_argument(
         "--output", "-o",
@@ -206,7 +230,7 @@ def main():
         text = f.read()
 
     # Count citations before conversion
-    raw_count = len(re.findall(r'\[([A-Za-z0-9_]+)\]', text))
+    raw_count = len(re.findall(r'\[([A-Za-z0-9_]+)(?::\([^)]+\))?\]', text))
     if raw_count == 0:
         print("No citations found in input file.")
         sys.exit(0)
