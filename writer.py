@@ -20,7 +20,7 @@ from dataclasses import dataclass
 # ============================================================================
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
-OPENROUTER_MODEL = "qwen/qwen3-72B-instruct"
+OPENROUTER_MODEL = "qwen/qwen3-30b-a3b"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 SYSTEM_PROMPT = """You are an academic dissertation writer specializing in South Asian history and literature.
