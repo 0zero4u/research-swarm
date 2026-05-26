@@ -238,9 +238,11 @@ class Downloader:
         
         return full_text.strip()
     
-    def save_text(self, source_id: str, text: str) -> str:
-        """Save extracted text to corpus directory."""
-        filename = f"{source_id}.txt"
+    def save_text(self, source_id: str, text: str, url: str) -> str:
+        """Save extracted text to corpus directory using original PDF filename from URL."""
+        pdf_filename = url.split("/")[-1]
+        base_name = pdf_filename.replace(".pdf", "")
+        filename = f"{base_name}.txt"
         filepath = self.corpus_dir / filename
         
         with open(filepath, "w", encoding="utf-8") as f:
@@ -329,7 +331,7 @@ class Downloader:
                     )
                 
                 # Save text to corpus
-                filename = self.save_text(source_id, text)
+                filename = self.save_text(source_id, text, url)
                 
                 return SourceResult(
                     id=source_id,

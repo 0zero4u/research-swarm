@@ -33,9 +33,8 @@ class CitationAuditor:
         self.chunk_index = {}  # Index by source_filename for quick key lookup
         self.metadata = {}
         self.api_key = os.environ.get("OPENROUTER_API_KEY", "")
-        # MLA citation: (Author, Year, p. #) or (Author Year, p. #)
-        # Supports CamelCase names like FakeAuthor (last names only, no spaces)
-        self.citation_pattern = re.compile(r'\(([A-Z][a-zA-Z]*(?:\s+[A-Z][a-zA-Z]*)*)\s*,?\s*(\d{4})\s*,\s*p\.?\s*(\d+)\)')
+        # MLA citation: (Author Year, p. #) or (filename, Author Year, p. #) or (Author, Year, p. #)
+        self.citation_pattern = re.compile(r'\((?:([a-zA-Z0-9_]+),\s*)?([A-Z][a-zA-Z]+)(?:,)?\s+(\d{4}),\s*p\.?\s*(\d+)\)')
         # Broad pattern to detect potential malformed citations
         self.broad_citation_pattern = re.compile(r'\(([^)]{3,60})\)')
         self.quotes_pattern = re.compile(r'"([^"]+)"')
@@ -106,15 +105,17 @@ class CitationAuditor:
                 })
                 seen_spans.add((line_num, match.start()))
 
-            # Format 2a: MLA with year and page: (Author, Year, p. #) or (Author Year, p. #)
+            # Format 2a: MLA with year and page: (Author Year, p. #) or (filename, Author Year, p. #)
             for match in self.citation_pattern.finditer(line):
                 if (line_num, match.start()) in seen_spans:
                     continue
-                author = match.group(1)
-                year = int(match.group(2))
-                page = int(match.group(3))
+                filename = match.group(1)  # Optional PDF filename prefix
+                author = match.group(2)
+                year = int(match.group(3))
+                page = int(match.group(4))
                 citations.append({
                     'author': author,
+                    'filename': filename,
                     'year': year,
                     'page': page,
                     'line': line_num,

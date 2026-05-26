@@ -116,11 +116,15 @@ def format_mla_citation(chunk, page=None):
     """Format a citation in MLA style.
 
     Returns:
-      (Author Year, p. #)   — when year and page are available
-      (Author, p. #)        — when page available but no year
-      (Author Year)         — when year available but no page
-      (Author)              — when neither is available
+      (filename, Author Year, p. #) — when year and page are available
+      (filename, Author, p. #)      — when page available but no year
+      (filename, Author Year)       — when year available but no page
+      (filename, Author)            — when neither is available
     """
+    # Extract and strip extension from source_filename
+    source_filename = chunk.get("source_filename", "unknown")
+    base_name = source_filename.rsplit(".", 1)[0]
+
     author_str = chunk.get("author", "")
     year = chunk.get("year", "").strip() if chunk.get("year") else ""
 
@@ -128,9 +132,9 @@ def format_mla_citation(chunk, page=None):
 
     # Build citation body
     if year:
-        citation = f"{author_formatted} {year}"
+        citation = f"{base_name}, {author_formatted} {year}"
     else:
-        citation = author_formatted
+        citation = f"{base_name}, {author_formatted}"
 
     # Add page number if specified
     if page is not None:
