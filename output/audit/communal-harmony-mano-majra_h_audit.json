@@ -1,0 +1,31 @@
+{
+  "chapter_file": "communal-harmony-mano-majra_h.md",
+  "total_citations": 3,
+  "valid_citations": 0,
+  "structured_valid": 0,
+  "mla_valid": 3,
+  "hallucinated_citations": 0,
+  "malformed_citations": 0,
+  "invalid_pages": 3,
+  "issues": [
+    {
+      "type": "invalid_page",
+      "citation": "(Charyulu 2019, p. 34)",
+      "line": 9,
+      "message": "Page 34 not found in source chunks for 'Charyulu'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Charyulu 2019, p. 41)",
+      "line": 11,
+      "message": "Page 41 not found in source chunks for 'Charyulu'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Charyulu 2019, p. 48)",
+      "line": 15,
+      "message": "Page 48 not found in source chunks for 'Charyulu'"
+    }
+  ],
+  "passed": true
+}

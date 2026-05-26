@@ -1,0 +1,19 @@
+{
+  "chapter_file": "ghost-train-symbolism-in-train-to-pakistan_h.md",
+  "total_citations": 1,
+  "valid_citations": 0,
+  "structured_valid": 0,
+  "mla_valid": 1,
+  "hallucinated_citations": 0,
+  "malformed_citations": 0,
+  "invalid_pages": 1,
+  "issues": [
+    {
+      "type": "invalid_page",
+      "citation": "Charyulu (2019, p. 47)",
+      "line": 7,
+      "message": "Page 47 not found in source chunks for 'Charyulu'"
+    }
+  ],
+  "passed": true
+}
