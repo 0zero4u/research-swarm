@@ -20,7 +20,7 @@ from dataclasses import dataclass
 # ============================================================================
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
-OPENROUTER_MODEL = "qwen/qwen3-30b-a3b"
+OPENROUTER_MODEL = "qwen/qwen3-30b-a3b-instruct-2507"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 SYSTEM_PROMPT = """You are an academic dissertation writer specializing in South Asian history and literature.
@@ -219,10 +219,15 @@ CRITICAL WRITING RULES:
 - If you need to make a claim not supported by evidence, write: "Further research is needed to..."
 - Write in formal academic prose (MLA style)
 - Use section headers: ## for main sections, ### for subsections
-- Cite sources as (AuthorName PageNumber) - example: (Singh 85)
 - Include a brief transition or discussion questions at the end
 - Target length: approximately {max_length} words
 - Write from a detached scholarly perspective
+
+CITATION FORMAT:
+- You MUST cite using the format: [[chunk_id:page]]
+- Example: [[002_P002C005:1]] means page 1 from chunk 002_P002C005
+- This is REQUIRED - do not use any other citation format
+- Do NOT use (Author Page) or EVIDENCE N format - use [[chunk_id:page]]
 
 OUTPUT FORMAT:
 Provide ONLY the chapter section in Markdown format. Do not include your reasoning
