@@ -1,0 +1,28 @@
+{
+  "pages": {
+    "1": {
+      "start_char": 0,
+      "end_char": 2951
+    },
+    "2": {
+      "start_char": 2970,
+      "end_char": 7005
+    },
+    "3": {
+      "start_char": 7024,
+      "end_char": 10662
+    },
+    "4": {
+      "start_char": 10681,
+      "end_char": 14159
+    },
+    "5": {
+      "start_char": 14178,
+      "end_char": 17881
+    },
+    "6": {
+      "start_char": 17900,
+      "end_char": 19805
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "partition": [
+    "PRI_001_C001",
+    "PRI_001_C002",
+    "PRI_001_C003",
+    "PRI_001_C004",
+    "PRI_001_C005",
+    "PRI_001_C006"
+  ],
+  "Gandhi": [
+    "PRI_001_C001",
+    "PRI_001_C004"
+  ],
+  "communal riots": [
+    "PRI_001_C001",
+    "PRI_001_C002",
+    "PRI_001_C003",
+    "PRI_001_C005",
+    "PRI_001_C006"
+  ],
+  "violence": [
+    "PRI_001_C001",
+    "PRI_001_C002",
+    "PRI_001_C004",
+    "PRI_001_C005"
+  ],
+  "gender": [
+    "PRI_001_C001",
+    "PRI_001_C002",
+    "PRI_001_C006"
+  ],
+  "freedom movement": [
+    "PRI_001_C001",
+    "PRI_001_C003",
+    "PRI_001_C004"
+  ],
+  "nationalism": [
+    "PRI_001_C001",
+    "PRI_001_C002",
+    "PRI_001_C003",
+    "PRI_001_C005",
+    "PRI_001_C006"
+  ],
+  "memory": [
+    "PRI_001_C001",
+    "PRI_001_C002"
+  ],
+  "identity": [
+    "PRI_001_C001",
+    "PRI_001_C002",
+    "PRI_001_C005"
+  ],
+  "partition literature": [
+    "PRI_001_C001"
+  ],
+  "Train to Pakistan": [
+    "PRI_001_C001",
+    "PRI_001_C002",
+    "PRI_001_C003",
+    "PRI_001_C004",
+    "PRI_001_C006"
+  ],
+  "A Bend in the Ganges": [
+    "PRI_001_C001",
+    "PRI_001_C002",
+    "PRI_001_C004",
+    "PRI_001_C005",
+    "PRI_001_C006"
+  ],
+  "postcolonialism": [
+    "PRI_001_C002",
+    "PRI_001_C006"
+  ],
+  "migration": [
+    "PRI_001_C003",
+    "PRI_001_C004"
+  ]
+}
