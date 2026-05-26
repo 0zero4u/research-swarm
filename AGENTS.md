@@ -220,7 +220,7 @@ research-swarm/
 | Orchestrator | minimax-m2.7 | Local | Coordination |
 | Downloader | qwen3.5-plus | OpenRouter | URL handling |
 | Chunker | None | — | Text processing |
-| Embedder | qwen3-embedding-8b | OpenRouter | Vectorization |
+| Embedder | qwen3-embedding-8b | OpenRouter | Vectorization (4096 dim) |
 | Retriever | None | — | Search |
 | Writer | qwen3-72B-Instruct | OpenRouter | Generation |
 | Auditor | qwen3.5-plus | OpenRouter | Verification |
@@ -234,10 +234,10 @@ research-swarm/
 | Orchestrator | ✅ | Sisyphus |
 | Downloader | ✅ | Working |
 | Chunker | ✅ | Working |
-| Embedder | ⏳ | TODO |
-| Retriever | ⏳ | TODO |
-| Writer | ⏳ | TODO |
-| Auditor | ⏳ | TODO |
+| Embedder | ✅ | Working (qwen3-embedding-8b, 4096 dim) |
+| Retriever | ✅ | Working (semantic search) |
+| Writer | ✅ | Implemented |
+| Auditor | ✅ | Implemented |
 
 ---
 

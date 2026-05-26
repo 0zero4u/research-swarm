@@ -320,16 +320,10 @@ research-swarm/
 | Phase 1 | ✅ Done | Downloader agent |
 | Phase 2 | ✅ Done | Integrated in downloader (PyMuPDF) |
 | Phase 3 | ✅ Done | Chunker agent (chunks.json) |
-| Phase 4 | ⏳ Pending | Embedder (qwen3-embedding-8b) |
-| Phase 5 | ⏳ Pending | Retriever |
-| Phase 6 | ⏳ Pending | Writer agent |
-| Phase 7 | ⏳ Pending | Citation auditor |
-| Phase 2 | ⏳ Pending | — |
-| Phase 3 | ⏳ Pending | — |
-| Phase 4 | ⏳ Pending | — |
-| Phase 5 | ⏳ Pending | — |
-| Phase 6 | ⏳ Pending | Writer agent to generate chapters |
-| Phase 7 | ⏳ Pending | Validation before output |
+| Phase 4 | ✅ Done | Embedder (qwen3-embedding-8b → FAISS) |
+| Phase 5 | ✅ Done | Retriever (semantic search) |
+| Phase 6 | ✅ Done | Writer agent (qwen3-72B-Instruct) |
+| Phase 7 | ✅ Done | Citation auditor |
 
 ---
 
