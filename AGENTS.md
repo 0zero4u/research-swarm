@@ -124,32 +124,45 @@ python3 chunker.py --resume      # Resume interrupted
 - Return top-k relevant chunks
 - Package as evidence pack
 
+**Note:** Requires `faiss-cpu` and `requests` — use the venv: `/tmp/rs-venv/bin/python retriever.py`
+
 ---
 
 ### 5. Writer Agent
 | Property | Value |
 |-----------|-------|
-| **File** | `writer.py` |
-| **Model** | `minimax/m2.7` (OpenRouter) |
+| **Agent** | `AcademicWriterAgent` (OpenCode sub-agent) |
+| **File** | `~/.config/opencode/agents/academic-writer-agent.md` |
+| **Model** | `minimax-m2.5` via OpenCode task |
 | **Phase** | Phase 6 |
 | **Input** | Topic + Evidence pack |
-| **Output** | Chapter section with `[chunk_id]` citations |
+| **Output** | Chapter section with MLA citations |
+
+**How it works:** Invoked via OpenCode `task(category="writing")` with `academic-writing` + `humanizer` skill chain. The `writer.py` script is a fallback wrapper (minimax/m2.7 has null-content issues via urllib).
 
 **Responsibilities:**
-- Generate academic prose
-- Cite sources with MLA format
-- Maintain page-level provenance
+- Generate academic prose in formal scholarly voice
+- Write MLA citations directly (author-in-text style: `Author (Year, p. #)`)
+- Apply skill chain: academic-writing → humanizer → formal-writing
 
 **Output Format:**
 ```markdown
 ## 1.1 Partition of India
 
-The historiography... [chunk_id].
+The historiography... Charyulu (2019, p. 47).
 
 ## 1.2 About the Author
 
 [Next section...]
 ```
+
+**CLI (via OpenCode task):**
+```bash
+# Primary method — use task() with AcademicWriterAgent
+task(category="writing", load_skills=["academic-writing", "humanizer"], prompt="...")
+```
+
+**E2E Test (2026-05-26):** ghost-train-symbolism chapter written, humanized, audited — 1 MLA citation detected (Charyulu 2019), PASS.
 
 ---
 
@@ -243,13 +256,11 @@ python3 humanizer_agent.py --input output/chapters/final.md --output output/chap
          ↓
 5. Retriever ← User Query → Evidence Pack
          ↓
-6. Writer → Draft Chapter (Markdown)
+6. AcademicWriterAgent (task) → Draft Chapter with MLA
          ↓
-7. Formatter → Chapter with MLA Citations
+7. HumanizerAgent (task+skill) → Natural-sounding prose
          ↓
-8. Humanizer → Natural-sounding prose
-         ↓
-9. Citation Auditor → Validation Report
+8. Citation Auditor → Validation Report
          ↓
 8. Human Review → Final Output
 ```
@@ -260,14 +271,11 @@ python3 humanizer_agent.py --input output/chapters/final.md --output output/chap
 
 ```
 research-swarm/
-├── agents/                  # Agent code
-│   ├── orchestrator.py    # Main coordinator
-│   ├── downloader.py      # Phase 1
-│   ├── chunker.py         # Phase 3
-│   ├── embedder.py        # Phase 4 (TODO)
-│   ├── retriever.py       # Phase 5 (TODO)
-│   ├── writer.py          # Phase 6 (TODO)
-│   └── auditor.py         # Phase 7 (TODO)
+├── *.py                    # Pipeline scripts (downloader, chunker, embedder, retriever, formatter, auditor, humanizer_agent)
+├── ~/.config/opencode/agents/
+│   ├── academic-writer-agent.md   # AcademicWriterAgent (primary writer)
+│   ├── humanizer-agent.md         # HumanizerAgent definition
+│   └── research-agent.md          # ResearchAgent (RAG queries)
 ├── corpus/                 # Downloaded text (local only)
 │   ├── *.txt
 │   └── metadata.json
@@ -275,8 +283,9 @@ research-swarm/
 │   └── chunks.json
 ├── vector_index/           # FAISS index (local only)
 │   └── *.faiss
-├── output/                 # Final chapters
-│   └── chapter_*.md
+├── output/
+│   ├── chapters/          # Generated chapters
+│   └── audit/             # Audit reports
 ├── research_swarm_roadmap.md
 └── AGENTS.md              # This file
 ```
@@ -292,7 +301,7 @@ research-swarm/
 | Chunker | None | — | Text processing |
 | Embedder | qwen3-embedding-8b | OpenRouter | Vectorization (4096 dim) |
 | Retriever | None | — | Search |
-| Writer | minimax/m2.7 | OpenRouter | Generation |
+| Writer | minimax-m2.5 | OpenCode task | Generation (AcademicWriterAgent) |
 | Formatter | None | — | Citation formatting |
 | Humanizer | qwen3.5-plus | OpenRouter | AI pattern removal |
 | Auditor | qwen3.5-plus | OpenRouter | Verification |
@@ -308,7 +317,7 @@ research-swarm/
 | Chunker | ✅ | Working |
 | Embedder | ✅ | Working (qwen3-embedding-8b, 4096 dim) |
 | Retriever | ✅ | Working (semantic search) |
-| Writer | ✅ | minimax/m2.7 |
+| Writer | ✅ | AcademicWriterAgent (task+skill) |
 | Formatter | ✅ | MLA citation formatter |
 | Humanizer | ✅ | AI pattern removal (29 categories) |
 | Auditor | ✅ | Citation validation |
@@ -328,17 +337,17 @@ python3 chunker.py
 # 3. Embed
 python3 embedder.py
 
-# 4. Retrieve
-python3 retriever.py --query "Partition violence in Train to Pakistan"
+# 4. Retrieve (requires faiss-cpu in venv)
+/tmp/rs-venv/bin/python retriever.py --query "Partition violence in Train to Pakistan"
 
-# 5. Write
-python3 writer.py --topic "Chapter 3: Partition and Violence"
+# 5. Write (via OpenCode task — AcademicWriterAgent with skill chain)
+task(category="writing", load_skills=["academic-writing", "humanizer"], prompt="...")
 
-# 6. Format (MLA citations)
+# 6. Format (only needed if writer output uses [chunk_id] placeholders)
 python3 formatter.py --input output/chapters/draft.md
 
-# 7. Humanize (remove AI patterns — via OpenCode task+skill)
-python3 humanizer_agent.py --input output/chapters/final.md
+# 7. Humanize (via OpenCode task + humanizer skill)
+task(category="writing", load_skills=["humanizer"], prompt="...")
 
 # 8. Audit
 python3 auditor.py --input output/chapters/final_h.md

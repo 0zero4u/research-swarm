@@ -42,6 +42,9 @@ class CitationAuditor:
         self.structured_pattern = re.compile(r'\[\[([A-Za-z0-9_]+):(\d+)\]\]')
         # MLA simple: (Author page) or (Author, page) — no year
         self.mla_simple_pattern = re.compile(r'\(([A-Z][a-zA-Z]*)\s*,?\s*(\d+)\)')
+        # MLA author-in-text: AuthorName (Year, p. #) — e.g., Charyulu (2019, p. 47)
+        # This is the most common MLA in-text citation where author is outside the parens
+        self.mla_author_in_text_pattern = re.compile(r'([A-Z][a-zA-Z]+)\s+\((\d{4}),\s*p\.?\s*(\d+)\)')
         # Index by chunk_id for quick structured lookup
         self.chunk_by_id = {}
 
@@ -132,6 +135,23 @@ class CitationAuditor:
                 page = int(match.group(2))
                 citations.append({
                     'author': author,
+                    'page': page,
+                    'line': line_num,
+                    'text': match.group(0),
+                    'type': 'mla'
+                })
+                seen_spans.add((line_num, match.start()))
+
+            # Format 2c: MLA author-in-text: AuthorName (Year, p. #) — e.g., Charyulu (2019, p. 47)
+            for match in self.mla_author_in_text_pattern.finditer(line):
+                if (line_num, match.start()) in seen_spans:
+                    continue
+                author = match.group(1)
+                year = int(match.group(2))
+                page = int(match.group(3))
+                citations.append({
+                    'author': author,
+                    'year': year,
                     'page': page,
                     'line': line_num,
                     'text': match.group(0),
