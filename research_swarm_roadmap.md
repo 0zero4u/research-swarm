@@ -322,7 +322,7 @@ research-swarm/
 | Phase 3 | ✅ Done | Chunker agent (chunks.json) |
 | Phase 4 | ✅ Done | Embedder (qwen3-embedding-8b → FAISS) |
 | Phase 5 | ✅ Done | Retriever (semantic search) |
-| Phase 6 | ✅ Done | Writer agent (qwen3-72B-Instruct) |
+| Phase 6 | ✅ Done | Writer agent (minimax/m2.7) |
 | Phase 7 | ✅ Done | Citation auditor |
 
 ---

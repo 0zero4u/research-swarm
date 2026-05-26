@@ -7,10 +7,10 @@
 ## Pipeline Overview
 
 ```
-URLs → Downloader → Chunker → Embedder → Retriever → Writer → Citation Auditor
-         ↓            ↓          ↓           ↓          ↓
-       corpus/     chunks/   vector_index  evidence   output/
-        *.txt     chunks.json              packs     chapters/
+URLs → Downloader → Chunker → Embedder → Retriever → Writer → Formatter → Citation Auditor
+         ↓            ↓          ↓           ↓          ↓         ↓          ↓
+       corpus/     chunks/   vector_index  evidence   output/   final     output/
+        *.txt     chunks.json              packs    draft.md  chapters/ chapters/
 ```
 
 ---
@@ -126,14 +126,14 @@ python3 chunker.py --resume      # Resume interrupted
 
 ---
 
-### 5. Writer Agent (TODO)
+### 5. Writer Agent
 | Property | Value |
 |-----------|-------|
 | **File** | `writer.py` |
-| **Model** | `qwen/qwen3-72B-Instruct` (OpenRouter) |
+| **Model** | `minimax/m2.7` (OpenRouter) |
 | **Phase** | Phase 6 |
 | **Input** | Topic + Evidence pack |
-| **Output** | Chapter section (Markdown) |
+| **Output** | Chapter section with `[chunk_id]` citations |
 
 **Responsibilities:**
 - Generate academic prose
@@ -144,7 +144,7 @@ python3 chunker.py --resume      # Resume interrupted
 ```markdown
 ## 1.1 Partition of India
 
-The historiography... (Author, 4).
+The historiography... [chunk_id].
 
 ## 1.2 About the Author
 
@@ -153,12 +153,34 @@ The historiography... (Author, 4).
 
 ---
 
-### 6. Citation Auditor Agent (TODO)
+### 6. Formatter Agent
+| Property | Value |
+|-----------|-------|
+| **File** | `formatter.py` |
+| **Model** | None (algorithmic) |
+| **Phase** | Phase 6b |
+| **Input** | Writer output with `[chunk_id]` citations |
+| **Output** | Chapter with MLA citations `(filename, Author Year, p. #)` |
+
+**Responsibilities:**
+- Convert `[chunk_id]` citations to MLA format
+- Look up author/title/year from chunks.json
+- Format: `(filename, Author Year, p. #)`
+
+**CLI:**
+```bash
+python3 formatter.py --input output/draft.md
+python3 formatter.py --input output/draft.md --output output/final.md
+```
+
+---
+
+### 7. Citation Auditor Agent
 | Property | Value |
 |-----------|-------|
 | **File** | `auditor.py` |
 | **Model** | `qwen/qwen3.5-plus` (OpenRouter) |
-| **Phase** | Phase 7 |
+| **Phase** | Phase 7+8 |
 | **Input** | Writer output |
 | **Output** | Validation report |
 
@@ -227,7 +249,8 @@ research-swarm/
 | Chunker | None | — | Text processing |
 | Embedder | qwen3-embedding-8b | OpenRouter | Vectorization (4096 dim) |
 | Retriever | None | — | Search |
-| Writer | qwen3-72B-Instruct | OpenRouter | Generation |
+| Writer | minimax/m2.7 | OpenRouter | Generation |
+| Formatter | None | — | Citation formatting |
 | Auditor | qwen3.5-plus | OpenRouter | Verification |
 
 ---
@@ -241,8 +264,9 @@ research-swarm/
 | Chunker | ✅ | Working |
 | Embedder | ✅ | Working (qwen3-embedding-8b, 4096 dim) |
 | Retriever | ✅ | Working (semantic search) |
-| Writer | ✅ | Implemented |
-| Auditor | ✅ | Implemented |
+| Writer | ✅ | minimax/m2.7 |
+| Formatter | ✅ | MLA citation formatter |
+| Auditor | ✅ | Citation validation |
 
 ---
 
@@ -265,8 +289,11 @@ python3 retriever.py --query "Partition violence in Train to Pakistan"
 # 5. Write
 python3 writer.py --topic "Chapter 3: Partition and Violence"
 
-# 6. Audit
-python3 auditor.py --input output/draft.md
+# 6. Format (MLA citations)
+python3 formatter.py --input output/chapters/draft.md
+
+# 7. Audit
+python3 auditor.py --input output/chapters/final.md
 ```
 
 ### Via Orchestrator
