@@ -95,33 +95,30 @@ Output (chapter section with traceable citations)
 
 ---
 
-## PHASE 1 — SOURCE INGESTION
+## PHASE 1 — DOWNLOADER AGENT
 
-**Goal:** Collect all PDFs for dissertation corpus
+**Model:** `qwen/qwen3.5-plus` via OpenRouter
 
-**Primary Sources (must have):**
-- *Train to Pakistan* — Khushwant Singh (novel)
-- *Train to Pakistan* film (directed by Pamela Rooks) — script/transcript
-- Any critical edition with page numbers
+**Goal:** Download PDFs from URLs and convert to clean text
 
-**Secondary Sources (10-15 recommended):**
-- Partition history books
-- Adaptation studies
-- Humanism in literature
-- Academic articles on Khushwant Singh
+**Process:**
+1. Receive list of URLs from user
+2. Download each PDF
+3. Extract text using PyMuPDF
+4. Save to `corpus/{source_id}.txt`
+5. Update `metadata.json` with status
 
-**Output:** `sources/metadata.json`
-```json
-{
-  "source_id": "NOV_001",
-  "type": "primary",
-  "title": "Train to Pakistan",
-  "author": "Khushwant Singh",
-  "year": 1956,
-  "pdf_path": "sources/train_to_pakistan.pdf",
-  "resolved": true
-}
+**Output:** `corpus/*.txt` + `metadata.json`
+
+**Folder Structure:**
 ```
+corpus/
+├── 001_train_to_pakistan.txt
+├── 002_literature_review.txt
+└── metadata.json
+```
+
+**Model Note:** Downloader uses qwen/qwen3.5-plus to handle complex URLs, retry logic, error handling.
 
 ---
 
@@ -172,9 +169,8 @@ Output (chapter section with traceable citations)
 
 **Goal:** Enable semantic search over chunks
 
-**Tool:** Simple embedding + FAISS or sqlite-vector
-
-**Embedding Model:** `sentence-transformers/multi-qa-mpnet-base-dot-v1` (fast, good for retrieval)
+**Embedder:** `qwen/qwen3-embedding-8b` via OpenRouter (1024 dimensions)
+**Vector Store:** FAISS
 
 **Storage:**
 - `chunks.json` — all chunk metadata + text
@@ -294,12 +290,13 @@ research-swarm/
 
 ## STACK
 
-| Component | Choice | Notes |
-|-----------|--------|-------|
+| Component | Model | Notes |
+|-----------|-------|-------|
+| **Downloader** | `qwen/qwen3.5-plus` | OpenRouter |
 | **PDF Extraction** | PyMuPDF | Fast, page-accurate |
-| **Embedding** | `multi-qa-mpnet-base-dot-v1` | Optimized for Q&A retrieval |
+| **Embedding** | `qwen/qwen3-embedding-8b` | OpenRouter, 1024 dim |
 | **Vector Store** | FAISS | Simple, local, fast |
-| **Writer LLM** | `qwen/qwen3-72B-Instruct` | Via OpenRouter |
+| **Writer LLM** | `qwen/qwen3-72B-Instruct` | OpenRouter |
 | **Citation Format** | MLA | (Author Page) |
 
 ---
@@ -320,7 +317,13 @@ research-swarm/
 
 | Phase | Status | Notes |
 |-------|--------|-------|
-| Phase 1 | ⏳ Pending | Need: novel PDF, film transcript, 10-15 secondary sources |
+| Phase 1 | 🚧 In Progress | Downloader agent being implemented |
+| Phase 2 | ⏳ Pending | — |
+| Phase 3 | ⏳ Pending | — |
+| Phase 4 | ⏳ Pending | — |
+| Phase 5 | ⏳ Pending | — |
+| Phase 6 | ⏳ Pending | Writer agent |
+| Phase 7 | ⏳ Pending | Citation auditor |
 | Phase 2 | ⏳ Pending | — |
 | Phase 3 | ⏳ Pending | — |
 | Phase 4 | ⏳ Pending | — |
