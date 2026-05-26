@@ -21,7 +21,7 @@ import requests
 
 # Constants
 EMBEDDING_MODEL = "qwen/qwen3-embedding-8b"
-EMBEDDING_DIM = 1024
+EMBEDDING_DIM = 4096  # qwen3-embedding-8b returns 4096 dimensions
 DEFAULT_BATCH_SIZE = 32
 DEFAULT_CHUNKS_PATH = Path("chunks/chunks.json")
 DEFAULT_INDEX_DIR = Path("vector_index")
