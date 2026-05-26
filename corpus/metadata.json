@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "id": "001_9c77b2",
+      "url": "https://github.com/0zero4u/research_work/blob/main/directory/pdf_from_arxiv/363508_8461703.pdf",
+      "status": "failed",
+      "text_length": 0,
+      "error": "Downloaded content is not a valid PDF",
+      "timestamp": "2026-05-26T20:17:38.049012",
+      "filename": null
+    },
+    {
+      "id": "002_0030bc",
+      "url": "https://raw.githubusercontent.com/0zero4u/research_work/main/directory/pdf_from_arxiv/363508_8461703.pdf",
+      "status": "success",
+      "text_length": 25057,
+      "error": null,
+      "timestamp": "2026-05-26T20:17:42.402850",
+      "filename": "002_0030bc.txt"
+    }
+  ],
+  "created_at": "2026-05-26T20:17:36.881284",
+  "version": "1.0",
+  "updated_at": "2026-05-26T20:17:42.403050",
+  "total_sources": 2,
+  "successful": 1,
+  "failed": 1
+}

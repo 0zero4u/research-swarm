@@ -90,6 +90,10 @@ class Chunker:
         segments = re.split(f'({page_split_regex})', text)
         
         for i, segment in enumerate(segments):
+            # Skip None segments (can occur with re.split)
+            if segment is None:
+                continue
+            
             # Check if this segment is a page marker
             matched = False
             for pattern in self.PAGE_PATTERNS:
@@ -282,9 +286,7 @@ class Chunker:
         """Write chunks to output file."""
         output_path = self.output_dir / output_file
         
-        output_data = ChunkOutput(
-            chunks=[asdict(c) for c in chunks]
-        )
+        output_data = {"chunks": [asdict(c) for c in chunks]}
         
         output_path.write_text(
             json.dumps(output_data, indent=2, ensure_ascii=False),
