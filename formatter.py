@@ -178,6 +178,14 @@ def convert_citations(text, chunks_map):
         page = chunk.get("page", 1)
         return format_mla_citation(chunk, page=page)
 
+    # Block citation: [B_XXX] — pass through, no conversion needed (from rag_retriever_skill.py)
+    # These are already formatted block IDs, not chunk_id placeholders
+    text = re.sub(
+        r'\[B_(\d+)\]',
+        lambda m: f"[B_{m.group(1)}]",
+        text
+    )
+
     # Hybrid: [chunk_id:(author year, p. #)] — validate chunk, keep MLA intact
     text = re.sub(
         r'\[([A-Za-z0-9_]+):(\([^)]+\))\]',

@@ -42,7 +42,7 @@ class RetrieverConfig:
     embedding_model: str = EMBEDDING_MODEL
     embedding_dim: int = EMBEDDING_DIM
     save_evidence: bool = True
-    min_confidence: float = 0.70
+    min_confidence: float = 0.30
 
 
 @dataclass

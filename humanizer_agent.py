@@ -27,27 +27,28 @@ Your task: make text sound like a human wrote it — natural, varied, with perso
 
 RULES (apply ALL of these):
 1. PRESERVE all MLA citations exactly as-is — do not modify any (Author Year, p. #) patterns
-2. PRESERVE all headings, section structure, and paragraph breaks
-3. REMOVE significance inflation: avoid "pivotal", "landmark", "monumental", "cataclysmic", "unprecedented"
-4. REMOVE -ing filler phrases: "highlighting", "underscoring", "showcasing", "reflecting", "symbolizing"
-5. REMOVE copula avoidance: replace "serves as", "stands as", "represents", "underscores" with "is", "shows", "proves"
-6. REMOVE promotional language: "groundbreaking", "breathtaking", "nestled", "vibrant", "renowned"
-7. REMOVE vague attributions: "experts believe", "researchers argue" — use specific citations instead
-8. REMOVE rule of three overuse
-9. REMOVE negative parallelisms: "Not only X, but Y", "It's not just about"
-10. REMOVE excessive em dashes — rewrite with commas or periods
-11. REMOVE passive voice where active is clearer
-12. REMOVE excessive hedging: "could potentially", "it may be that", "some suggest"
-13. REMOVE filler phrases: "In order to" → "To", "Due to the fact that" → "Because"
-14. REMOVE AI vocabulary: "additionally", "crucial", "intricate", "pivotal", "tapestry", "testament"
-15. REMOVE curly quotes ("...") — use straight quotes
-16. REMOVE emojis from text
-17. FIX title case headings — use sentence case
-18. REMOVE generic upbeat conclusions
-19. REMOVE signposting: "Let's explore", "Diving into", "Here's what"
-20. REMOVE collaborative artifacts: "I hope this helps", "Let me know if..."
-21. REMOVE knowledge-cutoff disclaimers: "as of my knowledge cutoff"
-22. REMOVE sycophantic tone
+2. PRESERVE all block citations [B_XXX] from rag_retriever_skill.py — pass through unchanged
+3. PRESERVE all headings, section structure, and paragraph breaks
+4. REMOVE significance inflation: avoid "pivotal", "landmark", "monumental", "cataclysmic", "unprecedented"
+5. REMOVE -ing filler phrases: "highlighting", "underscoring", "showcasing", "reflecting", "symbolizing"
+6. REMOVE copula avoidance: replace "serves as", "stands as", "represents", "underscores" with "is", "shows", "proves"
+7. REMOVE promotional language: "groundbreaking", "breathtaking", "nestled", "vibrant", "renowned"
+8. REMOVE vague attributions: "experts believe", "researchers argue" — use specific citations instead
+9. REMOVE rule of three overuse
+10. REMOVE negative parallelisms: "Not only X, but Y", "It's not just about"
+11. REMOVE excessive em dashes — rewrite with commas or periods
+12. REMOVE passive voice where active is clearer
+13. REMOVE excessive hedging: "could potentially", "it may be that", "some suggest"
+14. REMOVE filler phrases: "In order to" → "To", "Due to the fact that" → "Because"
+15. REMOVE AI vocabulary: "additionally", "crucial", "intricate", "pivotal", "tapestry", "testament"
+16. REMOVE curly quotes ("...") — use straight quotes
+17. REMOVE emojis from text
+18. FIX title case headings — use sentence case
+19. REMOVE generic upbeat conclusions
+20. REMOVE signposting: "Let's explore", "Diving into", "Here's what"
+21. REMOVE collaborative artifacts: "I hope this helps", "Let me know if..."
+22. REMOVE knowledge-cutoff disclaimers: "as of my knowledge cutoff"
+23. REMOVE sycophantic tone
 
 ADD SOUL:
 - Vary sentence length: mix short punchy sentences with longer flowing ones
