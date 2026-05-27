@@ -275,8 +275,8 @@ def convert_citations(text, chunks_map, block_map):
         return format_mla_citation(chunk, page=page)
 
     def replace_block(match):
-        block_id = match.group(0)
-        
+        block_id = f"B_{int(match.group(1)):03d}"
+
         block_info = block_map.get(block_id)
         if block_info is None:
             print(
@@ -300,7 +300,7 @@ def convert_citations(text, chunks_map, block_map):
         return format_mla_citation(chunk, page=page)
 
     text = re.sub(
-        r'\[B_\d+\]',
+        r'\[B_(\d+)\]',
         replace_block,
         text
     )
