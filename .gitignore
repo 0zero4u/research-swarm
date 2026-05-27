@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# FAISS index (large binary)
+vector_index/index.faiss
+vector_index/manifest.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

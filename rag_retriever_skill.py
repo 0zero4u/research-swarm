@@ -18,7 +18,9 @@ Usage:
 
 import argparse
 import json
+import re
 import sys
+from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
@@ -33,7 +35,21 @@ DEFAULT_TOP_K = 5
 DEFAULT_MIN_CONFIDENCE = 0.30  # Lowered for new multi-source corpus
 DEFAULT_CHUNKS_PATH = Path("chunks/chunks.json")
 DEFAULT_INDEX_DIR = Path("vector_index")
-DEFAULT_CHUNKS_PATH = Path("chunks/chunks.json")
+DEFAULT_EVIDENCE_DIR = Path("evidence_packs")
+
+
+def _slugify_query(query: str) -> str:
+    """Convert query string to safe filename slug."""
+    # Lowercase, replace spaces with underscores, remove special chars
+    slug = re.sub(r'[^a-z0-9]+', '_', query.lower()).strip('_')
+    # Truncate to 60 chars to avoid long filenames
+    return slug[:60]
+
+
+def _get_evidence_pack_path(query: str) -> Path:
+    """Get the path for the evidence pack corresponding to a query."""
+    slug = _slugify_query(query)
+    return DEFAULT_EVIDENCE_DIR / f"{slug}.json"
 
 
 def format_author(author_str: str) -> str:
@@ -151,6 +167,46 @@ def build_structured_blocks(results: list[EvidenceResult], top_k: int, chunks_me
     return blocks
 
 
+def save_evidence_pack(query: str, blocks: list[dict], top_k: int) -> Path:
+    """Save structured evidence blocks as a JSON evidence pack.
+
+    Args:
+        query: The search query
+        blocks: List of structured block dicts with block_id, chunk_id, source, page, text, etc.
+        top_k: Number of results requested
+
+    Returns:
+        Path to the saved file.
+    """
+    DEFAULT_EVIDENCE_DIR.mkdir(parents=True, exist_ok=True)
+    pack_path = _get_evidence_pack_path(query)
+
+    pack_data = {
+        "query": query,
+        "top_k": top_k,
+        "blocks": blocks,
+        "total_retrieved": len(blocks),
+        "timestamp": datetime.now().isoformat(),
+    }
+
+    with open(pack_path, "w", encoding="utf-8") as f:
+        json.dump(pack_data, f, indent=2, ensure_ascii=False)
+
+    return pack_path
+
+
+def load_evidence_pack(query: str) -> Optional[dict]:
+    """Load an evidence pack for a query if it exists.
+    
+    Returns the pack dict or None if not found.
+    """
+    pack_path = _get_evidence_pack_path(query)
+    if not pack_path.exists():
+        return None
+    with open(pack_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
 def retrieve_evidence(
     query: str,
     top_k: int = DEFAULT_TOP_K,
@@ -158,7 +214,7 @@ def retrieve_evidence(
     chunks_path: Path = DEFAULT_CHUNKS_PATH,
     api_key: Optional[str] = None,
     min_confidence: float = 0.30,
-    save_pack: bool = False
+    save_pack: bool = True
 ) -> dict:
     """
     Main retrieval function: query FAISS and return structured evidence blocks.
@@ -200,6 +256,9 @@ def retrieve_evidence(
         # Build structured blocks
         chunks_meta = load_chunks_metadata(config.chunks_path)
         blocks = build_structured_blocks(evidence.results, top_k, chunks_meta)
+        
+        if save_pack:
+            save_evidence_pack(query, blocks, top_k)
         
         return {
             "query": query,

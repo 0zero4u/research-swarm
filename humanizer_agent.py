@@ -19,7 +19,7 @@ import requests
 # ============================================================================
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
-OPENROUTER_MODEL = "qwen/qwen3.5-plus-20260420"
+OPENROUTER_MODEL = "opencode-go/minimax-m2.7"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 SYSTEM_PROMPT = """You are an academic writing editor specializing in removing AI-generated text patterns.

@@ -15,7 +15,7 @@ import requests
 
 
 # Constants
-DEFAULT_MODEL = "qwen/qwen3.5-plus"
+DEFAULT_MODEL = "opencode-go/minimax-m2.7"
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 

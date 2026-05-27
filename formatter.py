@@ -7,6 +7,7 @@ Converts structured citations in Markdown files to proper MLA format.
 Supported formats:
   [chunk_id:(author year, p. #)]  — hybrid: validates chunk, keeps MLA intact
   [chunk_id]                       — simple: looks up metadata, generates MLA
+  [B_XXX]                          — block: looks up block in evidence packs, generates MLA
 
 Usage:
     python3 formatter.py --input output/chapters/draft.md
@@ -17,6 +18,7 @@ import argparse
 import json
 import re
 import sys
+from pathlib import Path
 
 
 def load_chunks(chunks_path="chunks/chunks.json"):
@@ -37,6 +39,60 @@ def load_chunks(chunks_path="chunks/chunks.json"):
         if chunk_id:
             chunks_map[chunk_id] = chunk
     return chunks_map
+
+
+def load_evidence_pack(pack_path: str) -> dict:
+    """Load a single evidence pack JSON file.
+
+    Returns dict with blocks, or empty dict if not found/error.
+    """
+    try:
+        with open(pack_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError, IOError):
+        return {}
+
+
+def load_all_evidence_packs(evidence_dir="evidence_packs"):
+    """Load all evidence packs and build block_id -> chunk_metadata mapping.
+    
+    Returns dict mapping "B_XXX" -> chunk_metadata dict.
+    """
+    evidence_path = Path(evidence_dir)
+    if not evidence_path.exists():
+        return {}
+    
+    block_map = {}
+    
+    for pack_file in evidence_path.glob("*.json"):
+        try:
+            with open(pack_file, "r", encoding="utf-8") as f:
+                pack = json.load(f)
+
+            blocks = pack.get("blocks", [])
+            for idx, block in enumerate(blocks, start=1):
+                block_id = block.get("block_id", f"B_{idx:03d}")
+                if block_id not in block_map:
+                    block_map[block_id] = {
+                        "chunk_id": block.get("chunk_id", ""),
+                        "source_filename": block.get("source_filename", ""),
+                        "page": block.get("page", 1),
+                    }
+
+            if not blocks:
+                results = pack.get("results", [])
+                for idx, result in enumerate(results, start=1):
+                    block_id = f"B_{idx:03d}"
+                    if block_id not in block_map:
+                        block_map[block_id] = {
+                            "chunk_id": result.get("chunk_id", ""),
+                            "source_filename": result.get("source_filename", ""),
+                            "page": result.get("page", 1),
+                        }
+        except (json.JSONDecodeError, IOError):
+            continue
+    
+    return block_map
 
 
 def extract_last_name(name):
@@ -60,15 +116,12 @@ def parse_authors(author_str):
 
     author_str = author_str.strip()
 
-    # Check for "et al." — treat as single first author
     if re.search(r'\bet\s+al\.?', author_str, re.IGNORECASE):
         first = author_str.split(",")[0].strip() if "," in author_str else author_str.split()[0]
         return [first]
 
-    # Split on " and " first
     if " and " in author_str:
         parts = [p.strip() for p in author_str.split(" and ")]
-        # If first part contains commas, it's a list with "and" at end
         authors = []
         for part in parts:
             if "," in part:
@@ -77,12 +130,9 @@ def parse_authors(author_str):
                 authors.append(part)
         return authors
 
-    # Check for comma-separated list with trailing "and"
     if "," in author_str:
         parts = [p.strip() for p in author_str.split(",")]
-        # Filter empty strings
         parts = [p for p in parts if p]
-        # If last part starts with "and ", remove the "and"
         if parts and parts[-1].lower().startswith("and "):
             parts[-1] = parts[-1][4:].strip()
         elif parts and parts[-1].lower() == "and":
@@ -124,7 +174,6 @@ def format_mla_citation(chunk, page=None):
       (filename, Author Year)       — when year available but no page
       (filename, Author)            — when neither is available
     """
-    # Extract and strip extension from source_filename
     source_filename = chunk.get("source_filename", "unknown")
     base_name = source_filename.rsplit(".", 1)[0]
 
@@ -133,21 +182,68 @@ def format_mla_citation(chunk, page=None):
 
     author_formatted = format_author(author_str)
 
-    # Build citation body
     if year:
         citation = f"{base_name}, {author_formatted} {year}"
     else:
         citation = f"{base_name}, {author_formatted}"
 
-    # Add page number if specified
     if page is not None:
         citation = f"{citation}, p. {page}"
 
     return f"({citation})"
 
 
-def convert_citations(text, chunks_map):
-    """Replace all [chunk_id] and [chunk_id:(mla citation)] citations with MLA format."""
+def convert_block_citations(text, evidence_pack_path):
+    """
+    Load evidence pack from JSON and convert [B_XXX] to MLA.
+
+    For each [B_XXX] found, look up the block in the pack
+    and replace with format: (Author Year, p. #)
+
+    Args:
+        text: Input text with [B_XXX] citations
+        evidence_pack_path: Path to evidence pack JSON from rag_retriever_skill
+
+    Returns:
+        Text with [B_XXX] replaced by MLA citations
+    """
+    pack = load_evidence_pack(evidence_pack_path)
+    blocks = pack.get("blocks", [])
+
+    # Build block_id -> block lookup
+    block_map = {block["block_id"]: block for block in blocks}
+
+    def replace_block(match):
+        block_id = match.group(0)  # e.g. "[B_001]"
+        block_num = match.group(1)
+        key = f"B_{int(block_num):03d}"
+
+        block = block_map.get(key)
+        if not block:
+            return block_id  # preserve if not found
+
+        source = block.get("source", "Unknown")
+        # Parse "Author Year" from source field
+        # e.g. "Butalia 1998" -> author="Butalia", year="1998"
+        parts = source.rsplit(" ", 1)
+        author = parts[0] if parts else "Unknown"
+        year = parts[1] if len(parts) > 1 else ""
+        page = block.get("page", "")
+
+        if year:
+            return f"({author} {year}, p. {page})"
+        else:
+            return f"({author}, p. {page})"
+
+    # Pattern: [B_XXX] where XXX is 1-3 digits
+    return re.sub(r'\[B_(\d+)\]', replace_block, text)
+
+
+def convert_citations(text, chunks_map, block_map):
+    """Replace all [chunk_id] and [chunk_id:(mla citation)] citations with MLA format.
+    
+    Also handles [B_XXX] block citations by looking up block metadata and converting to MLA.
+    """
 
     def replace_hybrid(match):
         chunk_id = match.group(1)
@@ -178,21 +274,42 @@ def convert_citations(text, chunks_map):
         page = chunk.get("page", 1)
         return format_mla_citation(chunk, page=page)
 
-    # Block citation: [B_XXX] — pass through, no conversion needed (from rag_retriever_skill.py)
-    # These are already formatted block IDs, not chunk_id placeholders
+    def replace_block(match):
+        block_id = match.group(0)
+        
+        block_info = block_map.get(block_id)
+        if block_info is None:
+            print(
+                f"Warning: block '{block_id}' not found in evidence packs, "
+                f"preserving original citation",
+                file=sys.stderr,
+            )
+            return block_id
+        
+        chunk_id = block_info.get("chunk_id", "")
+        chunk = chunks_map.get(chunk_id)
+        if chunk is None:
+            print(
+                f"Warning: chunk '{chunk_id}' for block '{block_id}' not found, "
+                f"preserving original citation",
+                file=sys.stderr,
+            )
+            return block_id
+        
+        page = block_info.get("page", chunk.get("page", 1))
+        return format_mla_citation(chunk, page=page)
+
     text = re.sub(
-        r'\[B_(\d+)\]',
-        lambda m: f"[B_{m.group(1)}]",
+        r'\[B_\d+\]',
+        replace_block,
         text
     )
 
-    # Hybrid: [chunk_id:(author year, p. #)] — validate chunk, keep MLA intact
     text = re.sub(
         r'\[([A-Za-z0-9_]+):(\([^)]+\))\]',
         replace_hybrid,
         text
     )
-    # Simple: [chunk_id] — look up metadata and generate MLA
     text = re.sub(
         r'\[([A-Za-z0-9_]+)\]',
         replace_simple,
@@ -221,41 +338,57 @@ def main():
         default="chunks/chunks.json",
         help="Path to chunks.json metadata (default: chunks/chunks.json)",
     )
+    parser.add_argument(
+        "--evidence-dir", "-e",
+        default="evidence_packs",
+        help="Path to evidence_packs directory (default: evidence_packs)",
+    )
+    parser.add_argument(
+        "--pack", "--evidence-pack", "-p",
+        default=None,
+        help="Path to specific evidence pack JSON from rag_retriever_skill",
+    )
 
     args = parser.parse_args()
 
-    # Validate input file
     if not os.path.isfile(args.input):
         print(f"Error: input file '{args.input}' not found", file=sys.stderr)
         sys.exit(1)
 
-    # Load chunks metadata
     chunks_map = load_chunks(args.chunks)
     print(f"Loaded {len(chunks_map)} chunks from '{args.chunks}'")
 
-    # Read input markdown
+    block_map = load_all_evidence_packs(args.evidence_dir)
+    print(f"Loaded {len(block_map)} block citations from '{args.evidence_dir}'")
+
     with open(args.input, "r", encoding="utf-8") as f:
         text = f.read()
 
-    # Count citations before conversion
     raw_count = len(re.findall(r'\[([A-Za-z0-9_]+)(?::\([^)]+\))?\]', text))
+    block_count = len(re.findall(r'\[B_\d+\]', text))
     if raw_count == 0:
         print("No citations found in input file.")
         sys.exit(0)
 
-    # Convert citations
-    converted = convert_citations(text, chunks_map)
+    if args.pack:
+        pack_path = Path(args.pack)
+        if pack_path.exists():
+            text = convert_block_citations(text, str(pack_path))
+            print(f"Converted block citations using: {args.pack}")
+        else:
+            print(f"Warning: evidence pack not found at '{args.pack}'", file=sys.stderr)
 
-    # Count MLA citations after conversion
+    converted = convert_citations(text, chunks_map, block_map)
+
     mla_count = len(re.findall(r'\([^()]+,\s*p\.\s*\d+\)', converted))
 
-    # Write output
     output_path = args.output if args.output else args.input
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(converted)
 
     print(f"Processed {args.input}")
     print(f"  Citations found:     {raw_count}")
+    print(f"  Block citations:     {block_count}")
     print(f"  MLA citations written: {mla_count}")
     if args.output:
         print(f"  Output:              {args.output}")
