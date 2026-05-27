@@ -1,0 +1,12 @@
+{
+  "chapter_file": "ghost-train-v3_h.md",
+  "total_citations": 3,
+  "valid_citations": 3,
+  "structured_valid": 0,
+  "mla_valid": 3,
+  "hallucinated_citations": 0,
+  "malformed_citations": 0,
+  "invalid_pages": 0,
+  "issues": [],
+  "passed": true
+}

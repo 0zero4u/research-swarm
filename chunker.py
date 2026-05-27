@@ -40,10 +40,9 @@ class ChunkOutput:
 class Chunker:
     """Processes text documents into chunks with provenance."""
     
-    SOFT_MAX_TOKENS = 500
-    WORDS_PER_PAGE = 500  # When no page markers found
-    MIN_CHUNK_CHARS = 50
-    TOKEN_MULTIPLIER = 1.3
+    SOFT_MAX_TOKENS = 15000
+    TOKEN_MULTIPLIER = 1.0  # ~1 token per word for English prose
+    MIN_CHUNK_WORDS = 150  # Minimum words per chunk (no char-based minimum)
     
     # Page marker patterns
     PAGE_PATTERNS = [
@@ -85,114 +84,143 @@ class Chunker:
         return int(len(text.split()) * self.TOKEN_MULTIPLIER)
     
     def _extract_pages(self, text: str) -> list[tuple[int, str]]:
-        """Split text by page markers."""
+        """Split text by page markers to extract page numbers.
+
+        Returns list of (page_num, page_content) tuples.
+        If no page markers found, returns single page with full text.
+        Does NOT artificially split by word count (paragraph-level splitting
+        happens later in _split_into_chunks).
+        """
         pages = []
         current_page = 1
         current_content = []
-        
+
         # Split by page markers
         page_split_regex = '|'.join(self.PAGE_PATTERNS)
         segments = re.split(f'({page_split_regex})', text)
-        
+
         for i, segment in enumerate(segments):
-            # Skip None segments (can occur with re.split)
             if segment is None:
                 continue
-            
+
             # Check if this segment is a page marker
             matched = False
             for pattern in self.PAGE_PATTERNS:
                 match = re.search(pattern, segment)
                 if match:
-                    # Save current page content
                     if current_content:
                         pages.append((current_page, ''.join(current_content)))
                         current_content = []
-                    
+
                     current_page = int(match.group(1))
                     matched = True
                     break
-            
+
             if not matched:
                 current_content.append(segment)
-        
-        # Don't forget the last page
+
         if current_content:
             pages.append((current_page, ''.join(current_content)))
-        
-        # If no pages found, create synthetic pages
+
+        # If no pages found, treat entire text as one page (splitting happens later)
         if len(pages) == 0:
-            words = text.split()
-            if len(words) <= self.WORDS_PER_PAGE:
-                pages = [(1, text)]
-            else:
-                # Split into pages of WORDS_PER_PAGE
-                for i in range(0, len(words), self.WORDS_PER_PAGE):
-                    page_words = words[i:i + self.WORDS_PER_PAGE]
-                    page_num = (i // self.WORDS_PER_PAGE) + 1
-                    pages.append((page_num, ' '.join(page_words)))
-        
+            pages = [(1, text)]
+
         return pages
     
     def _split_into_chunks(self, text: str, max_tokens: int = None) -> list[str]:
-        """Split text into chunks, respecting sentence and paragraph boundaries."""
+        """Split text into chunks bottom-up by paragraphs, merge undersized chunks."""
         if max_tokens is None:
             max_tokens = self.SOFT_MAX_TOKENS
-        
+
+        HARD_MAX_WORDS = 1350  # Flush chunk after accumulating this many words
+
         chunks = []
-        
-        # Split into paragraphs first (preserve structure)
         paragraphs = re.split(r'\n\s*\n', text)
-        
+
         current_chunk = []
-        current_tokens = 0
-        
+        current_word_count = 0
+
         for para in paragraphs:
             para = para.strip()
             if not para:
                 continue
-            
-            para_tokens = self._estimate_tokens(para)
-            
-            # If single paragraph exceeds limit, split by sentences
-            if para_tokens > max_tokens and current_chunk:
-                # Save current chunk
+
+            para_words = len(para.split())
+            para_tokens = int(para_words * self.TOKEN_MULTIPLIER)
+
+            if para_tokens > max_tokens or para_words > HARD_MAX_WORDS:
                 if current_chunk:
                     chunks.append('\n'.join(current_chunk))
                     current_chunk = []
-                    current_tokens = 0
-            
-            if para_tokens > max_tokens:
-                # Split by sentences
+                    current_word_count = 0
+
                 sentences = re.split(r'(?<=[.!?])\s+', para)
-                for sentence in sentences:
-                    sentence = sentence.strip()
-                    if not sentence:
+                sub_chunk = []
+                sub_word_count = 0
+                for sent in sentences:
+                    sent = sent.strip()
+                    if not sent:
                         continue
-                    
-                    sentence_tokens = self._estimate_tokens(sentence)
-                    
-                    if current_tokens + sentence_tokens > max_tokens and current_chunk:
-                        chunks.append('\n'.join(current_chunk))
-                        current_chunk = []
-                        current_tokens = 0
-                    
-                    current_chunk.append(sentence)
-                    current_tokens += sentence_tokens
+                    sent_words = len(sent.split())
+                    if sub_word_count > 0 and (sub_word_count + sent_words) * self.TOKEN_MULTIPLIER > max_tokens:
+                        chunks.append(' '.join(sub_chunk))
+                        sub_chunk = []
+                        sub_word_count = 0
+                    sub_chunk.append(sent)
+                    sub_word_count += sent_words
+                if sub_chunk:
+                    chunks.append(' '.join(sub_chunk))
             else:
-                if current_tokens + para_tokens > max_tokens and current_chunk:
+                flush = current_word_count > 0 and (
+                    current_word_count >= HARD_MAX_WORDS
+                    or current_word_count + para_words > HARD_MAX_WORDS
+                    or (current_word_count + para_words) * self.TOKEN_MULTIPLIER > max_tokens
+                )
+                if flush:
                     chunks.append('\n'.join(current_chunk))
                     current_chunk = []
-                    current_tokens = 0
-                
+                    current_word_count = 0
+
                 current_chunk.append(para)
-                current_tokens += para_tokens
-        
-        # Don't forget the last chunk
+                current_word_count += para_words
+
         if current_chunk:
             chunks.append('\n'.join(current_chunk))
-        
-        return [c.strip() for c in chunks if len(c.strip()) >= self.MIN_CHUNK_CHARS]
+
+        merged = []
+        i = 0
+        n = len(chunks)
+
+        while i < n:
+            chunk_text = chunks[i]
+            chunk_words = len(chunk_text.split())
+
+            if chunk_words < self.MIN_CHUNK_WORDS:
+                if merged:
+                    merged[-1] = merged[-1] + '\n\n' + chunk_text
+                    merged_word_count = len(merged[-1].split())
+                    j = i + 1
+                    while merged_word_count < self.MIN_CHUNK_WORDS and j < n:
+                        merged[-1] = merged[-1] + '\n\n' + chunks[j]
+                        merged_word_count = len(merged[-1].split())
+                        j += 1
+                    i = j
+                else:
+                    j = i + 1
+                    while j < n and len(chunks[j].split()) < self.MIN_CHUNK_WORDS:
+                        j += 1
+                    if j < n:
+                        merged.append(chunk_text + '\n\n' + chunks[j])
+                        i = j + 1
+                    else:
+                        merged.append(chunk_text)
+                        i = j
+            else:
+                merged.append(chunk_text)
+                i += 1
+
+        return merged
     
     def _extract_source_id(self, filename: str) -> str:
         """Extract source ID from filename (e.g., '001_file.txt' -> '001')."""
@@ -321,67 +349,56 @@ class Chunker:
     def process_file(self, filepath: Path) -> list[Chunk]:
         """Process a single file into chunks."""
         source_id = self._extract_source_id(filepath.name)
-        
-        # Skip if already processed (for resume)
+
         if source_id in self.processed_sources:
             print(f"  Skipping {filepath.name} (already processed)")
             return []
-        
+
         print(f"  Processing {filepath.name}...")
         text = filepath.read_text(encoding='utf-8')
-        
-        # Extract pages
+
         pages = self._extract_pages(text)
-        
-        # Extract metadata from first non-empty page
+
         first_page_text = ""
         for _, page_text in pages:
             if page_text.strip():
                 first_page_text = page_text
                 break
         metadata = self._extract_metadata(first_page_text, filepath.name)
-        
+
+        full_text = '\n\n'.join(pt.strip() for _, pt in pages if pt.strip())
+
+        all_chunks = self._split_into_chunks(full_text)
+
         chunks = []
         chunk_counter = 1
-        
-        for page_num, page_text in pages:
-            # Clean up page text
-            page_text = page_text.strip()
-            
-            # Skip empty pages
-            if len(page_text.strip()) < self.MIN_CHUNK_CHARS:
+
+        for chunk_text in all_chunks:
+            chunk_text = chunk_text.strip()
+            if not chunk_text:
                 continue
-            
-            # Split page into chunks
-            page_chunks = self._split_into_chunks(page_text)
-            
-            for chunk_text in page_chunks:
-                # Final validation
-                if len(chunk_text.strip()) < self.MIN_CHUNK_CHARS:
-                    continue
-                
-                chunk_id = f"{source_id}_P{page_num:03d}C{chunk_counter:03d}"
-                
-                chunk = Chunk(
-                    chunk_id=chunk_id,
-                    source_id=source_id,
-                    source_filename=filepath.name,
-                    author=metadata["author"],
-                    title=metadata["title"],
-                    year=metadata["year"],
-                    journal=metadata["journal"],
-                    url=metadata["url"],
-                    page=page_num,
-                    text=chunk_text,
-                    token_count=self._estimate_tokens(chunk_text)
-                )
-                
-                chunks.append(chunk)
-                chunk_counter += 1
-        
-        # Save progress
+
+            chunk_id = f"{source_id}_P001C{chunk_counter:03d}"
+
+            chunk = Chunk(
+                chunk_id=chunk_id,
+                source_id=source_id,
+                source_filename=filepath.name,
+                author=metadata["author"],
+                title=metadata["title"],
+                year=metadata["year"],
+                journal=metadata["journal"],
+                url=metadata["url"],
+                page=1,
+                text=chunk_text,
+                token_count=self._estimate_tokens(chunk_text)
+            )
+
+            chunks.append(chunk)
+            chunk_counter += 1
+
         self._save_state(source_id)
-        
+
         return chunks
     
     def process_corpus(self, source_filter: Optional[str] = None) -> list[Chunk]:
