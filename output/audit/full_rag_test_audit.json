@@ -1,0 +1,13 @@
+{
+  "chapter_file": "full_rag_test.json",
+  "total_citations": 1,
+  "valid_citations": 1,
+  "structured_valid": 0,
+  "block_valid": 1,
+  "mla_valid": 0,
+  "hallucinated_citations": 0,
+  "malformed_citations": 0,
+  "invalid_pages": 0,
+  "issues": [],
+  "passed": true
+}

@@ -1,0 +1,46 @@
+{
+  "query": "partition 1947 india",
+  "top_k": 3,
+  "blocks": [
+    {
+      "block_id": "B_001",
+      "chunk_id": "IJNRD220b1026_P001C002",
+      "source": "Unknown 2022",
+      "source_filename": "IJNRD220b1026.txt",
+      "page": 1,
+      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n205 \non the immediate emotional impact of the events. Overall, Train to Pakistan the film is a poignant retelling of a tragic \nchapter in Indian history, staying true to the novel’s core message while adapting it for the visual medium. \nReferences: \n \nAziz, K.K. History of Partition of India.",
+      "score": 0.6267,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_002",
+      "chunk_id": "IJNRD2201026_P001C002",
+      "source": "Unknown 2022",
+      "source_filename": "IJNRD2201026.txt",
+      "page": 1,
+      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n205 \non the immediate emotional impact of the events. Overall, Train to Pakistan the film is a poignant retelling of a tragic \nchapter in Indian history, staying true to the novel’s core message while adapting it for the visual medium. \nReferences: \n \nAziz, K.K. History of Partition of India.",
+      "score": 0.6267,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_003",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P001C097",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 1,
+      "text": "254 The Other Side of Silence \nvery happy to meet all her Muslim friends — they too were happy \nto see her. \nEven now when we go to Pakistan we meet all our old friends and \neveryone is greeted with much affection. The fighting was between \nMuslims and Hindus. We didn’t fight with the Muslims, it had \nnothing to do with us. \nI have never been there. My mother went. And you know that \nfriend of mine, the leader, she went and met my uncle, and they sent \nlots of things for me and for the children.",
+      "score": 0.5887,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    }
+  ],
+  "total_retrieved": 3,
+  "timestamp": "2026-05-27T04:16:06.484152"
+}

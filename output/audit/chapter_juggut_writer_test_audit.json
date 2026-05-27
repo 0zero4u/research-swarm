@@ -1,0 +1,13 @@
+{
+  "chapter_file": "chapter_juggut_writer_test.md",
+  "total_citations": 3,
+  "valid_citations": 3,
+  "structured_valid": 0,
+  "block_valid": 0,
+  "mla_valid": 3,
+  "hallucinated_citations": 0,
+  "malformed_citations": 0,
+  "invalid_pages": 0,
+  "issues": [],
+  "passed": true
+}

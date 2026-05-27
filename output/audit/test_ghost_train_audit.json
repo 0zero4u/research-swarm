@@ -1,0 +1,38 @@
+{
+  "chapter_file": "test_ghost_train.md",
+  "total_citations": 4,
+  "valid_citations": 0,
+  "structured_valid": 0,
+  "block_valid": 0,
+  "mla_valid": 0,
+  "hallucinated_citations": 0,
+  "malformed_citations": 4,
+  "invalid_pages": 0,
+  "issues": [
+    {
+      "type": "malformed",
+      "citation": "(Partition_The_Holocaust_Train_to_Pakista, Unknown, p. 1)",
+      "line": 5,
+      "message": "Malformed citation format: '(Partition_The_Holocaust_Train_to_Pakista, Unknown, p. 1)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(Partition_The_Holocaust_Train_to_Pakista, Unknown, p. 1)",
+      "line": 5,
+      "message": "Malformed citation format: '(Partition_The_Holocaust_Train_to_Pakista, Unknown, p. 1)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(Partition_The_Holocaust_Train_to_Pakista, Unknown, p. 1)",
+      "line": 5,
+      "message": "Malformed citation format: '(Partition_The_Holocaust_Train_to_Pakista, Unknown, p. 1)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(Partition_The_Holocaust_Train_to_Pakista, Unknown, p. 1)",
+      "line": 5,
+      "message": "Malformed citation format: '(Partition_The_Holocaust_Train_to_Pakista, Unknown, p. 1)'"
+    }
+  ],
+  "passed": false
+}

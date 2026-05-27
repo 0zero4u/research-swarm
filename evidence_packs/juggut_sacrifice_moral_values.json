@@ -1,0 +1,55 @@
+{
+  "query": "juggut sacrifice moral values",
+  "top_k": 3,
+  "blocks": [
+    {
+      "block_id": "B_001",
+      "chunk_id": "Train-To-Pakistan_P001C049",
+      "source": "Singh 1956",
+      "source_filename": "Train-To-Pakistan.txt",
+      "page": 1,
+      "text": "‘No, no, Bhaiji, I have all I want in my tins. If I want something I will ask\nyou for it. I have a little work to do before I eat.’\nMeet Singh put the hurricane lantern on a stool by the bed and went back to\nthe hall.\nIqbal put his plates, knife, fork, and tins back into the haversack. He felt a little\nfeverish, the sort of feverishness one feels when one is about to make a\ndeclaration of love. It was time for a declaration of something. Only he was not\nsure what it should be.",
+      "score": 0.6665,
+      "claims": [
+        "Sikh vs Muslim conflict",
+        "Juggut sacrifice",
+        "Iqbal pessimism",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_002",
+      "chunk_id": "Paper35357_P001C002",
+      "source": "IJARSCT Editors 2026",
+      "source_filename": "Paper35357.txt",
+      "page": 1,
+      "text": "ISSN: 2581-9429 \nImpact Factor: 8.2 \nWhen extremists plan to attack the train carrying Muslim refugees, Jugga risks his life to stop the massacre because \nNooran is among the passengers. He cuts the rope intended to derail the train and dies in the process. \nJugga’s sacrifice symbolizes redemption and the triumph of humanity over communal hatred. His action restores faith \nin moral values and demonstrates that individual courage can challenge violence and injustice.",
+      "score": 0.6038,
+      "claims": [
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_003",
+      "chunk_id": "ijrar_issue_20542129_P001C004",
+      "source": "Associate Editors 2018",
+      "source_filename": "ijrar_issue_20542129.txt",
+      "page": 1,
+      "text": "4\n[VOLUME 5  I  ISSUE 4  I  OCT. – DEC. 2018]                                                             e ISSN 2348 –1269, Print ISSN 2349-5138 \nhttp://ijrar.com/                                                                                                                                          Cosmos Impact Factor 4.",
+      "score": 0.5831,
+      "claims": [
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "Juggut sacrifice"
+      ]
+    }
+  ],
+  "total_retrieved": 3,
+  "timestamp": "2026-05-27T14:13:14.217367",
+  "pack_slug": "juggut_sacrifice_moral_values"
+}

@@ -1,12 +1,26 @@
 {
   "chapter_file": "ghost-train_h.md",
   "total_citations": 5,
-  "valid_citations": 5,
+  "valid_citations": 3,
   "structured_valid": 0,
+  "block_valid": 0,
   "mla_valid": 5,
   "hallucinated_citations": 0,
   "malformed_citations": 0,
-  "invalid_pages": 0,
-  "issues": [],
+  "invalid_pages": 2,
+  "issues": [
+    {
+      "type": "invalid_page",
+      "citation": "(363508_8461703, Charyulu 2019, p. 2)",
+      "line": 7,
+      "message": "Page 2 not found in source chunks for 'Charyulu'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(363508_8461703, Charyulu 2019, p. 2)",
+      "line": 11,
+      "message": "Page 2 not found in source chunks for 'Charyulu'"
+    }
+  ],
   "passed": true
 }

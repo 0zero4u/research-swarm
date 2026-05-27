@@ -1,0 +1,54 @@
+{
+  "query": "ghost train symbolism mano majra",
+  "top_k": 3,
+  "blocks": [
+    {
+      "block_id": "B_001",
+      "chunk_id": "Train-To-Pakistan_P001C041",
+      "source": "Train-To-Pakistan.txt",
+      "source_filename": "Train-To-Pakistan.txt",
+      "page": 1,
+      "text": "that what they had heard were human voices and not jackals, they felt more and\nmore uncertain and had to ask each other: ‘It was clear, wasn’t it, Karnaila?’\n‘Oh yes. It was clear enough. “Hai, hai”—like someone in pain.’\nThe four men sat under a tree, huddled around a hurricane lamp. The gunny\nsacks they used as raincoats were soaking wet; so were all their clothes. An\nhour later there was a break in the clouds. The rain slowed down to a drizzle\nand then stopped.",
+      "score": 0.6181,
+      "claims": [
+        "railroad as central symbol",
+        "Mano Majra intersection",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_002",
+      "chunk_id": "Train-To-Pakistan_P001C002",
+      "source": "Train-To-Pakistan.txt",
+      "source_filename": "Train-To-Pakistan.txt",
+      "page": 1,
+      "text": "Mano Majra has always been known for its railway station. Since the bridge\nhas only one track, the station has several sidings where less important trains\ncan wait, to make way for the more important.\nA small colony of shopkeepers and hawkers has grown up around the station\nto supply travellers with food, betel leaves, cigarettes, tea, biscuits and\nsweetmeats. This gives the station an appearance of constant activity and its\nstaff a somewhat exaggerated sense of importance.",
+      "score": 0.5909,
+      "claims": [
+        "railroad as central symbol",
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_003",
+      "chunk_id": "002_P001C002",
+      "source": "Charyulu 2019",
+      "source_filename": "002_0030bc.txt",
+      "page": 1,
+      "text": "Khushwant Singh Novel “Train to Pakistan”: Essential Style and Technique for Exploration of the \nExperience of Rural India \nthe devotion of the Sikh fighters who lecture \nvengeance. \nThe rail route in Train to Pakistan has especially \nfascinating and vile job. Mano Majra has the sad \ndifferentiation of being a railroad intersection. The \ntown turns into the focal point of collective scorn just \nwhen the trains show up with their grievous cargoes \nof death.",
+      "score": 0.5569,
+      "claims": [
+        "railroad as central symbol",
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    }
+  ],
+  "total_retrieved": 3,
+  "timestamp": "2026-05-27T04:20:35.080481"
+}

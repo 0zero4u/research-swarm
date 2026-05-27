@@ -1,0 +1,13 @@
+{
+  "chapter_file": "agent_test_h.md",
+  "total_citations": 4,
+  "valid_citations": 4,
+  "structured_valid": 0,
+  "block_valid": 0,
+  "mla_valid": 4,
+  "hallucinated_citations": 0,
+  "malformed_citations": 0,
+  "invalid_pages": 0,
+  "issues": [],
+  "passed": true
+}

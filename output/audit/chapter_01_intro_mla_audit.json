@@ -1,0 +1,13 @@
+{
+  "chapter_file": "chapter_01_intro_mla.md",
+  "total_citations": 35,
+  "valid_citations": 35,
+  "structured_valid": 0,
+  "block_valid": 33,
+  "mla_valid": 2,
+  "hallucinated_citations": 0,
+  "malformed_citations": 0,
+  "invalid_pages": 0,
+  "issues": [],
+  "passed": true
+}
