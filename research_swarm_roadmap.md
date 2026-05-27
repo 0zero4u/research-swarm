@@ -28,227 +28,206 @@ Based on department pattern (chapter-style, not theoretical thesis):
 
 TITLE Partition, Violence and Humanism in Khushwant Singh's Train to Pakistan: A Comparative Study of the Novel and Film Adaptation
 
-Preliminary Pages
-Title Page
-Declaration
-Certificate
-Acknowledgement
-Abstract (~200-300 words)
-Table of Contents
-Main Chapters
-Chapter I — Introduction (~8-10 pages)
 
-1.1 Partition of India background
-1.2 About Khushwant Singh
-1.3 About the Novel Train to Pakistan
-1.4 About the Film Adaptation
-1.5 Aim/Objectives
-1.6 Research Method/Scope
-1.7 Thesis Statement
-Chapter II — Review of Literature (~8-10 pages) 2.1 Partition Literature: Overview 2.2 Critical Studies on Train to Pakistan 2.3 Studies on Violence and Communalism 2.4 Studies on Humanism and Moral Crisis 2.5 Film Adaptation Studies 2.6 - Existing scholarship on Partition literature 2.7 Research Gap
 
-Chapter III — Partition and Violence (~14-16 pages) Historical Violence in the Novel 3.2 Communal Breakdown in Mano Majra 3.3 Displacement and Refugee Trauma 3.4 Violence in the Film Adaptation 3.5 Comparative Analysis Chapter IV — Humanism and Moral Crisis (~14-16 pages)
 
-Chapter IV — Humanism and Moral Conflict (~14-16 pages)
 
-Jugga's sacrifice, compassion, morality
-Novel vs film comparison
-4.1 Jugga as the Humanist Figure 4.2 Compassion Amid Violence 4.3 Moral Crisis: Iqbal and Hukum Chand 4.4 Humanism in the Film Adaptation 4.5 Comparative Reading Chapter V — Adaptation Analysis (~7-8 pages)
-Chapter V — Adaptation Analysis (~7-8 pages)
 
-From Novel to Film 5.2 Omissions and Additions 5.3 Visual Representation of Violence 5.4 Cinematic Techniques 5.5 Limits of Adaptation
 
-Novel to film: changes, omissions, cinematic techniques
-Conclusion (~4-5 pages)
 
-Summary, thesis return, no new arguments
-Summary Major Findings Return to Thesis
-Reference Material
-Works Cited (MLA format ( refine improve nd correct it
 
-Your outline is strong, but it has repetition, numbering issues, inconsistent chapter titles, and unclear section flow. I refined it into a more academic and thesis-ready structure with corrected headings, consistent numbering, better wording, and improved organization for an MA/BA dissertation.
 
-TITLE
-Train to Pakistan, Violence, and Humanism in Train to Pakistan: A Comparative Study of the Novel and Film Adaptation
 
-Preliminary Pages
-Title Page
+# Chapter I — Introduction (8–10 Pages)
 
-Declaration
+### 1.1 Historical Background: The Partition of India
 
-Certificate
+* Political and socio-historical context of the 1947 Partition
+* Causes and consequences of communal division
+* Violence, migration, and displacement
 
-Acknowledgement
+### 1.2 About Khushwant Singh
 
-Abstract (200–300 words)
+* Life and literary background
+* Contribution to Partition literature
+* Themes and writing style
 
-Table of Contents
+### 1.3 Introduction to the Novel *Train to Pakistan*
 
-Chapter I — Introduction (8–10 Pages)
-1.1 Historical Background: The Partition of India
-Political and socio-historical context of the 1947 Partition
+* Plot overview
+* Major characters and setting (Mano Majra)
+* Major themes: violence, communalism, sacrifice, humanism
 
-Causes and consequences of communal division
+### 1.4 Introduction to the Film Adaptation
 
-Violence, migration, and displacement
+* Overview of the film adaptation
+* Director, screenplay, and cinematic background
+* Relevance of adaptation to the study
 
-1.2 About Khushwant Singh
-Life and literary background
+### 1.5 Aim and Objectives of the Study
 
-Contribution to Partition literature
+* To analyze representations of Partition violence
+* To examine humanism and moral conflict in the novel and film
+* To compare literary and cinematic treatment of major themes
 
-Themes and writing style
+### 1.6 Research Methodology and Scope
 
-1.3 Introduction to the Novel Train to Pakistan
-Plot overview
+* Comparative textual and film analysis
+* Historical and literary approach
+* Scope and limitations of the study
 
-Major characters and setting (Mano Majra)
+### 1.7 Thesis Statement
 
-Major themes: violence, communalism, sacrifice, humanism
+* Central argument of the dissertation
 
-1.4 Introduction to the Film Adaptation
-Overview of the film adaptation
+---
 
-Director, screenplay, and cinematic background
+# Chapter II — Review of Literature (8–10 Pages)
 
-Relevance of adaptation to the study
+### 2.1 Overview of Partition Literature
 
-1.5 Aim and Objectives of the Study
-To analyze representations of Partition violence
+* Development and major themes of Partition writing
+* Key authors and texts
 
-To examine humanism and moral conflict in the novel and film
+### 2.2 Critical Studies on *Train to Pakistan*
 
-To compare literary and cinematic treatment of major themes
+* Scholarly interpretations of the novel
+* Themes of violence, nationalism, and identity
 
-1.6 Research Methodology and Scope
-Comparative textual and film analysis
+### 2.3 Studies on Violence and Communalism
 
-Historical and literary approach
+* Critical discussions on communal conflict and brutality in Partition literature
 
-Scope and limitations of the study
+### 2.4 Studies on Humanism and Moral Crisis
 
-1.7 Thesis Statement
-Central argument of the dissertation
+* Compassion, ethical conflict, sacrifice, and morality in literary criticism
 
-Chapter II — Review of Literature (8–10 Pages)
-2.1 Overview of Partition Literature
-Development and major themes of Partition writing
+### 2.5 Studies on Film Adaptation
 
-Key authors and texts
+* Theories of adaptation
+* Literary texts adapted into films
 
-2.2 Critical Studies on Train to Pakistan
-Scholarly interpretations of the novel
+### 2.6 Existing Scholarship on *Train to Pakistan* and Partition Narratives
 
-Themes of violence, nationalism, and identity
+* Comparative overview of existing academic studies
 
-2.3 Studies on Violence and Communalism
-Critical discussions on communal conflict and brutality in Partition literature
+### 2.7 Research Gap
 
-2.4 Studies on Humanism and Moral Crisis
-Compassion, ethical conflict, sacrifice, and morality in literary criticism
+* What previous studies have not sufficiently explored
+* Justification for the present comparative study
 
-2.5 Studies on Film Adaptation
-Theories of adaptation
+---
 
-Literary texts adapted into films
+# Chapter III — Partition and Violence in *Train to Pakistan* (14–16 Pages)
 
-2.6 Existing Scholarship on Train to Pakistan and Partition Narratives
-Comparative overview of existing academic studies
+### 3.1 Historical Violence in the Novel
 
-2.7 Research Gap
-What previous studies have not sufficiently explored
+* Representation of Partition riots and brutality
+* Social and political dimensions of violence
 
-Justification for the present comparative study
+### 3.2 Communal Breakdown in Mano Majra
 
-Chapter III — Partition and Violence in Train to Pakistan (14–16 Pages)
-3.1 Historical Violence in the Novel
-Representation of Partition riots and brutality
+* Collapse of communal harmony
+* Hindu–Muslim–Sikh relationships
 
-Social and political dimensions of violence
+### 3.3 Displacement and Refugee Trauma
 
-3.2 Communal Breakdown in Mano Majra
-Collapse of communal harmony
+* Forced migration and psychological suffering
+* Loss, fear, and displacement
 
-Hindu–Muslim–Sikh relationships
+### 3.4 Violence in the Film Adaptation
 
-3.3 Displacement and Refugee Trauma
-Forced migration and psychological suffering
+* Visual portrayal of brutality and communal tension
+* Cinematic representation of trauma
 
-Loss, fear, and displacement
+### 3.5 Comparative Analysis of Violence in the Novel and Film
 
-3.4 Violence in the Film Adaptation
-Visual portrayal of brutality and communal tension
+* Similarities and differences in representation
+* Narrative versus visual impact
 
-Cinematic representation of trauma
+---
 
-3.5 Comparative Analysis of Violence in the Novel and Film
-Similarities and differences in representation
+# Chapter IV — Humanism and Moral Conflict (14–16 Pages)
 
-Narrative versus visual impact
+### 4.1 Jugga as the Humanist Figure
 
-Chapter IV — Humanism and Moral Conflict (14–16 Pages)
-4.1 Jugga as the Humanist Figure
-Jugga’s transformation and sacrifice
+* Jugga’s transformation and sacrifice
+* Humanism in times of communal violence
 
-Humanism in times of communal violence
+### 4.2 Compassion Amid Violence
 
-4.2 Compassion Amid Violence
-Human relationships during crisis
+* Human relationships during crisis
+* Love, empathy, and coexistence
 
-Love, empathy, and coexistence
+### 4.3 Moral Crisis: Iqbal and Hukum Chand
 
-4.3 Moral Crisis: Iqbal and Hukum Chand
-Ethical dilemmas and political ambiguity
+* Ethical dilemmas and political ambiguity
+* Crisis of responsibility and conscience
 
-Crisis of responsibility and conscience
+### 4.4 Humanism in the Film Adaptation
 
-4.4 Humanism in the Film Adaptation
-Representation of morality and compassion through cinematic devices
+* Representation of morality and compassion through cinematic devices
 
-4.5 Comparative Reading of Humanism in the Novel and Film
-Differences in characterization and moral emphasis
+### 4.5 Comparative Reading of Humanism in the Novel and Film
 
-Visual versus textual representation of human values
+* Differences in characterization and moral emphasis
+* Visual versus textual representation of human values
 
-Chapter V — Adaptation Analysis: From Novel to Film (7–8 Pages)
-5.1 From Novel to Film: Adaptation Process
-Transition from literary narrative to cinema
+---
 
-5.2 Omissions and Additions
-Altered scenes, removed episodes, and new interpretations
+# Chapter V — Adaptation Analysis: From Novel to Film (7–8 Pages)
 
-5.3 Visual Representation of Violence and Emotion
-Camera work, imagery, symbolism, and dramatic presentation
+### 5.1 From Novel to Film: Adaptation Process
 
-5.4 Cinematic Techniques and Narrative Style
-Direction, screenplay, sound, editing, and mise-en-scène
+* Transition from literary narrative to cinema
 
-5.5 Limits of Adaptation
-Constraints of cinema in representing literary complexity
+### 5.2 Omissions and Additions
 
-Challenges of translating Partition trauma to screen
+* Altered scenes, removed episodes, and new interpretations
 
-Conclusion (4–5 Pages)
-6.1 Summary of Major Findings
-6.2 Return to the Thesis Statement
-6.3 Final Reflections on Violence, Humanism, and Adaptation
-Note: Avoid introducing new arguments in the conclusion. Focus on synthesis and interpretation.
+### 5.3 Visual Representation of Violence and Emotion
 
-Reference Material
-Works Cited (MLA 9th Edition)
+* Camera work, imagery, symbolism, and dramatic presentation
+
+### 5.4 Cinematic Techniques and Narrative Style
+
+* Direction, screenplay, sound, editing, and mise-en-scène
+
+### 5.5 Limits of Adaptation
+
+* Constraints of cinema in representing literary complexity
+* Challenges of translating Partition trauma to screen
+
+---
+
+# Conclusion (4–5 Pages)
+
+### 6.1 Summary of Major Findings
+
+### 6.2 Return to the Thesis Statement
+
+### 6.3 Final Reflections on Violence, Humanism, and Adaptation
+
+**Note:** Avoid introducing new arguments in the conclusion. Focus on synthesis and interpretation.
+
+---
+
+# Reference Material
+
+### Works Cited (MLA 9th Edition)
+
 Include:
 
-Primary texts (novel and film)
+* Primary texts (novel and film)
+* Books
+* Journal articles
+* Edited volumes
+* Reliable academic sources and dissertations
 
-Books
+### Bibliography (Optional, if required by university guidelines)
 
-Journal articles
 
-Edited volumes
 
-Reliable academic sources and dissertations
-
-Bibliography (Optional, if required by university guidelines)
 
 
 
