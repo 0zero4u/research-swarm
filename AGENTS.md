@@ -7,11 +7,22 @@
 ## Pipeline Overview
 
 ```
-URLs → Downloader → Chunker → Embedder → Retriever → Writer → Formatter → Humanizer → Citation Auditor
-         ↓            ↓          ↓           ↓          ↓         ↓          ↓          ↓
-       corpus/     chunks/   vector_index  evidence   output/   final    output/    output/
-        *.txt     chunks.json              packs    draft.md  chapters/ humanized/ chapters/
+URLs → Downloader → Chunker → Embedder → FAISS Index
+                                      ↓
+Query → rag_retriever_skill.py → Structured Evidence Blocks [B_XXX]
+                                      ↓
+AcademicWriterAgent (calls rag-pull internally) → hybrid citations [B_XXX]
+                                      ↓
+Formatter → HumanizerAgent → Citation Auditor → PASS
 ```
+
+## Citation Formats
+
+| Format | Example | Use |
+|--------|---------|-----|
+| Block | `[B_001]` | Primary — from rag_retriever evidence blocks |
+| Hybrid | `[002_P001C002:(Charyulu 2019, p. 1)]` | Writer can also use |
+| MLA | `(Charyulu 2019, p. 1)` | After formatting |
 
 ---
 
@@ -128,7 +139,39 @@ python3 chunker.py --resume      # Resume interrupted
 
 ---
 
-### 5. Writer Agent
+### 5. RAG Pull Skill
+| Property | Value |
+|-----------|-------|
+| **File** | `rag_retriever_skill.py` |
+| **Model** | `qwen/qwen3-embedding-8b` (OpenRouter) |
+| **Phase** | Phase 5 |
+| **Input** | Topic/query string |
+| **Output** | Structured evidence blocks with `[B_XXX]` IDs |
+
+**How it works:** Agent calls `rag_retriever_skill.py` internally, receives structured blocks with provenance, citations, and claims. The skill wraps FAISS retriever.
+
+**Evidence Block Schema:**
+```json
+{
+  "block_id": "B_001",
+  "chunk_id": "002_P001C002",
+  "source": "Charyulu 2019",
+  "page": 1,
+  "text": "The rail route in Train to Pakistan...",
+  "score": 0.71,
+  "claims": ["railroad as central symbol"]
+}
+```
+
+**CLI:**
+```bash
+python3 rag_retriever_skill.py "ghost train symbolism partition violence"
+python3 rag_retriever_skill.py "humanism values" --top-k 5 --min-confidence 0.30
+```
+
+---
+
+### 6. Writer Agent
 | Property | Value |
 |-----------|-------|
 | **Agent** | `AcademicWriterAgent` (OpenCode sub-agent) |
@@ -166,7 +209,7 @@ task(category="writing", load_skills=["academic-writing", "humanizer"], prompt="
 
 ---
 
-### 6. Formatter Agent
+### 7. Formatter Agent
 | Property | Value |
 |-----------|-------|
 | **File** | `formatter.py` |
@@ -188,7 +231,7 @@ python3 formatter.py --input output/draft.md --output output/final.md
 
 ---
 
-### 7. Humanizer Agent
+### 8. Humanizer Agent
 | Property | Value |
 |-----------|-------|
 | **File** | `humanizer_agent.py` (wrapper) |
@@ -227,7 +270,7 @@ python3 humanizer_agent.py --input output/chapters/final.md --output output/chap
 
 ---
 
-### 8. Citation Auditor Agent
+### 9. Citation Auditor Agent
 | Property | Value |
 |-----------|-------|
 | **File** | `auditor.py` |
@@ -256,7 +299,7 @@ python3 humanizer_agent.py --input output/chapters/final.md --output output/chap
          ↓
 5. Retriever ← User Query → Evidence Pack
          ↓
-6. AcademicWriterAgent (task) → Draft Chapter with MLA
+6. AcademicWriterAgent (calls rag-pull internally) → Draft with [B_XXX] citations
          ↓
 7. HumanizerAgent (task+skill) → Natural-sounding prose
          ↓
@@ -302,6 +345,7 @@ research-swarm/
 | Embedder | qwen3-embedding-8b | OpenRouter | Vectorization (4096 dim) |
 | Retriever | None | — | Search |
 | Writer | minimax-m2.5 | OpenCode task | Generation (AcademicWriterAgent) |
+| RAG Retriever | qwen3-embedding-8b | OpenRouter | Evidence retrieval (FAISS) |
 | Formatter | None | — | Citation formatting |
 | Humanizer | qwen3.5-plus | OpenRouter | AI pattern removal |
 | Auditor | qwen3.5-plus | OpenRouter | Verification |
@@ -320,6 +364,7 @@ research-swarm/
 | Writer | ✅ | AcademicWriterAgent (task+skill) |
 | Formatter | ✅ | MLA citation formatter |
 | Humanizer | ✅ | AI pattern removal (29 categories) |
+| RAG Pull | ✅ | Structured evidence blocks [B_XXX] |
 | Auditor | ✅ | Citation validation |
 
 ---
@@ -331,22 +376,22 @@ research-swarm/
 # 1. Download
 python3 downloader.py --urls "url1,url2,url3"
 
-# 2. Chunk
+# 2. Chunk (semantic, 150+ words)
 python3 chunker.py
 
 # 3. Embed
 python3 embedder.py
 
-# 4. Retrieve (requires faiss-cpu in venv)
-/tmp/rs-venv/bin/python retriever.py --query "Partition violence in Train to Pakistan"
+# 4. Query evidence (hybrid RAG — agent calls internally)
+python3 rag_retriever_skill.py "ghost train symbolism partition violence"
 
-# 5. Write (via OpenCode task — AcademicWriterAgent with skill chain)
+# 5. Write (AcademicWriterAgent calls rag-pull internally)
 task(category="writing", load_skills=["academic-writing", "humanizer"], prompt="...")
 
-# 6. Format (only needed if writer output uses [chunk_id] placeholders)
+# 6. Format
 python3 formatter.py --input output/chapters/draft.md
 
-# 7. Humanize (via OpenCode task + humanizer skill)
+# 7. Humanize
 task(category="writing", load_skills=["humanizer"], prompt="...")
 
 # 8. Audit

@@ -321,8 +321,8 @@ research-swarm/
 | Phase 2 | ✅ Done | Integrated in downloader (PyMuPDF) |
 | Phase 3 | ✅ Done | Chunker agent (chunks.json) |
 | Phase 4 | ✅ Done | Embedder (qwen3-embedding-8b → FAISS) |
-| Phase 5 | ✅ Done | Retriever (semantic search) |
-| Phase 6 | ✅ Done | Writer agent (minimax/m2.7) |
+| Phase 5 | ✅ Done | RAG retriever (FAISS + rag_retriever_skill) |
+| Phase 6 | ✅ Done | AcademicWriterAgent (calls rag-pull internally, hybrid citations) |
 | Phase 7 | ✅ Done | Humanizer agent (29 AI pattern categories) |
 | Phase 8 | ✅ Done | Citation auditor |
 
@@ -332,6 +332,6 @@ research-swarm/
 
 1. **Collect PDFs**: Get the novel PDF + film transcript
 2. **Download secondary sources**: Find 10-15 academic papers/books on Partition literature
-3. **Run pipeline**: Extract → Chunk → Index → Retrieve → Write → Format → Humanize → Audit
+3. **Run pipeline**: Extract → Chunk → Index → Query (rag_retriever_skill) → Write ([B_XXX]) → Format → Humanize → Audit
 4. **Generate Chapter 1 (Introduction)** as first output
 5. **Iterate** for remaining chapters
