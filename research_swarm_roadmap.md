@@ -21,6 +21,9 @@ Build a dissertation-writing assistant that:
 
 Based on department pattern (chapter-style, not theoretical thesis):
 
+TITLE
+Partition, Violence and Humanism in Khushwant Singh's Train to Pakistan: A Comparative Study of the Novel and Film Adaptation
+
 ### Preliminary Pages
 1. Title Page
 2. Declaration
@@ -40,22 +43,48 @@ Based on department pattern (chapter-style, not theoretical thesis):
    - 1.7 Thesis Statement
 
 8. **Chapter II — Review of Literature** (~8-10 pages)
-   - Existing scholarship on Partition literature
-   - Humanism studies, violence representation, adaptation studies
+   2.1 Partition Literature: Overview
+2.2 Critical Studies on Train to Pakistan
+2.3 Studies on Violence and Communalism
+2.4 Studies on Humanism and Moral Crisis
+2.5 Film Adaptation Studies
+    2.6  - Existing scholarship on Partition literature
+   2.7 Research Gap
+   
+   
 
-9. **Chapter III — Partition and Violence** (~14-16 pages)
-   - Communal conflict, riots, displacement
-   - Novel vs film comparison
+10. **Chapter III — Partition and Violence** (~14-16 pages)
+    Historical Violence in the Novel
+3.2 Communal Breakdown in Mano Majra
+3.3 Displacement and Refugee Trauma
+3.4 Violence in the Film Adaptation
+3.5 Comparative Analysis
+Chapter IV — Humanism and Moral Crisis (~14-16 pages)
 
-10. **Chapter IV — Humanism and Moral Conflict** (~14-16 pages)
+
+11. **Chapter IV — Humanism and Moral Conflict** (~14-16 pages)
     - Jugga's sacrifice, compassion, morality
     - Novel vs film comparison
+    - 4.1 Jugga as the Humanist Figure
+4.2 Compassion Amid Violence
+4.3 Moral Crisis: Iqbal and Hukum Chand
+4.4 Humanism in the Film Adaptation
+4.5 Comparative Reading
+Chapter V — Adaptation Analysis (~7-8 pages)
 
-11. **Chapter V — Adaptation Analysis** (~7-8 pages)
+12. **Chapter V — Adaptation Analysis** (~7-8 pages)
+13. From Novel to Film
+5.2 Omissions and Additions
+5.3 Visual Representation of Violence
+5.4 Cinematic Techniques
+5.5 Limits of Adaptation
     - Novel to film: changes, omissions, cinematic techniques
 
-12. **Conclusion** (~4-5 pages)
+14. **Conclusion** (~4-5 pages)
     - Summary, thesis return, no new arguments
+    - Summary
+Major Findings
+Return to Thesis
 
 ### Reference Material
 13. Works Cited (MLA format)
