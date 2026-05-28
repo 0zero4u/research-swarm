@@ -31,7 +31,7 @@ from retriever import Retriever, RetrieverConfig, EvidenceResult
 
 
 # Constants
-DEFAULT_TOP_K = 5
+DEFAULT_TOP_K = 60
 DEFAULT_MIN_CONFIDENCE = 0.30  # Lowered for new multi-source corpus
 _BASE_DIR = Path(__file__).parent
 DEFAULT_CHUNKS_PATH = _BASE_DIR / "chunks" / "chunks.json"
@@ -126,33 +126,40 @@ def load_chunks_metadata(chunks_path: Path) -> dict:
 def build_structured_blocks(results: list[EvidenceResult], top_k: int, chunks_meta: dict) -> dict:
     """Convert retriever results to structured evidence blocks."""
     blocks = []
-    
+
     for i, result in enumerate(results, start=1):
         block_id = f"B_{i:03d}"
-        
-        # Look up full chunk metadata
+
+        chunk_text = result.text.strip()
+        lines = chunk_text.split('\n')
+        first_non_empty = next((l for l in lines if l.strip()), "")
+        if first_non_empty.isdigit():
+            chunk_text = '\n'.join(lines[1:]).strip()
+        elif re.match(r'^\d+\s*\|', first_non_empty):
+            chunk_text = '\n'.join(lines[1:]).strip()
+
+        if len(chunk_text) < 50 or chunk_text.isdigit() or len(chunk_text) > 5000:
+            continue
+
         chunk_meta = chunks_meta.get(result.chunk_id, {})
         author = format_author(chunk_meta.get("author", result.source_id))
         year = chunk_meta.get("year", "")
-        
+
         source = f"{author} {year}".strip() if year else author
         if source in ("Unknown", ""):
             source = result.source_filename.split("_")[0] if result.source_filename else "Unknown"
-        
-        # Extract claims from text
-        claims = extract_claims_from_text(result.text, result.chunk_id)
-        
-        # Truncate text if too long (for readability)
-        text = result.text.strip()
+
+        claims = extract_claims_from_text(chunk_text, result.chunk_id)
+
+        text = chunk_text
         if len(text) > 500:
-            # Try to find a sentence boundary
             cutoff = text[:500]
             last_period = cutoff.rfind('.')
             if last_period > 300:
                 text = cutoff[:last_period + 1]
             else:
                 text = cutoff + "..."
-        
+
         block = {
             "block_id": block_id,
             "chunk_id": result.chunk_id,
@@ -164,7 +171,7 @@ def build_structured_blocks(results: list[EvidenceResult], top_k: int, chunks_me
             "claims": claims
         }
         blocks.append(block)
-    
+
     return blocks
 
 

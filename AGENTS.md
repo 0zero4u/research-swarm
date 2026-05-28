@@ -166,7 +166,7 @@ python3 chunker.py --resume      # Resume interrupted
 **CLI:**
 ```bash
 python3 rag_retriever_skill.py "ghost train symbolism partition violence"
-python3 rag_retriever_skill.py "humanism values" --top-k 5 --min-confidence 0.30
+python3 rag_retriever_skill.py "humanism values" --top-k 60 --min-confidence 0.30
 ```
 
 ---

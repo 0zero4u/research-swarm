@@ -28,7 +28,7 @@ Invoke `rag-pull` when:
 
 1. You provide a **query** (topic or research question)
 2. The skill queries the FAISS vector index
-3. Returns top-5 relevant evidence blocks with provenance
+3. Returns top-60 relevant evidence blocks with provenance (configurable via --top-k)
 
 ## Output Format
 
@@ -79,10 +79,10 @@ The Citation Auditor (`auditor.py`) validates `[B_XXX]` citations by:
 
 ```bash
 cd /home/arshhtripathi/research-swarm
-python3 rag_retriever_skill.py "ghost train symbolism"
+python3 rag_retriever_skill.py "ghost train symbolism" --top-k 30 --save
 ```
 
-Should return structured JSON with evidence blocks.
+Should return structured JSON with 60 evidence blocks. Use `--top-k` to control retrieval depth (default: 60 for dissertation chapters).
 
 ## Integration with Writer
 

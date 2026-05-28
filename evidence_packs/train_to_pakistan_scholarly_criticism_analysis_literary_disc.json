@@ -1,0 +1,692 @@
+{
+  "query": "Train to Pakistan scholarly criticism analysis literary discourse character narrative",
+  "top_k": 60,
+  "blocks": [
+    {
+      "block_id": "B_001",
+      "chunk_id": "Train_To_Pakistan_A_Realistic_Picture_of_Partition_P008C008",
+      "source": "Ahmad 2025",
+      "source_filename": "Train_To_Pakistan_A_Realistic_Picture_of_Partition.txt",
+      "page": 8,
+      "text": "ISSN: 2582-3574 \nSMART MOVES JOURNAL IJELLH \nVolume 13, Issue11, November 2025 \n57 \nWorks Cited \nAlexander, Suja. Personal Concern Go Public in Train to Pakistan. \nhttps://www.traintopakistanreview.org.in. \nDouglas, William C. A Girl with A Basket. \nhttps://www.traintopakistanreview.org.in. \nSingh, Khushwant. Train to Pakistan. Penguin Books, New Delhi, 2007. \nOp.cit. \nOp.cit. \nOp.cit. \nOp.cit. \nOp.cit. \nOp.cit. \nOp.cit.",
+      "score": 0.7782,
+      "claims": [
+        "source: Train_To_Pakistan_A_Realistic_Picture_of_Partition_P008C008"
+      ]
+    },
+    {
+      "block_id": "B_002",
+      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P008C008",
+      "source": "Unknown 2020",
+      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
+      "page": 8,
+      "text": "LangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n31\nAugust  2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
+      "score": 0.7432,
+      "claims": [
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_003",
+      "chunk_id": "002_P001C001",
+      "source": "Charyulu 2019",
+      "source_filename": "002_0030bc.txt",
+      "page": 1,
+      "text": "Shikha1* Dr. G. Mohana Charyulu2 \nwww.ignited.in \n3356\nJournal of Advances and Scholarly Researches in Allied Education \nVol. 16, Issue No. 6, May-2019, ISSN 2230-7540 \nKhushwant Singh Novel “Train to Pakistan”: \nEssential Style and Technique for Exploration of \nthe Experience of Rural India\nShikha1* Dr. G.",
+      "score": 0.7233,
+      "claims": [
+        "railroad as central symbol",
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_004",
+      "chunk_id": "609_P006C006",
+      "source": "Sheikh 2024",
+      "source_filename": "609a7c99198bdf42126fv3fe915d1434e84f5.txt",
+      "page": 6,
+      "text": "Sheikh and Khushi Communism and Complexity: A dichotomous study of Iqbal Singh in Khushwant \nSingh's Novel, Train to Pakistan \nIJELS-2024, 9(2), (ISSN: 2456-7620) (Int. J of Eng. Lit. and Soc. Sci.) \nhttps://dx.doi.org/10.22161/ijels.92.6 31 \n[8] Alka Bansal. “Train to Pakistan: A Saga of Unsalvaged \nSuffering.” Smart Moves Journal Ijellh, vol. 9, no. 7, Smart \nMoves, July 2021, pp. 41–55, doi:10.24113/ijellh.v9i7.11118. \n[9] “Communal Frenzy in Khushwant Singh’s Novel Train to \nPakistan.",
+      "score": 0.7206,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "Iqbal pessimism",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_005",
+      "chunk_id": "66578_P017C017",
+      "source": "66578-1-journal-bpaper-1",
+      "source_filename": "66578-1-journal-bpaper-1_rajarshi-vgh-tyhyt.txt",
+      "page": 17,
+      "text": "Rinaldi Amalraj. S (2017). A Feministic Approach in Khushwant Singh’s I Shall Not Hear the \nNightingale, Research Journal of English Language and Literature, 5 (1): 76-78. \nRohidas Nitonde, Chandrakant R. Patil (2019). Observance and Violation of Cooperative \nPrinciple in The Sunset Club, International Journal of English: Literature, Language & Skills, \n10(3): 49-55. \nRosana C. Pinotti (2014).",
+      "score": 0.7199,
+      "claims": [
+        "partition violence 1947",
+        "Juggut sacrifice",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_006",
+      "chunk_id": "IJNRD220b1026_P004C004",
+      "source": "Goel 2022",
+      "source_filename": "IJNRD220b1026.txt",
+      "page": 4,
+      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n205 \non the immediate emotional impact of the events. Overall, Train to Pakistan the film is a poignant retelling of a tragic \nchapter in Indian history, staying true to the novel’s core message while adapting it for the visual medium. \nReferences:  \n \nAziz, K.K. History of Partition of India.",
+      "score": 0.7126,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_007",
+      "chunk_id": "IJNRD2201026_P004C004",
+      "source": "Goel 2022",
+      "source_filename": "IJNRD2201026.txt",
+      "page": 4,
+      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n205 \non the immediate emotional impact of the events. Overall, Train to Pakistan the film is a poignant retelling of a tragic \nchapter in Indian history, staying true to the novel’s core message while adapting it for the visual medium. \nReferences:  \n \nAziz, K.K. History of Partition of India.",
+      "score": 0.7126,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_008",
+      "chunk_id": "363508_P001C001",
+      "source": "Charyulu 2019",
+      "source_filename": "363508_8461703.txt",
+      "page": 1,
+      "text": "Shikha1* Dr. G. Mohana Charyulu2 \nwww.ignited.in \n3356\nJournal of Advances and Scholarly Researches in Allied Education \nVol. 16, Issue No. 6, May-2019, ISSN 2230-7540 \nKhushwant Singh Novel “Train to Pakistan”: \nEssential Style and Technique for Exploration of \nthe Experience of Rural India\nShikha1* Dr. G.",
+      "score": 0.7088,
+      "claims": [
+        "railroad as central symbol",
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_009",
+      "chunk_id": "66578_P018C018",
+      "source": "66578-1-journal-bpaper-1",
+      "source_filename": "66578-1-journal-bpaper-1_rajarshi-vgh-tyhyt.txt",
+      "page": 18,
+      "text": "Sukhdev Singh Dhanju, Priya Saroj (2019). Train To Pakistan As A Partition Novel of \nKhushwant Singh, Journal of Emerging Technologies and Innovative Research, 6(11): 120-\n126. \nTotawad Nagnath Ramrao (2017). Khushwant Singh's Train To Pakistan: A Critique Of \nPartition, Pune Research- An International Journal in English, 3(5): 1-5. \nWaseem Akram (2018). Depiction of Love in Khushwant Singh’s I Shall not Hear the \nNightingale, The Criterion: An International Journal in English, 9(4): 44-51.",
+      "score": 0.6991,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_010",
+      "chunk_id": "JETIR1812857_P007C007",
+      "source": "Singh 2018",
+      "source_filename": "JETIR1812857.txt",
+      "page": 7,
+      "text": "© 2018 JETIR  December 2018, Volume 5, Issue 12                               www.jetir.org  (ISSN-2349-5162)\nJETIR1812857 \nJournal of Emerging Technologies and Innovative Research (JETIR) www.jetir.org \n359\n“Hindustan had become free. Pakistan had become independent soon after its inception but man was \nstill slave in both these countries—slave of prejudice….slave of religious fanaticism….slave of \nbarbarity and inhumanity”    \nWorks Cited  \nSingh, Khushwant.  Train to Pakistan.",
+      "score": 0.6984,
+      "claims": [
+        "source: JETIR1812857_P007C007"
+      ]
+    },
+    {
+      "block_id": "B_012",
+      "chunk_id": "Train_to_Pakistan_against_Mainstream_Rep_P009C009",
+      "source": "Chatterji 1947",
+      "source_filename": "Train_to_Pakistan_against_Mainstream_Rep.txt",
+      "page": 9,
+      "text": "Chatterji 9\nWorks cited \nAdam, Jean-Michel. Le texte narratif: Traité d’analyse pragmatique et textuelle. Paris:\nNathan, 1999. \nArendt, Hannah. “Thinking and Moral Considerations.” Social Research 38.3 (1971): 417-\n446. \nButalia, Urvashi. The Other Side of Silence: Voices from the Partition of India. London: Hurst\n& Co, 2000. \nCoussy, Denise. Le roman indien de langue anglaise. Paris: Karthala, 2004. \nDhawan, R.K. “Khushwant Singh: The Man and the Writer.",
+      "score": 0.6946,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_014",
+      "chunk_id": "Paper35357_P004C004",
+      "source": "Srivastava 2026",
+      "source_filename": "Paper35357.txt",
+      "page": 4,
+      "text": "IJARSCT\nInternational Journal of Advanced Research in Science, Communication and Technology \n                          International Open-Access, Double-Blind, Peer-Reviewed, Refereed, Multidisciplinary Online Journal \nVolume 6, Issue 6, May 2026 \n Copyright to IJARSCT \n     DOI: 10.48175/IJARSCT-35357\n436 \n   www.ijarsct.co.in\nISSN: 2581-9429 \nImpact Factor: 8.2 \nThe novel combines historical reality with fictional storytelling.",
+      "score": 0.6913,
+      "claims": [
+        "partition violence 1947",
+        "communal violence",
+        "Juggut sacrifice",
+        "Iqbal pessimism",
+        "Hukum Chand officialdom"
+      ]
+    },
+    {
+      "block_id": "B_015",
+      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P002C002",
+      "source": "Unknown 2020",
+      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
+      "page": 2,
+      "text": "LangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n25\nAugust  2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
+      "score": 0.6862,
+      "claims": [
+        "railroad as central symbol",
+        "partition violence 1947",
+        "Juggut sacrifice"
+      ]
+    },
+    {
+      "block_id": "B_016",
+      "chunk_id": "priyanka_gupta_P003C003",
+      "source": "Unknown 2014",
+      "source_filename": "priyanka_gupta.txt",
+      "page": 3,
+      "text": "www.researchscholar.co.in \nImpact Factor 0.793 (IIFS) \nISSN 2320 – 6101 \nResearch Scholar \nAn International Refereed e-Journal of Literary Explorations\nNovember, 2014 \nVol. 2 Issue IV \ncharacters and the events of the tragic separation of the contemporary Indian history, partition. \nAll the characters in the novel were really presented as desolate people, who suffer not only from \nthe inhumane treatment but the ghastly sacrifice of the people for their nation.",
+      "score": 0.6782,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict",
+        "Kalyug metaphor"
+      ]
+    },
+    {
+      "block_id": "B_017",
+      "chunk_id": "IJNRD2201026_P001C001",
+      "source": "Goel 2022",
+      "source_filename": "IJNRD2201026.txt",
+      "page": 1,
+      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n202 \nAnalysis of Train to Pakistan, Film Adaptation \nfrom Khushwant Singh's Novel: Similarities and \nDifferences \nDr Manjula Goel \nAssociate Professor \nDepartment of English \nR.K.S.D.(P.G.",
+      "score": 0.6778,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_018",
+      "chunk_id": "IJNRD220b1026_P001C001",
+      "source": "Goel 2022",
+      "source_filename": "IJNRD220b1026.txt",
+      "page": 1,
+      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n202 \nAnalysis of Train to Pakistan, Film Adaptation \nfrom Khushwant Singh's Novel: Similarities and \nDifferences \nDr Manjula Goel \nAssociate Professor \nDepartment of English \nR.K.S.D.(P.G.",
+      "score": 0.6778,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_019",
+      "chunk_id": "Paper35357_P005C005",
+      "source": "Srivastava 2026",
+      "source_filename": "Paper35357.txt",
+      "page": 5,
+      "text": "IJARSCT\nInternational Journal of Advanced Research in Science, Communication and Technology \n                          International Open-Access, Double-Blind, Peer-Reviewed, Refereed, Multidisciplinary Online Journal \nVolume 6, Issue 6, May 2026 \n Copyright to IJARSCT \n     DOI: 10.48175/IJARSCT-35357\n437 \n   www.ijarsct.co.in\nISSN: 2581-9429 \nImpact Factor: 8.2 \nThe novel also creates the perception that communal hatred is not natural but socially and politically constructed.",
+      "score": 0.6755,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "Juggut sacrifice",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_020",
+      "chunk_id": "66578_P016C016",
+      "source": "66578-1-journal-bpaper-1",
+      "source_filename": "66578-1-journal-bpaper-1_rajarshi-vgh-tyhyt.txt",
+      "page": 16,
+      "text": "Dhanaji Nagane (2016). Assertives in Khushwant Singh’s The Company of Women, LangLit, \n2(3): 134-144. \nFarhat Rasool (2018). Khushwant Singh’s Narrative Techniques in Train to Pakistan, I Shall \nNot Hear the Nightingale and Delhi, ECONSPEAK: A Journal of Advances in Management \nIT & Social Sciences, 8 (8): 54-64. \nG. Ambika, A. Selvamani (2021). Social Realism in Kuswant Singh’s Novel, The Company \nOf Women, International Journal of Current Research and Modern Education, 6(2): 9-10. \nG. B.",
+      "score": 0.6751,
+      "claims": [
+        "gender oppression women",
+        "feminist perspective",
+        "comparative study"
+      ]
+    },
+    {
+      "block_id": "B_021",
+      "chunk_id": "Train_to_Pakistan_against_Mainstream_Rep_P010C010",
+      "source": "Chatterji 1947",
+      "source_filename": "Train_to_Pakistan_against_Mainstream_Rep.txt",
+      "page": 10,
+      "text": "Chatterji 10\nPandey, Gyanendra. Remembering Partition: Violence, Nationalism and History in India.\nCambridge: Cambridge University Press, 2001. \nRaizada, Harish. “Train To Pakistan: A Study in Crisis of Values.” Khushwant Singh: The\nMan and the Writer. Ed. R.K. Dhawan. New-Delhi: Prestige Books, 2001. 125-140. \n Roy, Rituparna. South Asian Partition Fiction in English: from Khushwant Singh to\nAmitav Ghosh. Amsterdam: Amsterdam University Press, 2010. \nSingh, Kushwant. Train to Pakistan. 1956.",
+      "score": 0.6748,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_022",
+      "chunk_id": "609_P001C001",
+      "source": "Sheikh 2024",
+      "source_filename": "609a7c99198bdf42126fv3fe915d1434e84f5.txt",
+      "page": 1,
+      "text": "International Journal of English Literature and Social Sciences \nVol-9, Issue-2; Mar-Apr, 2024\nPeer-Reviewed Journal \nJournal Home Page Available: https://ijels.com/ \nJournal DOI: 10.22161/ijels\nIJELS-2024, 9(2), (ISSN: 2456-7620) (Int. J of Eng. Lit. and Soc. Sci.) \nhttps://dx.doi.org/10.22161/ijels.92.",
+      "score": 0.6713,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Iqbal pessimism"
+      ]
+    },
+    {
+      "block_id": "B_023",
+      "chunk_id": "JETIR1812857_P001C001",
+      "source": "Singh 2018",
+      "source_filename": "JETIR1812857.txt",
+      "page": 1,
+      "text": "© 2018 JETIR  December 2018, Volume 5, Issue 12                               www.jetir.org  (ISSN-2349-5162)\nJETIR1812857 \nJournal of Emerging Technologies and Innovative Research (JETIR) www.jetir.org \n353\nAnalyzing Existentialist assertions in Indian \nLiterature: a study Humanistic Dynamics in Train to \nPakistan\nPushpraj Singh \nResearch Scholar; \nMaster of Philosophy- English \nJaipur National University, Jaipur\nThe creation of two sovereign states “The Republic of India” and “The Dominion of ...",
+      "score": 0.6696,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_025",
+      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P001C001",
+      "source": "Unknown 2020",
+      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
+      "page": 1,
+      "text": "LangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n24\nAugust  2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
+      "score": 0.6674,
+      "claims": [
+        "trains with grievous cargoes of death",
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_027",
+      "chunk_id": "HISTORY-AS-LEbIT-MOTIF_P001C001",
+      "source": "Sharma 2016",
+      "source_filename": "HISTORY-AS-LEbIT-MOTIF.txt",
+      "page": 1,
+      "text": "111 \n Rishika Sharma\nVEDA’S \nJOURNAL OF ENGLISH LANGUAGE AND LITERATURE (JOELL) \nAn International Peer Reviewed Journal \nhttp://www.joell.in\nVol.3 Issue 2 \n2016 \nRESEARCH ARTICLE\nHISTORY AS LEIT- MOTIF IN KHUSHWANT SINGH’S TRAIN TO PAKISTAN \nRishika Sharma \n (P.hD Scholar,Dept. of English,University of Jammu)\nABSTRACT \n Historical novel is the one that has a significant event of history at its \nbackdrop. It is an established fact that literature and history move hand in \nhand.",
+      "score": 0.6632,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_028",
+      "chunk_id": "Triumph%20of%20Human%20Spirit%20in%20Khushwant%20Singh%20s%20Train%20to%20Pakistan_P001C001",
+      "source": "Unknown 2008",
+      "source_filename": "Triumph%20of%20Human%20Spirit%20in%20Khushwant%20Singh%20s%20Train%20to%20Pakistan.txt",
+      "page": 1,
+      "text": "International Journal of Advances in Engineering and Management (IJAEM) \nVolume 2, Issue 5, pp: 660-664 www.ijaem.net ISSN: 2395-5252\nDOI: 10.35629/5252-0205660664 | Impact Factor value 7.429 | ISO 9001: 2008 Certified Journal Page 660 \nTriumph of Human Spirit in Khushwant Singh’s Train to \nPakistan\nKm. Rashmi \nResearch Scholar; Deptt. - English, Chaudhary Charan Singh University Meerut.",
+      "score": 0.6621,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_029",
+      "chunk_id": "Portrayal%20of%20Violence%20and%20Horror%20in%20Train%20to%20Pakistan_P001C001",
+      "source": "Unknown 1947",
+      "source_filename": "Portrayal%20of%20Violence%20and%20Horror%20in%20Train%20to%20Pakistan.txt",
+      "page": 1,
+      "text": "Portrayal of Violence and Horror in Train to Pakistan \nTrain to Pakistan is a magnificent novel where Khushwant Singh tells the tragic tale \nof the partition of India and Pakistan and the events that followed which will be remembered \nas one of the blackest chapters of human history. The Independent India was partitioned \ncausing a great upheaval in the whole continent. Independence brought in one of the \nbloodiest massacres in the history of India.",
+      "score": 0.6617,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_031",
+      "chunk_id": "Portrayal of Violence and Horror in Train to Pakistan_P001C001",
+      "source": "Unknown 1947",
+      "source_filename": "Portrayal of Violence and Horror in Train to Pakistan.txt",
+      "page": 1,
+      "text": "Portrayal of Violence and Horror in Train to Pakistan \nTrain to Pakistan is a magnificent novel where Khushwant Singh tells the tragic tale \nof the partition of India and Pakistan and the events that followed which will be remembered \nas one of the blackest chapters of human history. The Independent India was partitioned \ncausing a great upheaval in the whole continent. Independence brought in one of the \nbloodiest massacres in the history of India.",
+      "score": 0.6588,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_034",
+      "chunk_id": "Triumph of Human Spirit in Khushwant Singh s Train to Pakistan_P001C001",
+      "source": "Rashmi 2008",
+      "source_filename": "Triumph of Human Spirit in Khushwant Singh s Train to Pakistan.txt",
+      "page": 1,
+      "text": "International Journal of Advances in Engineering and Management (IJAEM) \nVolume 2, Issue 5, pp: 660-664         www.ijaem.net                 ISSN: 2395-5252\nDOI: 10.35629/5252-0205660664     | Impact Factor value 7.429   | ISO 9001: 2008 Certified Journal   Page 660 \nTriumph of Human Spirit in Khushwant Singh’s Train to \nPakistan\nKm. Rashmi \nResearch Scholar; Deptt. - English, Chaudhary Charan Singh University Meerut.",
+      "score": 0.6557,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_035",
+      "chunk_id": "priyanka_gupta_P006C006",
+      "source": "Unknown 2014",
+      "source_filename": "priyanka_gupta.txt",
+      "page": 6,
+      "text": "www.researchscholar.co.in \nImpact Factor 0.793 (IIFS) \nISSN 2320 – 6101 \nResearch Scholar \nAn International Refereed e-Journal of Literary Explorations\nNovember, 2014 \nVol. 2 Issue IV\nWorking bibliography: \nPrimary sources: \n1) Malgonkar, Manohar. A Bend in the Ganges. Roli books: New Delhi. 2009. Print. \n2) Singh, Khushwant. Train to Pakistan. Ravi Dayal Publisher: Akash Press, New Delhi. \n2007. Print.\nSecondary sources: \n1) Bruschi, Isabella. Partition in Fiction Gendered Perspectives.",
+      "score": 0.6556,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_036",
+      "chunk_id": "Paper35357_P002C002",
+      "source": "Srivastava 2026",
+      "source_filename": "Paper35357.txt",
+      "page": 2,
+      "text": "IJARSCT\nInternational Journal of Advanced Research in Science, Communication and Technology \n                          International Open-Access, Double-Blind, Peer-Reviewed, Refereed, Multidisciplinary Online Journal \nVolume 6, Issue 6, May 2026 \n Copyright to IJARSCT \n     DOI: 10.48175/IJARSCT-35357\n434 \n   www.ijarsct.co.in\nISSN: 2581-9429 \nImpact Factor: 8.2 \nPunjab became the center of violence because of its mixed population of Hindus, Muslims, and Sikhs.",
+      "score": 0.6528,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict",
+        "Juggut sacrifice"
+      ]
+    },
+    {
+      "block_id": "B_037",
+      "chunk_id": "priyanka_gupta_P002C002",
+      "source": "Unknown 2014",
+      "source_filename": "priyanka_gupta.txt",
+      "page": 2,
+      "text": "www.researchscholar.co.in \nImpact Factor 0.793 (IIFS) \nISSN 2320 – 6101 \nResearch Scholar \nAn International Refereed e-Journal of Literary Explorations\nNovember, 2014 \nVol. 2 Issue IV \nbetween communalism and nationality and the elision of partition violence by focusing largely \non the experiences of women and children during partition. \nThe present paper aims at the detailed study of the two partition novels selected for the \nstudy.",
+      "score": 0.6512,
+      "claims": [
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_039",
+      "chunk_id": "An%20Analysis%20of%20Khushwant%20Singh%E2%80%99%20Train%20to%20Pakistan_P003C003",
+      "source": "Unknown 1947",
+      "source_filename": "An%20Analysis%20of%20Khushwant%20Singh%E2%80%99%20Train%20to%20Pakistan.txt",
+      "page": 3,
+      "text": "Emerging Paradigms in English Writing EPEW-19 – Ed. M. Vinoth Kumar\n78 \nGo Green \nSave Trees \nSave Earth\nISBN: 978-93-86712-65-3 \nof political hate and violence throughout the turbulent and fateful days that preceded and \nfollowed the partition of British Bharat once spirit of communal hysteria and fanatical zeal \nfor self – expression was fanning and incompetent with the plenty. Each national was wedged \nwithin the holocaust. Nobody might stay aloof; no one can be trusty to be impartial.",
+      "score": 0.6501,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_040",
+      "chunk_id": "Paper35357_P003C003",
+      "source": "Srivastava 2026",
+      "source_filename": "Paper35357.txt",
+      "page": 3,
+      "text": "IJARSCT\nInternational Journal of Advanced Research in Science, Communication and Technology \n                          International Open-Access, Double-Blind, Peer-Reviewed, Refereed, Multidisciplinary Online Journal \nVolume 6, Issue 6, May 2026 \n Copyright to IJARSCT \n     DOI: 10.48175/IJARSCT-35357\n435 \n   www.ijarsct.co.in\nISSN: 2581-9429 \nImpact Factor: 8.",
+      "score": 0.6495,
+      "claims": [
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_041",
+      "chunk_id": "An%20Analysis%20of%20Khushwant%20Singh%E2%80%99%20Train%20to%20Pakistan_P002C002",
+      "source": "Unknown 1947",
+      "source_filename": "An%20Analysis%20of%20Khushwant%20Singh%E2%80%99%20Train%20to%20Pakistan.txt",
+      "page": 2,
+      "text": "Emerging Paradigms in English Writing EPEW-19 – Ed. M. Vinoth Kumar\n77 \nGo Green \nSave Trees \nSave Earth\nISBN: 978-93-86712-65-3 \nminister of Andhra Pradesh delineate him a “wry author and depraved believer in human \ngoodness with a devil may-care perspective and a stouthearted mind. \nThe Indian External affairs minister aforementioned that the key of Khushwant \nSingh’s success lay in his learning and discipline and his belief within the veneer of the \nsuperficiality.",
+      "score": 0.6454,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_043",
+      "chunk_id": "Term3researchpaper3_P001C001",
+      "source": "Zhe",
+      "source_filename": "Term3researchpaper3.txt",
+      "page": 1,
+      "text": "How successful is the author Khushwant Singh in showing the readers how external factors \ngo a long way in shaping our National identity?\nTrain to Pakistan\nOscar Huang Xi Zhe",
+      "score": 0.645,
+      "claims": [
+        "source: Term3researchpaper3_P001C001"
+      ]
+    },
+    {
+      "block_id": "B_044",
+      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P007C007",
+      "source": "Unknown 2020",
+      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
+      "page": 7,
+      "text": "LangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n30\nAugust  2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
+      "score": 0.6416,
+      "claims": [
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "communal violence",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_045",
+      "chunk_id": "IdentityandBelonging_AnalysisofTraintoPakistan_P008C008",
+      "source": "and 2023",
+      "source_filename": "IdentityandBelonging_AnalysisofTraintoPakistan.txt",
+      "page": 8,
+      "text": "Exploring Identity and Belonging in the Context of Partition of 1947: A Social Identity Theory Analysis of \n‘Train to Pakistan’ by Khushwant Singh \nVol. VIII, No. I (Winter 2023)\nPage | 211 \ncollective identities and the notion of \nbelonging in a place that transcends political \ndivisions. \nThese \ndialogues \nillustrate \nthe \ncomplexities of identity and the struggles \ncharacters face in finding a sense of \nbelonging within the societal and political \ncontext of the Partition.",
+      "score": 0.6413,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "Juggut sacrifice",
+        "Iqbal pessimism"
+      ]
+    },
+    {
+      "block_id": "B_046",
+      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P004C004",
+      "source": "Unknown 2020",
+      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
+      "page": 4,
+      "text": "LangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n27\nAugust  2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
+      "score": 0.6413,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "Juggut sacrifice",
+        "Iqbal pessimism"
+      ]
+    },
+    {
+      "block_id": "B_047",
+      "chunk_id": "Train_to_Pakistan_against_Mainstream_Rep_P006C006",
+      "source": "Chatterji 1947",
+      "source_filename": "Train_to_Pakistan_against_Mainstream_Rep.txt",
+      "page": 6,
+      "text": "Chatterji 6\nIn Train to Pakistan, therefore, violence is carried out by the opponents of the \nnarrative: outsiders, criminals and secondary characters who do not elicit empathy from the \nreader. The villagers are not responsible because they are manipulated, nor are they guilty \nsince the only crime they could have committed is prevented and atoned for by a sacrifice. \nTheir only fault, it seems, is their innocence.",
+      "score": 0.6407,
+      "claims": [
+        "partition violence 1947",
+        "Juggut sacrifice"
+      ]
+    },
+    {
+      "block_id": "B_048",
+      "chunk_id": "IJNRD220b1026_P003C003",
+      "source": "Goel 2022",
+      "source_filename": "IJNRD220b1026.txt",
+      "page": 3,
+      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n204 \n2. Character Development: While the novel provides a rich exploration of character motivations, the film \nsimplifies some of these aspects for brevity.",
+      "score": 0.6398,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "Juggut sacrifice",
+        "Iqbal pessimism",
+        "Hukum Chand officialdom"
+      ]
+    },
+    {
+      "block_id": "B_049",
+      "chunk_id": "IJNRD2201026_P003C003",
+      "source": "Goel 2022",
+      "source_filename": "IJNRD2201026.txt",
+      "page": 3,
+      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n204 \n2. Character Development: While the novel provides a rich exploration of character motivations, the film \nsimplifies some of these aspects for brevity.",
+      "score": 0.6398,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "Juggut sacrifice",
+        "Iqbal pessimism",
+        "Hukum Chand officialdom"
+      ]
+    },
+    {
+      "block_id": "B_051",
+      "chunk_id": "4_P017C017",
+      "source": "Joshi 2020",
+      "source_filename": "4Article_407DipakRJoshi2020.txt",
+      "page": 17,
+      "text": "Contemporary Research: An Interdisciplinary Academic Journal, 2020, vol. 4 (1): 59-75\n75\nFull text of this article can be downloaded from www.craiaj.com and www.nepjol.info\nRoy, R. (2010). South Asian partition fiction in English: From Khuswant Singh to\nAmitabh Ghosh. Amsterdam: Amsterdam University Press.\nSahni, B. (2002). Tamas (published in 1974). Printed in Memories of madness:\nStories of 1947. New Delhi: Penguin Books, pp.173-456.\nSingh, K. (2002). A train to Pakistan (published in 1954).",
+      "score": 0.6372,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_052",
+      "chunk_id": "1_P004C004",
+      "source": "Unknown 1947",
+      "source_filename": "1%20(1).txt",
+      "page": 4,
+      "text": "yet both events and characters are very close to the realities of that time. Commenting on its content a critic \ncalled Jibran rightly says :\n“Train to Pakistan is one of the earliest\nEnglish Language novels to capture the\nhorrors of the Indian partition of 1947.\nSince then it has classic status in the\nhistory of sub-continental literature \nand for right reasons.\nAs independence and with it partition\ntook reality the Punjabis become \ndesperate to learn about their fate.",
+      "score": 0.6372,
+      "claims": [
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict",
+        "Iqbal pessimism"
+      ]
+    },
+    {
+      "block_id": "B_053",
+      "chunk_id": "Train_To_Pakistan_A_Realistic_Picture_of_Partition_P002C002",
+      "source": "Ahmad 2025",
+      "source_filename": "Train_To_Pakistan_A_Realistic_Picture_of_Partition.txt",
+      "page": 2,
+      "text": "ISSN: 2582-3574 \nSMART MOVES JOURNAL IJELLH \nVolume 13, Issue11, November 2025 \n51 \nin the history of India. Partition being a political issue became the cause of great sufferings, \ntortures, miseries and misfortunes for the people of diverse communities and cultures \nparticularly for the Sikhs, the Hindus and the Muslims. Mark : \"The beliefs that Singh had \ncherished all his life were shattered. He had believed in innate goodness of the common man.",
+      "score": 0.6365,
+      "claims": [
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_054",
+      "chunk_id": "Paper35357_P001C001",
+      "source": "Srivastava 2026",
+      "source_filename": "Paper35357.txt",
+      "page": 1,
+      "text": "IJARSCT\nInternational Journal of Advanced Research in Science, Communication and Technology \n                          International Open-Access, Double-Blind, Peer-Reviewed, Refereed, Multidisciplinary Online Journal \nVolume 6, Issue 6, May 2026 \n Copyright to IJARSCT \n     DOI: 10.48175/IJARSCT-35357\n433 \n   www.ijarsct.co.in\nISSN: 2581-9429 \nImpact Factor: 8.",
+      "score": 0.6362,
+      "claims": [
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_055",
+      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P005C005",
+      "source": "Unknown 2020",
+      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
+      "page": 5,
+      "text": "LangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n28\nAugust  2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
+      "score": 0.636,
+      "claims": [
+        "Mano Majra intersection",
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_056",
+      "chunk_id": "study_material_1770263377_P001C001",
+      "source": "Unknown 1956",
+      "source_filename": "study_material_1770263377.txt",
+      "page": 1,
+      "text": "Partition and Communal Violence in Train to Pakistan\nKhushwant Singh’s Train to Pakistan (1956) is one of the most powerful fictional \nrepresentations of the Partition of India in 1947. Rather than focusing on political \nleaders or high-level negotiations, Singh foregrounds the lived experience of ordinary \npeople whose lives are shattered by communal violence.",
+      "score": 0.6359,
+      "claims": [
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_057",
+      "chunk_id": "63_P001C004",
+      "source": "Badiger 1956",
+      "source_filename": "63c2bf255668a.txt",
+      "page": 1,
+      "text": "DR GURUNATH K BADIGER                              9 P a g e  \nnovelists who dealt with theme of partition, Kushwant Singh is not only a pioneer but also a \nclass apart. The major theme of Bapsi’s novel is the broken marriage and the disciplining \nfemale body in the closed societies. The reference of partition makes her a comparable to \nother Indian writers who wrote on partition.\n1.",
+      "score": 0.6356,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_059",
+      "chunk_id": "27_P001C001",
+      "source": "Kundra 2025",
+      "source_filename": "27.-Ishika-Kundra-and-Dr.-Sagar-Kumar-Sharma.txt",
+      "page": 1,
+      "text": "www.literarycognizance.com\nISSN- 2395-7522 (Online), Imp. Fact.6.21 (IIJF) \nLiterary Cognizance:An International Refereed / Peer Reviewed \ne - Journal of English Language, Literature & Criticism \nVol. – VI, Issue-1, June 2025\nPage | 182\n27 \nPARTITION, PAIN AND BEYOND: A STUDY OF KHUSHWANT SINGH’S \nTRAIN TO PAKISTAN\nIshika Kundra1 \nStudent, School of Media Studies And Humanties, Manav Rachna International Institute of \nResearch & Studies, Faridabad, India\nDr.",
+      "score": 0.635,
+      "claims": [
+        "Mano Majra intersection",
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "communal violence",
+        "Sikh vs Muslim conflict"
+      ]
+    }
+  ],
+  "total_retrieved": 48,
+  "timestamp": "2026-05-28T03:45:04.139133"
+}

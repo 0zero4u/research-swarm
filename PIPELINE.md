@@ -122,8 +122,8 @@ python3 chunker.py
 # 3. Embed
 python3 embedder.py
 
-# 4. Query evidence
-python3 rag_retriever_skill.py "ghost train symbolism" --top-k 10 --min-confidence 0.65
+# 4. Query evidence (top-k 60 for rich content)
+python3 rag_retriever_skill.py "ghost train symbolism" --top-k 60 --min-confidence 0.65
 
 # 5. Write section
 python3 writer.py --evidence evidence_packs/ghost_train_symbolism.json \

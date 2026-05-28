@@ -114,6 +114,7 @@ class Chunker:
     SOFT_MAX_TOKENS = 15000
     TOKEN_MULTIPLIER = 1.0  # ~1 token per word for English prose
     MIN_CHUNK_WORDS = 150  # Minimum words per chunk (no char-based minimum)
+    MIN_CHUNK_CHARS = 50   # Minimum characters per chunk
     
     # Page marker patterns
     PAGE_PATTERNS = [
@@ -507,6 +508,10 @@ class Chunker:
             page_text = page_text.strip()
             if not page_text:
                 continue
+
+            lines = page_text.split('\n')
+            if lines and lines[0].strip().isdigit():
+                page_text = '\n'.join(lines[1:]).strip()
 
             page_chunks = self._split_into_chunks(page_text)
 

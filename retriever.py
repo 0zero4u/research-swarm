@@ -261,10 +261,9 @@ class Retriever:
         # Build results
         results = []
         for i, (score, faiss_idx) in enumerate(zip(scores[0], indices[0])):
-            if faiss_idx < 0:  # Invalid index
+            if faiss_idx < 0:
                 continue
 
-            # Find chunk_id from manifest via O(1) index
             manifest_entry = self._manifest_index.get(int(faiss_idx))
             if not manifest_entry:
                 continue
@@ -273,6 +272,18 @@ class Retriever:
             chunk_data = self.chunks_index.get(chunk_id)
 
             if not chunk_data:
+                continue
+
+            text = chunk_data.get("text", "").strip()
+            lines = text.split('\n')
+            first_line = lines[0].strip() if lines else ""
+            if first_line.isdigit():
+                stripped_text = '\n'.join(lines[1:]).strip()
+            elif re.match(r'^\d+\s*\|', first_line):
+                stripped_text = '\n'.join(lines[1:]).strip()
+            else:
+                stripped_text = text
+            if len(stripped_text) < 50 or stripped_text.isdigit():
                 continue
 
             result = EvidenceResult(

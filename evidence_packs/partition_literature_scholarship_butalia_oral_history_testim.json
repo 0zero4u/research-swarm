@@ -1,0 +1,622 @@
+{
+  "query": "Partition literature scholarship Butalia oral history testimonial",
+  "top_k": 60,
+  "blocks": [
+    {
+      "block_id": "B_001",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P008C007",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 8,
+      "text": "VIKING \nPenguin Books India (P) Ltd., 210, Chiranjiv Tower, 43, Nehru Place, New Delhi 110 019, India \nPenguin Books Ltd., 27 Wrights Lane, London W8 STZ, UK \nPenguin Books USA Inc., 375 Hudson Street, New York, NY 10014, USA \nPenguin Books Australia Ltd., Ringwood, Victoria, Australia \nPenguin Books Canada Ltd., 10 Alcorn Avenue, Suite 300, Toronto, Ontario M4V 3B2, Canada \nPenguin Books (NZ) Ltd.",
+      "score": 0.6208,
+      "claims": [
+        "source: the-other-side-of-silence-voices-from-the-partition-of-india_P008C007"
+      ]
+    },
+    {
+      "block_id": "B_002",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P001C001",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 1,
+      "text": "i \nig \n‘ \nole aaah \nThe Other Side of \nolLeNCE \nVoices from the Partition of India \nURVASHI BUTALIA",
+      "score": 0.595,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_003",
+      "chunk_id": "Train-To-Pakistan_P167C160",
+      "source": "Train-To-Pakistan.txt",
+      "source_filename": "Train-To-Pakistan.txt",
+      "page": 167,
+      "text": "THE BEGINNING\nLet the conversation begin...\nFollow the Penguin Twitter.com@PenguinIndia\nKeep up-to-date with all our stories YouTube.com/PenguinIndia\nLike ‘Penguin Books’ on Facebook.com/PenguinIndia\nFind out more about the author and\ndiscover more stories like this at penguinbooksindia.com",
+      "score": 0.5944,
+      "claims": [
+        "source: Train-To-Pakistan_P167C160"
+      ]
+    },
+    {
+      "block_id": "B_004",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P026C022",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 26,
+      "text": "8 The Other Side of Silence \nas much as through its ‘history’, we know the holocaust through \nits literary, fictional, historical, \npolitical representations, and \nthrough its personal, testimonial representations, for it is not only \nthe ‘facts’ of any event that are important, but equally, how \npeople remember those facts, and how they represent them.",
+      "score": 0.5842,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_005",
+      "chunk_id": "Train_to_Pakistan_against_Mainstream_Rep_P009C009",
+      "source": "Chatterji 1947",
+      "source_filename": "Train_to_Pakistan_against_Mainstream_Rep.txt",
+      "page": 9,
+      "text": "Chatterji 9\nWorks cited \nAdam, Jean-Michel. Le texte narratif: Traité d’analyse pragmatique et textuelle. Paris:\nNathan, 1999. \nArendt, Hannah. “Thinking and Moral Considerations.” Social Research 38.3 (1971): 417-\n446. \nButalia, Urvashi. The Other Side of Silence: Voices from the Partition of India. London: Hurst\n& Co, 2000. \nCoussy, Denise. Le roman indien de langue anglaise. Paris: Karthala, 2004. \nDhawan, R.K. “Khushwant Singh: The Man and the Writer.",
+      "score": 0.5804,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_006",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P032C028",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 32,
+      "text": "14 The Other Side of Silence \nexample, many of the interviews I have used come from the same \nregion — Rawalpindi district — and relate to incidents of violence \nthat took place there in March 1947, just a few months before \nPartition. Often, in an attempt to recreate the communities that \nPartition destroyed, people moved en masse to one place, or were \nhoused by the State in a particular place.",
+      "score": 0.5766,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_007",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P003C003",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 3,
+      "text": "Digitized by the Internet Archive \nin 2021 with funding from \nKahle/Austin Foundation \nhttps://archive.org/details/othersideofsilenO00Obuta",
+      "score": 0.5759,
+      "claims": [
+        "source: the-other-side-of-silence-voices-from-the-partition-of-india_P003C003"
+      ]
+    },
+    {
+      "block_id": "B_008",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P011C009",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 11,
+      "text": "Contents \nAcknowledgments / 1x \n1 Beginnings / 1 \n2 Blood / 21 \n3 ‘Facts’ / 51 \n4 Women / 81 \n5 ‘Honour’ / 130 \n6 Children / 185 \n7 ‘Margins’ / 221 \n8 Memory / 259",
+      "score": 0.5701,
+      "claims": [
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_009",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P041C036",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 41,
+      "text": "Part I \nRANAMAMA \nFor many years while this story has lived with me, I have \nthought and debated about how to tell it, indeed whether \nto tell it at all. At first it was painful and, I thought, too private \nto be told. Even though my uncle had said, time and again, that \nhe did not mind my telling it, even though my mother knew I \nwanted to tell it, I still couldn’t get rid of a sense of betrayal. I \nwas convinced they didn’t realize the implications of what they \nwere saying.",
+      "score": 0.5663,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_010",
+      "chunk_id": "priyanka_gupta_P006C006",
+      "source": "Unknown 2014",
+      "source_filename": "priyanka_gupta.txt",
+      "page": 6,
+      "text": "www.researchscholar.co.in \nImpact Factor 0.793 (IIFS) \nISSN 2320 – 6101 \nResearch Scholar \nAn International Refereed e-Journal of Literary Explorations\nNovember, 2014 \nVol. 2 Issue IV\nWorking bibliography: \nPrimary sources: \n1) Malgonkar, Manohar. A Bend in the Ganges. Roli books: New Delhi. 2009. Print. \n2) Singh, Khushwant. Train to Pakistan. Ravi Dayal Publisher: Akash Press, New Delhi. \n2007. Print.\nSecondary sources: \n1) Bruschi, Isabella. Partition in Fiction Gendered Perspectives.",
+      "score": 0.5634,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_011",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P036C032",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 36,
+      "text": "18 The Other Side of Silence \nquestionnaire, \nno \nchosen \n‘sample’ \nof people, \nin terms \nof \ngeography or class or any other category. I would simply ask \npeople to speak about that time in their lives, and let the \nconversation take its own course, to flow in whichever direction \nseemed appropriate. This was a deliberate decision: if one is to \ndo a proper collection of people’s histories of Partition, no one \nindividual can carry out such an enterprise.",
+      "score": 0.5625,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_012",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P283C273",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 283,
+      "text": "MEMORY \n265 \ninserting themselves into the text, the more I realized that the \nsilences did not exist only around women, but also around others, \nthose whose silences have been even less important to society. \nThe search for a history of women was what then led me to a \nsearch for a history of others.",
+      "score": 0.5585,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_013",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P007C006",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 7,
+      "text": "ist @ iia ake SDE \nOE Ore ENCE \nVoices from the Partition of India \nURVASHI BUTALIA \nVIKING",
+      "score": 0.5568,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_014",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P281C271",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 281,
+      "text": "MEMORY \n263 \none has looked at things in quite this way before. Yet research is \na humbling thing, as I found out. Nothing is really new, other \nthan your interpretation (and sometimes not even that): you \nsimply train a different eye on the past. Quite quickly, then, I \nlearnt not to feel complacent about being the ‘first’ — many, \nmany others had been there before me.",
+      "score": 0.5548,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_015",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P015C012",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 15,
+      "text": "ACKNOWLEDGMENTS \nxi \nmy manuscript, and Zamir Ansari for believing in my work \ndespite not being able to read it! At different times Subhadra \nSanyal and Ram Narayan provided valuable research assistance; \nthey unearthed new and constantly fascinating material and often \npointed me in the right direction.To Shankar and Sanjay for \ngiving up their weekends and typesetting in record time. To \nUpali Chakravarti and Geetanjali Gangoli for helping to read the \nproofs, also in record time.",
+      "score": 0.5546,
+      "claims": [
+        "source: the-other-side-of-silence-voices-from-the-partition-of-india_P015C012"
+      ]
+    },
+    {
+      "block_id": "B_016",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P029C025",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 29,
+      "text": "BEGINNINGS \n11 \npeople remember it. I do not wish here to carry out a literal \nexercise of first seeing how people remember the history of \nPartition, and then attempting to penetrate their narrative for its \nunderlying facts to arrive at an approximation of some kind of \n‘truth’. Instead, I wish to look at the memories for themselves — \neven if they are shifting, changing, unreliable.",
+      "score": 0.5533,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_017",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P293C283",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 293,
+      "text": "MEMORY \n275 \nOnce we enter the difficult and troubled terrain of memory \nthen, the history of Partition presents us with different kinds of \nmemories. \nWe have, \nfor example, memories \nof the \nState, \nprofessional, or historical memory, the memories of survivors, \nwhether they are victims or aggressors or both, and the memories \nthat we, as the generation born after Partition, have inherited.",
+      "score": 0.5515,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_018",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P027C023",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 27,
+      "text": "BEGINNINGS \n9 \nto remember this time? Surely this reluctance in itself pointed to \nsomething? Was it only to do with the horrific nature of events \n— sanitized into numbers and statistics in the pages of history \nbooks — or was it to do, at least in some instances, with people’s \nown complicity in this history? There had been, at Partition, no \n‘good’ people and no ‘bad’ ones; virtually every family had a \nhistory of being both victims and aggessors in the violence.",
+      "score": 0.5465,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_019",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P030C026",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 30,
+      "text": "12. The Other Side of Silence \none continuous narrative, although no chronological alterations \nhave been made. And in a few cases, I have retained \nthe \ninterventions made by other people, particularly in instances \nwhere they add to, or illuminate, certain aspects of the text. This \nshaping of the interviews to turn them into more ‘readable’ texts \nhas been done quite consciously. I do not believe the transcript \nof any interview can ever be an unmediated text.",
+      "score": 0.5445,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_020",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P033C029",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 33,
+      "text": "BEGINNINGS \n15 \nsection at the end of the book. But having once done that, the \nsame problem re-presented itself: would people actually read \nthem, or would they see them as simply adjuncts to the other \nchapters? It seemed likely that that was what would happen, and \nto me the interviews were far too important to be put aside as an \nappendix. Finally, I decided to move the interviews into the main \ntext, and to supplement what I have said in each chapter with \none or two interviews.",
+      "score": 0.5415,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_021",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P037C033",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 37,
+      "text": "BEGINNINGS \n19 \nof the process of remembering, to oneself and to others. I \nrecognized too the imbalance of power that oral historians have \noften spoken about as being inherent in such situations: for the \nmost part I watched, listened, recorded while people laid their \nlives bare. When they turned around with a question to me: what \ndo you think this will achieve, who do you think will listen to \nyour tapes, will this really make a difference to anything, to our \nlives, the lives of others, I ...",
+      "score": 0.5384,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_022",
+      "chunk_id": "Triumph of Human Spirit in Khushwant Singh s Train to Pakistan_P004C004",
+      "source": "Rashmi 2008",
+      "source_filename": "Triumph of Human Spirit in Khushwant Singh s Train to Pakistan.txt",
+      "page": 4,
+      "text": "International Journal of Advances in Engineering and Management (IJAEM) \nVolume 2, Issue 5, pp: 660-664         www.ijaem.net                 ISSN: 2395-5252\nDOI: 10.35629/5252-0205660664     | Impact Factor value 7.429   | ISO 9001: 2008 Certified Journal   Page 663 \n[6]. \nThe Story of My Experiment with Truth- \nM.K. Gandhi. \n[7]. \nhttps://www.harfoordcountybarfoundation.or\ng",
+      "score": 0.5341,
+      "claims": [
+        "source: Triumph of Human Spirit in Khushwant Singh s Train to Pakistan_P004C004"
+      ]
+    },
+    {
+      "block_id": "B_023",
+      "chunk_id": "Train-To-Pakistan_P168C161",
+      "source": "Train-To-Pakistan.txt",
+      "source_filename": "Train-To-Pakistan.txt",
+      "page": 168,
+      "text": "VIKING\nPublished by the Penguin Group \nPenguin Books India Pvt. Ltd, 11 Community Centre, Panchsheel Park, New Delhi 110 017, India \nPenguin Group (USA) Inc., 375 Hudson Street, New York, New York 10014, USA \nPenguin Group (Canada), 90 Eglinton Avenue East, Suite 700, Toronto, Ontario M4P 2Y3, Canada (a\ndivision of Pearson Penguin Canada Inc.",
+      "score": 0.5298,
+      "claims": [
+        "source: Train-To-Pakistan_P168C161"
+      ]
+    },
+    {
+      "block_id": "B_024",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P282C272",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 282,
+      "text": "264 The Other Side of Silence \naspects of the past. It became clear to me as I drew closer to the \nend of this work, that in any such exploration of the past, the \naspects we choose to illuminate are determined not only the \npresent we live in, but the future we wish to work towards. In \nthis book, I have been concerned with looking at what one might \ncall the voices of ordinary people, as well as those on the margins \nof society.",
+      "score": 0.5293,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_025",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P034C030",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 34,
+      "text": "16 The Other Side of Silence \n7 \nabsence of the ‘I’ in such histories helps perhaps to establish \ndistance, even to create the illusion of objectivity, perhaps to \nestablish factuality. I have no wish to pretend that these histories, \nthese stories, are in any way an ‘objective’ rendering of Partition. \nI do not believe such a thing is possible. For the many years that \nthis work has been with me, I have felt involved in it, intensely \nand emotionally, politically and academically.",
+      "score": 0.5277,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_026",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P286C276",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 286,
+      "text": "268 The Other Side of Silence \nhad listened to many stories. Each was unique. In every telling I \nfound a different Partition, in every story a different experience.” \nEach account raised different questions. Perhaps the question that I \nwas most frequently faced with was about the very nature of the \nexercise: a question that had to do, in the main, with remembering.",
+      "score": 0.5223,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_027",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P025C021",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 25,
+      "text": "BEGINNINGS \n7 \nstill lived on in so many people’s lives. I began to realize that \nPartition was surely more than just a political divide, or a division \nof properties, of assets and liabilities. It was also, to use a phrase \nthat survivors use repeatedly, a ‘division of hearts’. It brought \nuntold \nsuffering, \ntragedy, \ntrauma, \npain \nand \nviolence \nto \ncommunities who had hitherto lived together in some kind of \nsocial contract.",
+      "score": 0.5203,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_028",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P118C111",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 118,
+      "text": "100 The Other Side of Silence \nwork. I did not want to be in this kind of violative — and \nexploitative — position. I decided, as I had done with Ranamama, \nthat I would impose my own silences on this search. I knew by \nnow that the history of Partition was a history of deep violation \n— physical and mental — for women. I would then talk to only \nthose who wanted to talk about it. And would continue to explore \nother sources \nto help me recover \nthe histories \nof women.",
+      "score": 0.5202,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_029",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P114C107",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 114,
+      "text": "96 The Other Side of Silence \nit have been for women to do so. To whom would they have \nspoken? Who would have listened? I realized too that in my \nquestioning, something I had not taken into account was that in \norder to be able to ‘hear’ women’s voices, I had to begin to pose \ndifferent questions, to talk in different situations, and to be \nprepared to do that most important of things, to listen: to their \nspeech, their silences, the half-said things, the nuances.",
+      "score": 0.5165,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_030",
+      "chunk_id": "Triumph%20of%20Human%20Spirit%20in%20Khushwant%20Singh%20s%20Train%20to%20Pakistan_P004C004",
+      "source": "Unknown 2008",
+      "source_filename": "Triumph%20of%20Human%20Spirit%20in%20Khushwant%20Singh%20s%20Train%20to%20Pakistan.txt",
+      "page": 4,
+      "text": "International Journal of Advances in Engineering and Management (IJAEM) \nVolume 2, Issue 5, pp: 660-664 www.ijaem.net ISSN: 2395-5252\nDOI: 10.35629/5252-0205660664 | Impact Factor value 7.429 | ISO 9001: 2008 Certified Journal Page 663 \n[6]. \nThe Story of My Experiment with Truth- \nM.K. Gandhi. \n[7]. \nhttps://www.harfoordcountybarfoundation.or\ng",
+      "score": 0.5164,
+      "claims": [
+        "source: Triumph%20of%20Human%20Spirit%20in%20Khushwant%20Singh%20s%20Train%20to%20Pakistan_P004C004"
+      ]
+    },
+    {
+      "block_id": "B_031",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P111C104",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 111,
+      "text": "WOMEN \n93 \nThen, as I was sitting there, the police came and I told them how \nI had got there, that I’ve come from Lahore and I’m related to such \nand such, and if you could get me to Dharamsala. They said what \nwill you do there? I said \nI'll get in touch with the Deputy \nCommissioner who is on duty there ... I told them I have no money, \nbut please put me on a bus somehow. You see, there I was at the \nchowki. My legs were swollen, my body was stiff like this, I could \nhardly move.",
+      "score": 0.515,
+      "claims": [
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_032",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P002C002",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 2,
+      "text": "The Partition of India in 1947 caused one \nof the great human convulsions of history. \nThe statistics are staggering. Twelve million \npeople were displaced; a million died; \nseventy-five thousand women were said to \nhave been abducted and raped; families were \ndivided; properties lost; homes destroyed. In \npublic memory, however, \nthe violent, \ndisturbing \nrealities \nthat accompanied \nPartition have remained blanketed \nin \nsilence.",
+      "score": 0.5144,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_033",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P090C084",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 90,
+      "text": "72 The Other Side of Silence \nregret, others have lived with the trauma of rape, the conscious, \nperhaps slow and always difficult process of the acceptance of so \ndeep a violation as abduction; some with the knowledge that in \nthe past they have killed ... It is only when one is able to look \nbehind and beyond the ‘facts’ of Partition, that these different, \nmulti-layered histories begin to unfold.",
+      "score": 0.5144,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_034",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P279C269",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 279,
+      "text": "how to bring it to a close. What can I say about Partition \nthat can adequately serve as a conclusion? That it was an \nevent of major importance? That it touched people’s lives in \nunprecedented, and very deep ways? That its influence on the \nhistory of the subcontinent has been profound and far reaching? \nAll of these are correct. But none of these is adequate.",
+      "score": 0.5139,
+      "claims": [
+        "trains with grievous cargoes of death",
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_035",
+      "chunk_id": "Train_To_Pakistan_A_Realistic_Picture_of_Partition_P008C008",
+      "source": "Ahmad 2025",
+      "source_filename": "Train_To_Pakistan_A_Realistic_Picture_of_Partition.txt",
+      "page": 8,
+      "text": "ISSN: 2582-3574 \nSMART MOVES JOURNAL IJELLH \nVolume 13, Issue11, November 2025 \n57 \nWorks Cited \nAlexander, Suja. Personal Concern Go Public in Train to Pakistan. \nhttps://www.traintopakistanreview.org.in. \nDouglas, William C. A Girl with A Basket. \nhttps://www.traintopakistanreview.org.in. \nSingh, Khushwant. Train to Pakistan. Penguin Books, New Delhi, 2007. \nOp.cit. \nOp.cit. \nOp.cit. \nOp.cit. \nOp.cit. \nOp.cit. \nOp.cit.",
+      "score": 0.5132,
+      "claims": [
+        "source: Train_To_Pakistan_A_Realistic_Picture_of_Partition_P008C008"
+      ]
+    },
+    {
+      "block_id": "B_036",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P146C139",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 146,
+      "text": "128 The Other Side of Silence \nthe rule. So we did some rough calculations — we took off some time \nfor the educational opportunties some of the women had lost, and \nthen a year for something else, and a few months for job searching, \nand then tried to see how many women fitted the bill. But my workers \nsaid, behanji, these lists have now become very small. I said how — \nhow will we find them jobs? Make the lists bigger. They said, but \nhow? IJ said just do it, orders are orders.",
+      "score": 0.5126,
+      "claims": [
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_037",
+      "chunk_id": "66578_P018C018",
+      "source": "66578-1-journal-bpaper-1",
+      "source_filename": "66578-1-journal-bpaper-1_rajarshi-vgh-tyhyt.txt",
+      "page": 18,
+      "text": "Sukhdev Singh Dhanju, Priya Saroj (2019). Train To Pakistan As A Partition Novel of \nKhushwant Singh, Journal of Emerging Technologies and Innovative Research, 6(11): 120-\n126. \nTotawad Nagnath Ramrao (2017). Khushwant Singh's Train To Pakistan: A Critique Of \nPartition, Pune Research- An International Journal in English, 3(5): 1-5. \nWaseem Akram (2018). Depiction of Love in Khushwant Singh’s I Shall not Hear the \nNightingale, The Criterion: An International Journal in English, 9(4): 44-51.",
+      "score": 0.5124,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_038",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P101C094",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 101,
+      "text": "DAMYANTI SAHGAL \n‘A lot of stories to tell ...’ \nI first met Damyanti Sahgal in 1989. At the time she was eighty years \nold — a diminutive, energetic woman with mischief and humour lurking \nconstantly in her eyes. It was her niece, Lina Dhingra, who introduced \nme to Damyanti. ‘Talk to my aunt,’ she said, one day when I was talking \nto her about my work on Partition, ‘she has a lot of stories to tell.’ \nDamyanti, however, wasn't too enthusiastic.",
+      "score": 0.5114,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_039",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P035C031",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 35,
+      "text": "BEGINNINGS \n17 \nequation \nof power \nthat underlies \nthe \ncollection \nof oral \ntestimonies: for long after your subjects have spoken to you, their \nvoices will live on in your work, they may help to promote your \ncareer, and while they continue \nto figure where you are \nconcerned, the subjects themselves will recede further and further \ninto the background.",
+      "score": 0.5112,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_040",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P284C274",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 284,
+      "text": "266 The Other Side of Silence \nIf recovering ‘voice’ \nis not unproblematic, this is further \ncomplicated by the fact that voices themselves are differentiated. \nThey have a hierarchy. In the process of interviewing people over \nan extended period of time, I found, time and again, how difficult \nit was to recover women’s voices.",
+      "score": 0.5101,
+      "claims": [
+        "partition violence 1947",
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_041",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P287C277",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 287,
+      "text": "MEMORY, 269 \nmemories? Krishna Sobti, a writer and a Partition refugee, once \nsaid that Partition was difficult to forget but dangerous to \nremember. But does this mean then that we must not remember \nit? Over the years, despite many uncertainties, I have become \nincreasingly convinced \nthat while \nit may be dangerous \nto \nremember, it is also essential to do so — not only so-that we can \ncome to terms with it, but also because unlocking memory and \nremembering is an essential part of beginning ...",
+      "score": 0.5087,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_042",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P055C050",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 55,
+      "text": "“BLOOD \n37 \non their memory, their recall? Often, what emerged from the \ninterviews was so bitter, so full of rage, resentment, communal \nfeeling, that it frightened me. What was I to do with such \nmaterial? Was \nit incumbent \non me, \nas \na might-have-been \nhistorian, to try to be true to this material, or should I, as a secular \nIndian, actually exercise some care about what I made visible and \nwhat I did not? A question that has dogged me constantly has \nbeen: is it fair to make these intervie...",
+      "score": 0.5078,
+      "claims": [
+        "source: the-other-side-of-silence-voices-from-the-partition-of-india_P055C050"
+      ]
+    },
+    {
+      "block_id": "B_043",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P122C115",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 122,
+      "text": "104 The Other Side of Silence \nAbducted Women and Children, India), the book, entitled List of \nNon Muslim Abducted Women and Children in Pakistan and Pakistan \nSide of the Cease-Fire Line in Jammu & Kashmir State, was not \nreleased to the public ‘out of deference’ for the feelings of those \nwhose relatives were listed there.",
+      "score": 0.5025,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_044",
+      "chunk_id": "4_P017C017",
+      "source": "Joshi 2020",
+      "source_filename": "4Article_407DipakRJoshi2020.txt",
+      "page": 17,
+      "text": "Contemporary Research: An Interdisciplinary Academic Journal, 2020, vol. 4 (1): 59-75\n75\nFull text of this article can be downloaded from www.craiaj.com and www.nepjol.info\nRoy, R. (2010). South Asian partition fiction in English: From Khuswant Singh to\nAmitabh Ghosh. Amsterdam: Amsterdam University Press.\nSahni, B. (2002). Tamas (published in 1974). Printed in Memories of madness:\nStories of 1947. New Delhi: Penguin Books, pp.173-456.\nSingh, K. (2002). A train to Pakistan (published in 1954).",
+      "score": 0.5013,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_045",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P028C024",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 28,
+      "text": "10 The Other Side of Silence \nacquire the kind of resilience that it has. Why is it that so many \nsecond and third generation Hindus and Sikhs after Partition \nhave come to internalize notions of ‘us’ and ‘them’ when they \nhave no reference of Partition — except through family and \ncommunity memories? What is it about the selectivity of memory \nthat, in this case, feelings of fear and hatred seem to have been \nnurtured, to have a greater resilience, while feelings of friendship \nand sharing are ...",
+      "score": 0.5001,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict"
+      ]
+    },
+    {
+      "block_id": "B_046",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P303C288",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 303,
+      "text": "Urvashi Butalia is co-founder of Kali for \nWomen, India’s first and only feminist \npublishing house. She has been active in \nthe women’s and civil rights movements in \nIndia, and writes on issues relating to \nwomen, \nmedia, \ncommunications \nand \ncommunalism. She is co-editor of Women \nand the Hindu Right: A Collection of Essays \nand In Other Words: New Writing by Women \nin India.",
+      "score": 0.4999,
+      "claims": [
+        "gender oppression women",
+        "feminist perspective"
+      ]
+    },
+    {
+      "block_id": "B_047",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P120C113",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 120,
+      "text": "102, The Other Side of Silence \nover our conversation that it struck me that that awkward silence, \nthat hesitant phrase was perhaps where the disappearance of the \ntwo sisters lay hidden: in a small crack, covered over by silence. \nI realized then that in this silence lay the many hidden histories \nof Partition, the histories that have always hovered at the edges \nof those that have been told, the histories that describe the dark \nside of freedom.",
+      "score": 0.4994,
+      "claims": [
+        "partition violence 1947",
+        "Sikh vs Muslim conflict",
+        "gender oppression women"
+      ]
+    },
+    {
+      "block_id": "B_048",
+      "chunk_id": "the-other-side-of-silence-voices-from-the-partition-of-india_P119C112",
+      "source": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "source_filename": "the-other-side-of-silence-voices-from-the-partition-of-india.txt",
+      "page": 119,
+      "text": "WOMEN \n101 \nfound her, a small, upright woman, living alone but for a sort of \ncompanion-helper-adopted daughter, in Bombay. ‘You want to \nknow why I didn’t write about this?’ she said, ‘I'll tell you.’ \nThe reason I did not write my book earlier was because I could not \naccept what J saw during that time. I found it difficult to believe that \nhuman beings could be like this. It was as if the demons had come \ndown on earth ...",
+      "score": 0.4977,
+      "claims": [
+        "trains with grievous cargoes of death",
+        "partition violence 1947",
+        "communal violence",
+        "gender oppression women"
+      ]
+    }
+  ],
+  "total_retrieved": 48,
+  "timestamp": "2026-05-28T03:43:17.199341"
+}
