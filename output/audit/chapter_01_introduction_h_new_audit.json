@@ -1,0 +1,398 @@
+{
+  "chapter_file": "chapter_01_introduction_h_new.md",
+  "total_citations": 73,
+  "valid_citations": 9,
+  "structured_valid": 0,
+  "block_valid": 0,
+  "mla_valid": 68,
+  "hallucinated_citations": 0,
+  "malformed_citations": 5,
+  "invalid_pages": 59,
+  "issues": [
+    {
+      "type": "malformed",
+      "citation": "(20IJELS-111202218-Depiction, Unknown 2022, p. 1)",
+      "line": 31,
+      "message": "Malformed citation format: '(20IJELS-111202218-Depiction, Unknown 2022, p. 1)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(20IJELS-111202218-Depiction, Unknown 2022, p. 1)",
+      "line": 31,
+      "message": "Malformed citation format: '(20IJELS-111202218-Depiction, Unknown 2022, p. 1)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(20IJELS-111202218-Depiction, Unknown 2022, p. 1)",
+      "line": 31,
+      "message": "Malformed citation format: '(20IJELS-111202218-Depiction, Unknown 2022, p. 1)'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 44,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 44,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 46,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 46,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 50,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 50,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 54,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 54,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 56,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 56,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 13)",
+      "line": 58,
+      "message": "Page 13 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 58,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 58,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 16)",
+      "line": 58,
+      "message": "Page 16 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 60,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 60,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 62,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 66,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 72,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 72,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 74,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 16)",
+      "line": 74,
+      "message": "Page 16 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 16)",
+      "line": 74,
+      "message": "Page 16 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 80,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 80,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 84,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 13)",
+      "line": 84,
+      "message": "Page 13 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(priyanka_gupta, Unknown 2014, p. 3)",
+      "line": 95,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 4)",
+      "line": 99,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 4)",
+      "line": 101,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 4)",
+      "line": 103,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(priyanka_gupta, Unknown 2014, p. 3)",
+      "line": 111,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 1)",
+      "line": 124,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 2)",
+      "line": 124,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 1)",
+      "line": 126,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 1)",
+      "line": 130,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 2)",
+      "line": 132,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 8)",
+      "line": 136,
+      "message": "Page 8 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 2)",
+      "line": 136,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 2)",
+      "line": 138,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(IJNRD220b1026, Unknown 2022, p. 1)",
+      "line": 142,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(IJNRD220b1026, Unknown 2022, p. 1)",
+      "line": 144,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 159,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 161,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 163,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 165,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 173,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 175,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 183,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 183,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 183,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 191,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 193,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 195,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 197,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 197,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 199,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 199,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(ijrar_issue_20542129, Asso. et al. 2018, p. 1)",
+      "line": 201,
+      "message": "Malformed citation format: '(ijrar_issue_20542129, Asso. et al. 2018, p. 1)'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Paper35357, Unknown 2026, p. 4)",
+      "line": 203,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(End of file - total 204 lines)",
+      "line": 209,
+      "message": "Malformed citation format: '(End of file - total 204 lines)'"
+    }
+  ],
+  "passed": true
+}
