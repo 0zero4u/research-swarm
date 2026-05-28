@@ -206,4 +206,20 @@ In conclusion, this dissertation maintains that *Train to Pakistan* represents a
 
 *Evidence used: 10 chunks from 8 sources*
 
+## Works Cited
+
+Butalia, Urvashi. *The Other Side of Silence: Voices from the Partition of India*. Penguin Books, 1998.
+
+Charyulu, Shikha, and G. Mohana Charyulu. "Khushwant Singh Novel 'Train to Pakistan': Essential Style and Technique for Exploration of the Experience of Rural India." *Journal of Advances and Scholarly Researches in Allied Education*, vol. 16, no. 6, May 2019, pp. 3356.
+
+Goel, Dr. Manjula. "Analysis of Train to Pakistan, Film Adaptation from Khushwant Singh's Novel: Similarities and Differences." *International Journal of Novel Research and Development*, vol. 7, no. 1, Jan. 2022.
+
+Gupta, Priyanka. "Khushwant Singh Novel 'Train to Pakistan.'" November 2014, vol. 2, Issue IV.
+
+Pandey, Gyanendra. *Remembering Partition: Violence, Nationalism and History in India*. Cambridge University Press, 2001.
+
+Rashmi, Km. "Triumph of Human Spirit in Khushwant Singh's Train to Pakistan." *International Journal of Advances in Engineering and Management*, vol. 2, no. 5, 2008, pp. 660-664.
+
+Singh, Khushwant. *Train to Pakistan*. Grove Press, 1956.
+
 
