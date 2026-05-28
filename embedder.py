@@ -23,8 +23,9 @@ import requests
 EMBEDDING_MODEL = "qwen/qwen3-embedding-8b"
 EMBEDDING_DIM = 4096  # qwen3-embedding-8b returns 4096 dimensions
 DEFAULT_BATCH_SIZE = 32
-DEFAULT_CHUNKS_PATH = Path("chunks/chunks.json")
-DEFAULT_INDEX_DIR = Path("vector_index")
+_BASE_DIR = Path(__file__).parent
+DEFAULT_CHUNKS_PATH = _BASE_DIR / "chunks" / "chunks.json"
+DEFAULT_INDEX_DIR = _BASE_DIR / "vector_index"
 INDEX_FILE = "index.faiss"
 MANIFEST_FILE = "manifest.json"
 

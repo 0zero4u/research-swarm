@@ -33,9 +33,10 @@ from retriever import Retriever, RetrieverConfig, EvidenceResult
 # Constants
 DEFAULT_TOP_K = 5
 DEFAULT_MIN_CONFIDENCE = 0.30  # Lowered for new multi-source corpus
-DEFAULT_CHUNKS_PATH = Path("chunks/chunks.json")
-DEFAULT_INDEX_DIR = Path("vector_index")
-DEFAULT_EVIDENCE_DIR = Path("evidence_packs")
+_BASE_DIR = Path(__file__).parent
+DEFAULT_CHUNKS_PATH = _BASE_DIR / "chunks" / "chunks.json"
+DEFAULT_INDEX_DIR = _BASE_DIR / "vector_index"
+DEFAULT_EVIDENCE_DIR = _BASE_DIR / "evidence_packs"
 
 
 def _slugify_query(query: str) -> str:

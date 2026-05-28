@@ -1,158 +1,95 @@
 {
-  "query": "train to pakistan film adaptation 1998 pamela rooks",
+  "query": "Train to Pakistan film adaptation 1998 Pamela Rooks",
   "top_k": 10,
   "blocks": [
     {
       "block_id": "B_001",
-      "chunk_id": "IJNRD220b1026_P001C001",
-      "source": "Unknown 2022",
-      "source_filename": "IJNRD220b1026.txt",
-      "page": 1,
-      "text": "1\n© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n202 \nAnalysis of Train to Pakistan, Film Adaptation \nfrom Khushwant Singh's Novel: Similarities and \nDifferences \nDr Manjula Goel \nAssociate Professor \nDepartment of English \nR.K.S.D.(P.G.",
-      "score": 0.7132,
-      "claims": [
-        "Mano Majra intersection",
-        "partition violence 1947",
-        "Sikh vs Muslim conflict",
-        "Juggut sacrifice",
-        "Iqbal pessimism"
-      ]
-    },
-    {
-      "block_id": "B_002",
-      "chunk_id": "IJNRD2201026_P001C001",
-      "source": "Unknown 2022",
-      "source_filename": "IJNRD2201026.txt",
-      "page": 1,
-      "text": "1\n© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n202 \nAnalysis of Train to Pakistan, Film Adaptation \nfrom Khushwant Singh's Novel: Similarities and \nDifferences \nDr Manjula Goel \nAssociate Professor \nDepartment of English \nR.K.S.D.(P.G.",
-      "score": 0.7132,
-      "claims": [
-        "Mano Majra intersection",
-        "partition violence 1947",
-        "Sikh vs Muslim conflict",
-        "Juggut sacrifice",
-        "Iqbal pessimism"
-      ]
-    },
-    {
-      "block_id": "B_003",
-      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P001C001",
+      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P008C008",
       "source": "Unknown 2020",
       "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
-      "page": 1,
-      "text": "1\nLangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n24\nAugust 2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
-      "score": 0.665,
+      "page": 8,
+      "text": "8\nLangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n31\nAugust  2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
+      "score": 0.744,
       "claims": [
-        "railroad as central symbol",
-        "trains with grievous cargoes of death",
-        "partition violence 1947",
-        "Juggut sacrifice"
-      ]
-    },
-    {
-      "block_id": "B_004",
-      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P001C004",
-      "source": "Unknown 2020",
-      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
-      "page": 1,
-      "text": "Contact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.edu, IBI, IIFC, DRJI, The CiteFactor, COSMOS \n ISSN 2349-5189 \n IMPACT FACTOR – 5.",
-      "score": 0.6621,
-      "claims": [
-        "Mano Majra intersection",
-        "trains with grievous cargoes of death",
-        "partition violence 1947",
-        "communal violence",
         "gender oppression women"
       ]
     },
     {
-      "block_id": "B_005",
-      "chunk_id": "IJNRD220b1026_P001C002",
-      "source": "Unknown 2022",
+      "block_id": "B_002",
+      "chunk_id": "IJNRD220b1026_P001C001",
+      "source": "Goel 2022",
       "source_filename": "IJNRD220b1026.txt",
       "page": 1,
-      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n205 \non the immediate emotional impact of the events. Overall, Train to Pakistan the film is a poignant retelling of a tragic \nchapter in Indian history, staying true to the novel’s core message while adapting it for the visual medium. \nReferences: \n \nAziz, K.K. History of Partition of India.",
-      "score": 0.6564,
+      "text": "1\n© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n202 \nAnalysis of Train to Pakistan, Film Adaptation \nfrom Khushwant Singh's Novel: Similarities and \nDifferences \nDr Manjula Goel \nAssociate Professor \nDepartment of English \nR.K.S.D.(P.G.",
+      "score": 0.7383,
       "claims": [
         "partition violence 1947"
       ]
     },
     {
-      "block_id": "B_006",
-      "chunk_id": "IJNRD2201026_P001C002",
-      "source": "Unknown 2022",
+      "block_id": "B_003",
+      "chunk_id": "IJNRD2201026_P001C001",
+      "source": "Goel 2022",
       "source_filename": "IJNRD2201026.txt",
       "page": 1,
-      "text": "© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n205 \non the immediate emotional impact of the events. Overall, Train to Pakistan the film is a poignant retelling of a tragic \nchapter in Indian history, staying true to the novel’s core message while adapting it for the visual medium. \nReferences: \n \nAziz, K.K. History of Partition of India.",
-      "score": 0.6564,
+      "text": "1\n© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n202 \nAnalysis of Train to Pakistan, Film Adaptation \nfrom Khushwant Singh's Novel: Similarities and \nDifferences \nDr Manjula Goel \nAssociate Professor \nDepartment of English \nR.K.S.D.(P.G.",
+      "score": 0.7383,
+      "claims": [
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_004",
+      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P001C001",
+      "source": "Unknown 2020",
+      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
+      "page": 1,
+      "text": "1\nLangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n24\nAugust  2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
+      "score": 0.699,
+      "claims": [
+        "trains with grievous cargoes of death",
+        "partition violence 1947"
+      ]
+    },
+    {
+      "block_id": "B_005",
+      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P002C002",
+      "source": "Unknown 2020",
+      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
+      "page": 2,
+      "text": "2\nLangLit \nAn International Peer-Reviewed Open Access Journal\nSpecial Issue\n25\nAugust  2020 \nWebsite: www.langlit.org\nContact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.",
+      "score": 0.6825,
+      "claims": [
+        "railroad as central symbol",
+        "partition violence 1947",
+        "Juggut sacrifice"
+      ]
+    },
+    {
+      "block_id": "B_006",
+      "chunk_id": "IJNRD220b1026_P004C004",
+      "source": "Goel 2022",
+      "source_filename": "IJNRD220b1026.txt",
+      "page": 4,
+      "text": "4\n© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n205 \non the immediate emotional impact of the events. Overall, Train to Pakistan the film is a poignant retelling of a tragic \nchapter in Indian history, staying true to the novel’s core message while adapting it for the visual medium. \nReferences:  \n \nAziz, K.K. History of Partition of India.",
+      "score": 0.6651,
       "claims": [
         "partition violence 1947"
       ]
     },
     {
       "block_id": "B_007",
-      "chunk_id": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS_P001C003",
-      "source": "Unknown 2020",
-      "source_filename": "VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS.txt",
-      "page": 1,
-      "text": "Contact No.:+919890290602 \nOne Day International Webinar On Film and Literature Organized by The Department of English & the \nInternal Quality Assurance Cell of Karmaveer Mamasaheb Jagdale Mahavidyalaya, Washi. Dist. Osmanabad. \nMaharashtra. India \nIndexed: ICI, Google Scholar, Research Gate, Academia.edu, IBI, IIFC, DRJI, The CiteFactor, COSMOS \n ISSN 2349-5189 \n IMPACT FACTOR – 5.",
-      "score": 0.6051,
+      "chunk_id": "IJNRD2201026_P004C004",
+      "source": "Goel 2022",
+      "source_filename": "IJNRD2201026.txt",
+      "page": 4,
+      "text": "4\n© 2022 IJNRD | Volume 7, Issue 1 January 2022 | ISSN: 2456-4184 | IJNRD.ORG\nIJNRD2201026 \nInternational Journal of Novel Research and Development (www.ijnrd.org)\n205 \non the immediate emotional impact of the events. Overall, Train to Pakistan the film is a poignant retelling of a tragic \nchapter in Indian history, staying true to the novel’s core message while adapting it for the visual medium. \nReferences:  \n \nAziz, K.K. History of Partition of India.",
+      "score": 0.6651,
       "claims": [
-        "Mano Majra intersection",
-        "trains with grievous cargoes of death",
-        "partition violence 1947",
-        "Sikh vs Muslim conflict",
-        "Juggut sacrifice"
-      ]
-    },
-    {
-      "block_id": "B_008",
-      "chunk_id": "002_P001C002",
-      "source": "Charyulu 2019",
-      "source_filename": "002_0030bc.txt",
-      "page": 1,
-      "text": "Khushwant Singh Novel “Train to Pakistan”: Essential Style and Technique for Exploration of the \nExperience of Rural India \nthe devotion of the Sikh fighters who lecture \nvengeance. \nThe rail route in Train to Pakistan has especially \nfascinating and vile job. Mano Majra has the sad \ndifferentiation of being a railroad intersection. The \ntown turns into the focal point of collective scorn just \nwhen the trains show up with their grievous cargoes \nof death.",
-      "score": 0.5675,
-      "claims": [
-        "railroad as central symbol",
-        "Mano Majra intersection",
-        "trains with grievous cargoes of death",
-        "partition violence 1947",
-        "Sikh vs Muslim conflict"
-      ]
-    },
-    {
-      "block_id": "B_009",
-      "chunk_id": "363508_P001C002",
-      "source": "Charyulu 2019",
-      "source_filename": "363508_8461703.txt",
-      "page": 1,
-      "text": "Khushwant Singh Novel “Train to Pakistan”: Essential Style and Technique for Exploration of the \nExperience of Rural India \nthe devotion of the Sikh fighters who lecture \nvengeance. \nThe rail route in Train to Pakistan has especially \nfascinating and vile job. Mano Majra has the sad \ndifferentiation of being a railroad intersection. The \ntown turns into the focal point of collective scorn just \nwhen the trains show up with their grievous cargoes \nof death.",
-      "score": 0.565,
-      "claims": [
-        "railroad as central symbol",
-        "Mano Majra intersection",
-        "trains with grievous cargoes of death",
-        "partition violence 1947",
-        "Sikh vs Muslim conflict"
-      ]
-    },
-    {
-      "block_id": "B_010",
-      "chunk_id": "002_P001C001",
-      "source": "Charyulu 2019",
-      "source_filename": "002_0030bc.txt",
-      "page": 1,
-      "text": "1\nShikha1* Dr. G. Mohana Charyulu2 \nwww.ignited.in \n3356\nJournal of Advances and Scholarly Researches in Allied Education \nVol. 16, Issue No. 6, May-2019, ISSN 2230-7540 \nKhushwant Singh Novel “Train to Pakistan”: \nEssential Style and Technique for Exploration of \nthe Experience of Rural India\nShikha1* Dr. G.",
-      "score": 0.5399,
-      "claims": [
-        "railroad as central symbol",
-        "Mano Majra intersection",
-        "partition violence 1947",
-        "Sikh vs Muslim conflict"
+        "partition violence 1947"
       ]
     }
   ],
-  "total_retrieved": 10,
-  "timestamp": "2026-05-27T04:27:36.368836"
+  "total_retrieved": 7,
+  "timestamp": "2026-05-28T02:14:17.072883"
 }

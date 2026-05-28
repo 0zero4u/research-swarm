@@ -27,6 +27,8 @@ class Chunk:
     title: str
     year: str
     journal: str
+    volume: str
+    issue: str
     url: str
     page: int
     text: str
@@ -329,6 +331,8 @@ class Chunker:
             "title": "",
             "year": "",
             "journal": "",
+            "volume": "",
+            "issue": "",
             "url": ""
         }
 
@@ -351,6 +355,21 @@ class Chunker:
         year_match = re.search(r'\b(19\d{2}|20\d{2})\b', text)
         if year_match:
             metadata["year"] = year_match.group(1)
+
+        # 2b. Volume and Issue — common patterns in academic headers
+        vol_match = re.search(r'Volume\s+(\d+)[,\s]+Issue\s+(\d+)', text, re.IGNORECASE)
+        if vol_match:
+            metadata["volume"] = vol_match.group(1)
+            metadata["issue"] = vol_match.group(2)
+        else:
+            vol_match2 = re.search(r'Vol\.?\s*(\d+)[,\s]+No\.?\s*(\d+)', text, re.IGNORECASE)
+            if vol_match2:
+                metadata["volume"] = vol_match2.group(1)
+                metadata["issue"] = vol_match2.group(2)
+            else:
+                vol_match3 = re.search(r'Vol\.?\s*(\d+)', text, re.IGNORECASE)
+                if vol_match3:
+                    metadata["volume"] = vol_match3.group(1)
 
         # 3. Labeled patterns (most reliable)
         labeled_patterns = [
@@ -506,6 +525,8 @@ class Chunker:
                     title=metadata["title"],
                     year=metadata["year"],
                     journal=metadata["journal"],
+                    volume=metadata.get("volume", ""),
+                    issue=metadata.get("issue", ""),
                     url=metadata["url"],
                     page=page_num,
                     text=chunk_text,

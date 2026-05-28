@@ -1,15 +1,15 @@
 {
-  "query": "khushwant singh biography writer career",
+  "query": "Khushwant Singh biography writer career",
   "top_k": 10,
   "blocks": [
     {
       "block_id": "B_001",
-      "chunk_id": "English_P001C001",
+      "chunk_id": "English_P002C002",
       "source": "Unknown 1915",
       "source_filename": "English.txt",
-      "page": 1,
-      "text": "1\n“Exploring the Literary Contributions of Kushwant Singh: A \nLiterary Maverick and Social Observer of Modern India.” \nAuthors’: \nI. \nNaved Alam, ELT Researcher and Mass Communication Student, Aligarh Muslim University, \nII. \nProfessor (Dr.) Md. Rizwan Khan, (Professor, Dept. of English, AMU) \nIII. \nFaizur Rehman Sherwani, (MA English Literature Student, Dept. of English, AMU) \nIV. \nDr. Rehan Khan (English Language Instructor & Former Assistant Prof. Dept.",
-      "score": 0.6936,
+      "page": 2,
+      "text": "2\nAs a writer, Kushwant Singh became renowned for his versatile literary contributions, spanning \nvarious genres. He published numerous novels, short stories, and collections of non-fiction \nessays. His literary works were characterized by their wit, satire, and candid exploration of \ncontroversial topics. \nSingh's literary career took off with the publication of his first novel, \"The Mark of Vishnu and \nOther Stories,\" in 1950.",
+      "score": 0.7535,
       "claims": [
         "partition violence 1947",
         "communal violence",
@@ -18,39 +18,37 @@
     },
     {
       "block_id": "B_002",
-      "chunk_id": "English_P001C004",
+      "chunk_id": "English_P001C001",
       "source": "Unknown 1915",
       "source_filename": "English.txt",
       "page": 1,
-      "text": "V. \nEncouraging New Writers: Throughout his career, Singh actively supported and \nencouraged emerging writers. He played a significant role in nurturing young talents and \nprovided opportunities for them to showcase their work. His mentorship and guidance \nhave had a positive impact on the growth of Indian literature.\nVI. \nCultural Criticism: Singh's critiques of Indian culture, politics, and society were both \nthought-provoking and influential.",
-      "score": 0.6841,
+      "text": "1\n“Exploring the Literary Contributions of Kushwant Singh: A \nLiterary Maverick and Social Observer of Modern India.” \nAuthors’:  \nI. \nNaved Alam, ELT Researcher and Mass Communication Student, Aligarh Muslim University, \nII. \nProfessor (Dr.) Md. Rizwan Khan, (Professor, Dept. of English, AMU) \nIII. \nFaizur Rehman Sherwani, (MA English Literature Student, Dept. of English, AMU) \nIV. \nDr. Rehan Khan (English Language Instructor & Former Assistant Prof. Dept.",
+      "score": 0.731,
       "claims": [
         "partition violence 1947",
-        "communal violence",
         "Sikh vs Muslim conflict"
       ]
     },
     {
       "block_id": "B_003",
-      "chunk_id": "CET-JJ21-8-Dr-Unrmila-Devi_P001C001",
-      "source": "doi:10.46360/cosmos.et.620211008 2021",
-      "source_filename": "CET-JJ21-8-Dr-Unrmila-Devi.txt",
-      "page": 1,
-      "text": "1\n42\nSOCIAL AND POLITICAL ASPECTS BY KHUSHWANT SINGH \n*Dr Urmila Devi \n Paper Received: 14.05.2021 / Paper Accepted: 11.06.2021 / Paper Published: 17.06.2021 \n Corresponding Author: Dr Urmila Devi; Email:sangwanurmil@gmail.com; doi:10.46360/cosmos.et.620211008\nIntroduction \nKhushwant Singh's pre-occupation in his vocation \nwith journals developed into well known allure. \nHis studies are genuinely a reflection of his time, \nshowing up as narrative of occasions and \nindividuals around him.",
-      "score": 0.6359,
+      "chunk_id": "English_P017C017",
+      "source": "Unknown 1915",
+      "source_filename": "English.txt",
+      "page": 17,
+      "text": "17\nAs a writer, journalist, and cultural icon, Kushwant Singh's legacy continues to resonate with \nreaders, scholars, and writers. His powerful storytelling, candid commentary, and celebration of \nIndian culture have left an indelible mark on Indian literature. His writings continue to inspire \nand provoke thought, making him an enduring figure in the literary canon and a cherished \nliterary icon in the hearts of readers.\nReferences: \n1.",
+      "score": 0.7093,
       "claims": [
-        "railroad as central symbol",
-        "gender oppression women"
+        "Sikh vs Muslim conflict"
       ]
     },
     {
       "block_id": "B_004",
-      "chunk_id": "English_P001C003",
+      "chunk_id": "English_P003C003",
       "source": "Unknown 1915",
       "source_filename": "English.txt",
-      "page": 1,
-      "text": "Through his literary explorations of these cultural and social contexts, Kushwant Singh \ncontributed to a better understanding of India's historical journey, its diverse cultural identity, \nand the challenges faced by its people. His works continue to resonate with readers, providing \nvaluable insights into the complex tapestry of Indian society.",
-      "score": 0.6162,
+      "page": 3,
+      "text": "3\nto his profound understanding of human nature, social dynamics, and the complexities of \nIndian society. \nOverview of his literary career \nKushwant Singh had a prolific literary career that spanned several decades and encompassed a \nwide range of genres, including novels, short stories, essays, and non-fiction works. Throughout \nhis career, he gained a reputation for his candid writing style, sharp wit, and fearless \nexploration of sensitive and controversial subjects.",
+      "score": 0.7078,
       "claims": [
         "partition violence 1947",
         "Sikh vs Muslim conflict"
@@ -58,84 +56,55 @@
     },
     {
       "block_id": "B_005",
-      "chunk_id": "English_P001C002",
-      "source": "Unknown 1915",
-      "source_filename": "English.txt",
-      "page": 1,
-      "text": "norms, and cultural practices, challenging traditional beliefs and norms. His candid \napproach helped break societal barriers and fostered conversations on topics that were \noften considered off-limits, encouraging readers to reflect on and question prevailing \nideologies. \nIII. \nExploration of Human Relationships: Singh's exploration of human relationships in his \nshort stories and novels was marked by its realism and depth.",
-      "score": 0.602,
+      "chunk_id": "CET-JJ21-8-Dr-Unrmila-Devi_P002C002",
+      "source": "doi:10.46360/cosmos.et.620211008 2021",
+      "source_filename": "CET-JJ21-8-Dr-Unrmila-Devi.txt",
+      "page": 2,
+      "text": "2\n43\nBefore becoming the pioneer Indian writer in \nEnglish, R.K. Narayan made a hard struggle to \nmake a living by doing odd jobs such as a \njournalist. Then he gave his attempts of becoming a \nRailway Officer and a Bank officer. Thus R.K. \nNarayan had considerable personal problems. \nHowever, Graham Greene, a reputed British \nnovelist inspired him and introduced his first one \nnovel entitled Swami & Friends for Western \nreaders since 1935.",
+      "score": 0.6806,
       "claims": [
-        "partition violence 1947",
-        "communal violence",
-        "Sikh vs Muslim conflict",
-        "gender oppression women",
-        "feminist perspective"
+        "railroad as central symbol",
+        "Sikh vs Muslim conflict"
       ]
     },
     {
       "block_id": "B_006",
-      "chunk_id": "CET-JJ21-8-Dr-Unrmila-Devi_P001C002",
-      "source": "doi:10.46360/cosmos.et.620211008 2021",
-      "source_filename": "CET-JJ21-8-Dr-Unrmila-Devi.txt",
-      "page": 1,
-      "text": "Despite the fact that perusers for beginning random \ndata news-casting in Indian editorial scene credit \nKhushwant Singh, yet it frames just miniscule \nsegment of the whole editorial works by him. \nKhushwant Singh relates inconsequential issues to \nhis and perusers' normal life so that they appear to \nbe especially pertinent to the perusers.",
-      "score": 0.5991,
+      "chunk_id": "English_P015C015",
+      "source": "Unknown 1915",
+      "source_filename": "English.txt",
+      "page": 15,
+      "text": "15\npractices sparked public discourse and introspection, contributing to broader debates \non pressing issues.\nVII. \nLegacy as a Public Intellectual: Beyond his literary contributions, Singh was also known \nas a public intellectual and cultural critic. His engaging debates and lectures on diverse \nsubjects enriched public discourse and influenced public opinion.\nVIII.",
+      "score": 0.6776,
       "claims": [
-        "Sikh vs Muslim conflict"
+        "source: English_P015C015"
       ]
     },
     {
       "block_id": "B_007",
-      "chunk_id": "002_P001C005",
-      "source": "Charyulu 2019",
-      "source_filename": "002_0030bc.txt",
-      "page": 1,
-      "text": "Journal of Advances and Scholarly Researches in Allied Education \nVol. 16, Issue No. 6, May-2019, ISSN 2230-7540 \nstrict, and political foundation of their country, the \nPunjab. At the hour of the Aryan flood into the \nPunjab, there were seven streams, with the goal that \nthe area was named Sapta Sindhua, or the place \nthat is known for the Seven Seas.",
-      "score": 0.5683,
+      "chunk_id": "English_P013C013",
+      "source": "Unknown 1915",
+      "source_filename": "English.txt",
+      "page": 13,
+      "text": "13\nother journalists and writers to blur the lines between journalism and literature, \nresulting in a diverse range of literary non-fiction works.\nVII. \nWidening the Audience for Indian Literature: Singh's engaging writing style and relatable \ncharacters attracted a wider audience, both within India and abroad. His works were \ntranslated into multiple languages, introducing Indian literature to global readers and \nenhancing its international recognition and appeal.",
+      "score": 0.6642,
       "claims": [
-        "Sikh vs Muslim conflict"
+        "partition violence 1947"
       ]
     },
     {
       "block_id": "B_008",
-      "chunk_id": "363508_P001C005",
-      "source": "Charyulu 2019",
-      "source_filename": "363508_8461703.txt",
-      "page": 1,
-      "text": "Journal of Advances and Scholarly Researches in Allied Education \nVol. 16, Issue No. 6, May-2019, ISSN 2230-7540 \nstrict, and political foundation of their country, the \nPunjab. At the hour of the Aryan flood into the \nPunjab, there were seven streams, with the goal that \nthe area was named Sapta Sindhua, or the place \nthat is known for the Seven Seas.",
-      "score": 0.5659,
+      "chunk_id": "English_P016C016",
+      "source": "Unknown 1915",
+      "source_filename": "English.txt",
+      "page": 16,
+      "text": "16\n\"Train to Pakistan,\" one of his most renowned works, remains a powerful portrayal of the \npartition of India, shedding light on the human tragedy and communal violence during that \nperiod. Singh fearlessly addressed controversial and taboo subjects in his writing, challenging \nsocietal norms and promoting open dialogue on social issues and his works showcased well-\nrounded characters and explored the complexities of human relationships, including love, \nfriendship, and family bonds.",
+      "score": 0.6565,
       "claims": [
-        "Sikh vs Muslim conflict"
-      ]
-    },
-    {
-      "block_id": "B_009",
-      "chunk_id": "002_P001C001",
-      "source": "Charyulu 2019",
-      "source_filename": "002_0030bc.txt",
-      "page": 1,
-      "text": "1\nShikha1* Dr. G. Mohana Charyulu2 \nwww.ignited.in \n3356\nJournal of Advances and Scholarly Researches in Allied Education \nVol. 16, Issue No. 6, May-2019, ISSN 2230-7540 \nKhushwant Singh Novel “Train to Pakistan”: \nEssential Style and Technique for Exploration of \nthe Experience of Rural India\nShikha1* Dr. G.",
-      "score": 0.5503,
-      "claims": [
-        "railroad as central symbol",
-        "Mano Majra intersection",
         "partition violence 1947",
-        "Sikh vs Muslim conflict"
-      ]
-    },
-    {
-      "block_id": "B_010",
-      "chunk_id": "63_P001C004",
-      "source": "Unknown 1956",
-      "source_filename": "63c2bf255668a.txt",
-      "page": 1,
-      "text": "DR GURUNATH K BADIGER                              9 P a g e  \nnovelists who dealt with theme of partition, Kushwant Singh is not only a pioneer but also a \nclass apart. The major theme of Bapsi’s novel is the broken marriage and the disciplining \nfemale body in the closed societies. The reference of partition makes her a comparable to \nother Indian writers who wrote on partition.\n1.",
-      "score": 0.5425,
-      "claims": [
-        "partition violence 1947"
+        "communal violence"
       ]
     }
   ],
-  "total_retrieved": 10,
-  "timestamp": "2026-05-27T04:27:35.948079"
+  "total_retrieved": 8,
+  "timestamp": "2026-05-28T02:14:12.862433"
 }

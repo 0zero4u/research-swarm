@@ -261,6 +261,8 @@ def generate_works_cited(used_chunks):
         title = chunk.get("title", "").strip()
         year = chunk.get("year", "").strip()
         journal = chunk.get("journal", "").strip()
+        volume = chunk.get("volume", "").strip()
+        issue = chunk.get("issue", "").strip()
         url = chunk.get("url", "").strip()
 
         # Build MLA entry
@@ -270,12 +272,10 @@ def generate_works_cited(used_chunks):
         if title:
             parts.append(f'"{title}."')
         if journal:
-            vol = chunk.get("volume", "")
-            issue = chunk.get("issue", "")
-            if vol and issue:
-                parts.append(f"*{journal}*, vol. {vol}, no. {issue}")
-            elif vol:
-                parts.append(f"*{journal}*, vol. {vol}")
+            if volume and issue:
+                parts.append(f"*{journal}*, vol. {volume}, no. {issue}")
+            elif volume:
+                parts.append(f"*{journal}*, vol. {volume}")
             else:
                 parts.append(f"*{journal}*")
         if year:

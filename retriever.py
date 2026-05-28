@@ -22,10 +22,11 @@ import requests
 
 # Constants
 EMBEDDING_MODEL = "qwen/qwen3-embedding-8b"
-EMBEDDING_DIM = 1024
+EMBEDDING_DIM = 4096
 DEFAULT_TOP_K = 10
-DEFAULT_INDEX_DIR = Path("vector_index")
-DEFAULT_CHUNKS_PATH = Path("chunks/chunks.json")
+_BASE_DIR = Path(__file__).parent
+DEFAULT_INDEX_DIR = _BASE_DIR / "vector_index"
+DEFAULT_CHUNKS_PATH = _BASE_DIR / "chunks" / "chunks.json"
 INDEX_FILE = "index.faiss"
 MANIFEST_FILE = "manifest.json"
 EVIDENCE_PACKS_DIR = Path("evidence_packs")
@@ -188,6 +189,13 @@ class Retriever:
 
         with open(manifest_path, "r", encoding="utf-8") as f:
             self.manifest = json.load(f)
+        
+        # Build O(1) lookup index: faiss_idx -> manifest entry
+        self._manifest_index = {
+            entry["faiss_idx"]: entry
+            for entry in self.manifest.get("chunks", [])
+            if "faiss_idx" in entry
+        }
 
     def load_chunks_index(self):
         """Load full chunks data for provenance lookup."""
@@ -256,13 +264,8 @@ class Retriever:
             if faiss_idx < 0:  # Invalid index
                 continue
 
-            # Find chunk_id from manifest
-            manifest_entry = None
-            for entry in self.manifest.get("chunks", []):
-                if entry.get("faiss_idx") == int(faiss_idx):
-                    manifest_entry = entry
-                    break
-
+            # Find chunk_id from manifest via O(1) index
+            manifest_entry = self._manifest_index.get(int(faiss_idx))
             if not manifest_entry:
                 continue
 
