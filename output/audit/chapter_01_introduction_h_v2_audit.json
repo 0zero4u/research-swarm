@@ -1,0 +1,194 @@
+{
+  "chapter_file": "chapter_01_introduction_h_v2.md",
+  "total_citations": 56,
+  "valid_citations": 26,
+  "structured_valid": 0,
+  "block_valid": 0,
+  "mla_valid": 47,
+  "hallucinated_citations": 0,
+  "malformed_citations": 9,
+  "invalid_pages": 21,
+  "issues": [
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 24,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 26,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 30,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 1)",
+      "line": 32,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 38,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 40,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 40,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 17)",
+      "line": 42,
+      "message": "Page 17 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 46,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 46,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 3)",
+      "line": 50,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 54,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 2)",
+      "line": 58,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(English, Unknown 1915, p. 16)",
+      "line": 58,
+      "message": "Page 16 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(originally titled *Mano Majra*, 1956)",
+      "line": 69,
+      "message": "Malformed citation format: '(originally titled *Mano Majra*, 1956)'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 4)",
+      "line": 75,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 4)",
+      "line": 75,
+      "message": "Page 4 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)",
+      "line": 81,
+      "message": "Malformed citation format: '(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)",
+      "line": 83,
+      "message": "Malformed citation format: '(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)",
+      "line": 83,
+      "message": "Malformed citation format: '(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)",
+      "line": 85,
+      "message": "Malformed citation format: '(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)",
+      "line": 89,
+      "message": "Malformed citation format: '(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)",
+      "line": 89,
+      "message": "Malformed citation format: '(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)",
+      "line": 95,
+      "message": "Malformed citation format: '(HISTORY-AS-LEbIT-MOTIF, Sharma 2016, p. 3)'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 1)",
+      "line": 110,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 1)",
+      "line": 116,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 1)",
+      "line": 116,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 2)",
+      "line": 122,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(VIDEOING_THE_CHAOS_OF_EVACUATION_IN_KHUS, Unknown 2020, p. 2)",
+      "line": 126,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(ijrar_issue_20542129, Asso. et al. 2018, p. 1)",
+      "line": 147,
+      "message": "Malformed citation format: '(ijrar_issue_20542129, Asso. et al. 2018, p. 1)'"
+    }
+  ],
+  "passed": false
+}
