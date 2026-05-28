@@ -1,0 +1,110 @@
+{
+  "chapter_file": "chapter_01_introduction_h_agent.md",
+  "total_citations": 25,
+  "valid_citations": 9,
+  "structured_valid": 0,
+  "block_valid": 0,
+  "mla_valid": 20,
+  "hallucinated_citations": 0,
+  "malformed_citations": 5,
+  "invalid_pages": 11,
+  "issues": [
+    {
+      "type": "malformed",
+      "citation": "(Butalia, p. 2)",
+      "line": 5,
+      "message": "Malformed citation format: '(Butalia, p. 2)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(Butalia, p. 21)",
+      "line": 5,
+      "message": "Malformed citation format: '(Butalia, p. 21)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(Butalia, p. 2)",
+      "line": 7,
+      "message": "Malformed citation format: '(Butalia, p. 2)'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1947, p. 1)",
+      "line": 9,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(Butalia, p. 289)",
+      "line": 9,
+      "message": "Malformed citation format: '(Butalia, p. 289)'"
+    },
+    {
+      "type": "malformed",
+      "citation": "(Butalia, p. 2)",
+      "line": 11,
+      "message": "Malformed citation format: '(Butalia, p. 2)'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1915, p. 2)",
+      "line": 15,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1915, p. 3)",
+      "line": 15,
+      "message": "Page 3 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1915, p. 2)",
+      "line": 17,
+      "message": "Page 2 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1915, p. 15)",
+      "line": 17,
+      "message": "Page 15 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1915, p. 17)",
+      "line": 17,
+      "message": "Page 17 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1915, p. 16)",
+      "line": 19,
+      "message": "Page 16 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1915, p. 16)",
+      "line": 19,
+      "message": "Page 16 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1915, p. 13)",
+      "line": 21,
+      "message": "Page 13 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1915, p. 17)",
+      "line": 21,
+      "message": "Page 17 not found in source chunks for 'Unknown'"
+    },
+    {
+      "type": "invalid_page",
+      "citation": "(Unknown 1947, p. 1)",
+      "line": 25,
+      "message": "Page 1 not found in source chunks for 'Unknown'"
+    }
+  ],
+  "passed": false
+}
