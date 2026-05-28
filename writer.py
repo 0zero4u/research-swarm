@@ -36,10 +36,11 @@ CRITICAL RULES - VIOLATIONS WILL CAUSE CITATION AUDIT FAILURE:
 7. Include section headers (## for H2, ### for H3)
 8. End with discussion questions or a transition
 
-CITATION FORMAT (use structured format):
-- Primary: [[chunk_id:page]] e.g., [[002_P001C003:1]]
-- Fallback MLA: (AuthorName PageNumber) e.g., (Singh 85)
-- Either format is acceptable - auditor validates both
+CITATION FORMAT (MANDATORY - use exactly this format):
+- You MUST cite using the format: [chunk_id]
+- Example: [002_P001C003] means from chunk 002_P001C003
+- This is REQUIRED - do not use any other citation format
+- Do NOT use (Author Page) or EVIDENCE N format - use [chunk_id] only
 """
 
 
@@ -73,7 +74,8 @@ class EvidencePack:
     
     @classmethod
     def from_dict(cls, data: dict) -> 'EvidencePack':
-        chunks = [EvidenceChunk.from_dict(c) for c in data.get("results", [])]
+        raw_chunks = data.get("results", []) or data.get("blocks", [])
+        chunks = [EvidenceChunk.from_dict(c) for c in raw_chunks]
         return cls(
             query=data.get("query", ""),
             chunks=chunks

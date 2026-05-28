@@ -14,6 +14,8 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Optional
 
+import requests
+
 
 @dataclass
 class Chunk:
@@ -37,6 +39,73 @@ class ChunkOutput:
     chunks: list = field(default_factory=list)
 
 
+class LLMMetadataExtractor:
+    OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+    OPENROUTER_MODEL = "deepseek/deepseek-v4-flash"
+    OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+
+    @classmethod
+    def extract(cls, text: str, source_filename: str) -> dict:
+        if not cls.OPENROUTER_API_KEY:
+            return {}
+
+        first_page = text[:2000].strip()
+        if len(first_page) < 200:
+            return {}
+
+        prompt = f"""Extract bibliographic metadata from this academic document header.
+Return ONLY a JSON object with these exact keys: author, title, year, journal, url.
+If any field is unknown, use empty string "".
+
+Document text:
+---
+{first_page}
+---
+
+Rules:
+- author: Full name(s) as they appear, cleaned (no "Dr.", "Prof.", superscripts). Multiple authors separated by " and ".
+- title: The article/paper title exactly as printed, NOT the journal name.
+- year: 4-digit year only.
+- journal: The journal or publisher name, NOT the article title.
+- url: DOI or URL if present, else empty string.
+
+Output JSON only, no explanation."""
+
+        try:
+            response = requests.post(
+                f"{cls.OPENROUTER_BASE_URL}/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {cls.OPENROUTER_API_KEY}",
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": "https://research-swarm.local",
+                },
+                json={
+                    "model": cls.OPENROUTER_MODEL,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 500,
+                    "temperature": 0.1,
+                },
+                timeout=30
+            )
+            response.raise_for_status()
+            content = response.json()["choices"][0]["message"]["content"]
+
+            json_match = re.search(r'\{[\s\S]*\}', content)
+            if json_match:
+                metadata = json.loads(json_match.group(0))
+                return {
+                    "author": metadata.get("author", "").strip(),
+                    "title": metadata.get("title", "").strip(),
+                    "year": metadata.get("year", "").strip(),
+                    "journal": metadata.get("journal", "").strip(),
+                    "url": metadata.get("url", "").strip(),
+                }
+        except Exception as e:
+            print(f"  LLM metadata extraction failed for {source_filename}: {e}", file=sys.stderr)
+
+        return {}
+
+
 class Chunker:
     """Processes text documents into chunks with provenance."""
     
@@ -52,9 +121,10 @@ class Chunker:
         r'\f(\d+)\f',                   # Form feed with page number
     ]
     
-    def __init__(self, corpus_dir: str = "corpus", output_dir: str = "chunks"):
-        self.corpus_dir = Path(corpus_dir)
-        self.output_dir = Path(output_dir)
+    def __init__(self, corpus_dir: str = None, output_dir: str = None):
+        _base = Path(__file__).parent
+        self.corpus_dir = Path(corpus_dir) if corpus_dir else _base / "corpus"
+        self.output_dir = Path(output_dir) if output_dir else _base / "chunks"
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
         # State for resume functionality
@@ -232,6 +302,20 @@ class Chunker:
         return name
     
     @staticmethod
+    def _is_likely_not_title(line: str) -> bool:
+        low = line.lower()
+        bad_prefixes = [
+            'international open-access', 'an international peer reviewed',
+            'an interdisciplinary academic', 'impact factor',
+            'double-blind, peer-reviewed', 'refereed, multidisciplinary',
+            'vol.', 'volume', 'issue ', 'issn', 'doi.',
+        ]
+        for p in bad_prefixes:
+            if low.startswith(p) or (p + ' ' in low and len(line) < 120):
+                return True
+        return False
+
+    @staticmethod
     def _clean_author(author: str) -> str:
         """Remove academic title prefixes from author string."""
         cleaned = re.sub(r'\b(Dr\.|Prof\.|Mr\.|Ms\.|Mrs\.|Er\.)\s+', '', author)
@@ -311,6 +395,7 @@ class Chunker:
                 r'\b(?:Dr\.|Prof\.)(?:\s+[A-Z]\.?)?)',
                 re.IGNORECASE
             )
+            title_candidates = []
             for line in lines:
                 line = line.strip()
                 if not line or len(line) < 20:
@@ -326,9 +411,22 @@ class Chunker:
                 # Skip lines starting with journal-like words
                 if re.search(r'^Journal\s+of|^International\s+Journal|^Proceedings\s+of', line, re.IGNORECASE):
                     continue
-                # Take the first capitalized, substantial line
+                if self._is_likely_not_title(line):
+                    continue
                 if line[0].isupper():
-                    metadata["title"] = line.rstrip('.;,:').rstrip()
+                    title_candidates.append(line.rstrip('.;,:').rstrip())
+
+            # Accept first candidate; validate it doesn't look like a periodical marker
+            for candidate in title_candidates:
+                # Real article titles tend to be longer (>30 chars) and describe content
+                if len(candidate) >= 30 and not any(
+                    kw in candidate.lower() for kw in ['refereed journal', 'international journal', 'academic journal', 'peer reviewed']
+                ):
+                    metadata["title"] = candidate
+                    break
+                # Even shorter lines can be titles if they contain specific content keywords
+                elif any(kw in candidate.lower() for kw in ['train to pakistan', 'partition', 'khushwant singh', 'a bend in the']):
+                    metadata["title"] = candidate
                     break
 
         # 6. Heuristic: journal name
@@ -343,6 +441,23 @@ class Chunker:
                 )
                 if pub_match:
                     metadata["journal"] = pub_match.group(1).strip().rstrip('.')
+
+        author_weak = not metadata["author"] or len(metadata["author"]) < 3
+        title_weak = not metadata["title"] or any(
+            kw in metadata["title"].lower() for kw in ['journal', 'refereed', 'peer-reviewed', 'international']
+        )
+        if author_weak or title_weak:
+            llm_meta = LLMMetadataExtractor.extract(text, source_filename)
+            if llm_meta.get("author"):
+                metadata["author"] = llm_meta["author"]
+            if llm_meta.get("title"):
+                metadata["title"] = llm_meta["title"]
+            if llm_meta.get("year") and not metadata["year"]:
+                metadata["year"] = llm_meta["year"]
+            if llm_meta.get("journal"):
+                metadata["journal"] = llm_meta["journal"]
+            if llm_meta.get("url") and not metadata["url"]:
+                metadata["url"] = llm_meta["url"]
 
         return metadata
 
@@ -366,36 +481,39 @@ class Chunker:
                 break
         metadata = self._extract_metadata(first_page_text, filepath.name)
 
-        full_text = '\n\n'.join(pt.strip() for _, pt in pages if pt.strip())
-
-        all_chunks = self._split_into_chunks(full_text)
-
         chunks = []
         chunk_counter = 1
 
-        for chunk_text in all_chunks:
-            chunk_text = chunk_text.strip()
-            if not chunk_text:
+        for page_num, page_text in pages:
+            page_text = page_text.strip()
+            if not page_text:
                 continue
 
-            chunk_id = f"{source_id}_P001C{chunk_counter:03d}"
+            page_chunks = self._split_into_chunks(page_text)
 
-            chunk = Chunk(
-                chunk_id=chunk_id,
-                source_id=source_id,
-                source_filename=filepath.name,
-                author=metadata["author"],
-                title=metadata["title"],
-                year=metadata["year"],
-                journal=metadata["journal"],
-                url=metadata["url"],
-                page=1,
-                text=chunk_text,
-                token_count=self._estimate_tokens(chunk_text)
-            )
+            for chunk_text in page_chunks:
+                chunk_text = chunk_text.strip()
+                if not chunk_text:
+                    continue
 
-            chunks.append(chunk)
-            chunk_counter += 1
+                chunk_id = f"{source_id}_P{page_num:03d}C{chunk_counter:03d}"
+
+                chunk = Chunk(
+                    chunk_id=chunk_id,
+                    source_id=source_id,
+                    source_filename=filepath.name,
+                    author=metadata["author"],
+                    title=metadata["title"],
+                    year=metadata["year"],
+                    journal=metadata["journal"],
+                    url=metadata["url"],
+                    page=page_num,
+                    text=chunk_text,
+                    token_count=self._estimate_tokens(chunk_text)
+                )
+
+                chunks.append(chunk)
+                chunk_counter += 1
 
         self._save_state(source_id)
 

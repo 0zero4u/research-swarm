@@ -19,7 +19,7 @@ import requests
 # ============================================================================
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
-OPENROUTER_MODEL = "opencode-go/minimax-m2.7"
+OPENROUTER_MODEL = "deepseek/deepseek-v4-flash"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 SYSTEM_PROMPT = """You are an academic writing editor specializing in removing AI-generated text patterns.

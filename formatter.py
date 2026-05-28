@@ -239,11 +239,70 @@ def convert_block_citations(text, evidence_pack_path):
     return re.sub(r'\[B_(\d+)\]', replace_block, text)
 
 
+def generate_works_cited(used_chunks):
+    """Generate MLA Works Cited section from cited chunks.
+
+    Groups by source_filename to avoid duplicate entries.
+    Returns markdown-formatted Works Cited section.
+    """
+    if not used_chunks:
+        return ""
+
+    # Deduplicate by source_filename, keep first occurrence
+    seen = {}
+    for chunk in used_chunks:
+        src = chunk.get("source_filename", "unknown")
+        if src not in seen:
+            seen[src] = chunk
+
+    entries = []
+    for chunk in seen.values():
+        author = chunk.get("author", "").strip()
+        title = chunk.get("title", "").strip()
+        year = chunk.get("year", "").strip()
+        journal = chunk.get("journal", "").strip()
+        url = chunk.get("url", "").strip()
+
+        # Build MLA entry
+        parts = []
+        if author:
+            parts.append(author + ".")
+        if title:
+            parts.append(f'"{title}."')
+        if journal:
+            vol = chunk.get("volume", "")
+            issue = chunk.get("issue", "")
+            if vol and issue:
+                parts.append(f"*{journal}*, vol. {vol}, no. {issue}")
+            elif vol:
+                parts.append(f"*{journal}*, vol. {vol}")
+            else:
+                parts.append(f"*{journal}*")
+        if year:
+            parts.append(year + ".")
+        if url:
+            parts.append(url + ".")
+
+        entry = " ".join(parts) if parts else chunk.get("source_filename", "unknown")
+        entries.append(entry)
+
+    if not entries:
+        return ""
+
+    lines = ["## Works Cited", ""]
+    for entry in entries:
+        lines.append(entry)
+        lines.append("")
+    return "\n".join(lines)
+
+
 def convert_citations(text, chunks_map, block_map):
     """Replace all [chunk_id] and [chunk_id:(mla citation)] citations with MLA format.
-    
+
     Also handles [B_XXX] block citations by looking up block metadata and converting to MLA.
+    Tracks all cited chunks for Works Cited generation.
     """
+    used_chunks = []
 
     def replace_hybrid(match):
         chunk_id = match.group(1)
@@ -271,6 +330,7 @@ def convert_citations(text, chunks_map, block_map):
             )
             return match.group(0)
 
+        used_chunks.append(chunk)
         page = chunk.get("page", 1)
         return format_mla_citation(chunk, page=page)
 
@@ -285,7 +345,7 @@ def convert_citations(text, chunks_map, block_map):
                 file=sys.stderr,
             )
             return block_id
-        
+
         chunk_id = block_info.get("chunk_id", "")
         chunk = chunks_map.get(chunk_id)
         if chunk is None:
@@ -295,7 +355,8 @@ def convert_citations(text, chunks_map, block_map):
                 file=sys.stderr,
             )
             return block_id
-        
+
+        used_chunks.append(chunk)
         page = block_info.get("page", chunk.get("page", 1))
         return format_mla_citation(chunk, page=page)
 
@@ -306,15 +367,21 @@ def convert_citations(text, chunks_map, block_map):
     )
 
     text = re.sub(
-        r'\[([A-Za-z0-9_]+):(\([^)]+\))\]',
+        r'\[([A-Za-z0-9_ %\.\-]+_P\d+C\d+):(\([^)]+\))\]',
         replace_hybrid,
         text
     )
     text = re.sub(
-        r'\[([A-Za-z0-9_]+)\]',
+        r'\[([A-Za-z0-9_ %\.\-]+_P\d+C\d+)\]',
         replace_simple,
         text
     )
+
+    # Append Works Cited if any chunks were cited
+    if used_chunks:
+        works_cited = generate_works_cited(used_chunks)
+        if works_cited:
+            text = text.rstrip() + "\n\n---\n\n" + works_cited
 
     return text
 
@@ -364,9 +431,9 @@ def main():
     with open(args.input, "r", encoding="utf-8") as f:
         text = f.read()
 
-    raw_count = len(re.findall(r'\[([A-Za-z0-9_]+)(?::\([^)]+\))?\]', text))
+    raw_count = len(re.findall(r'\[([A-Za-z0-9_ %\.\-]+_P\d+C\d+)(?::\([^)]+\))?\]', text))
     block_count = len(re.findall(r'\[B_\d+\]', text))
-    if raw_count == 0:
+    if raw_count == 0 and block_count == 0:
         print("No citations found in input file.")
         sys.exit(0)
 
